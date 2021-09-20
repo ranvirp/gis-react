@@ -1,0 +1,123 @@
+{
+  "errors": [],
+  "warnings": [],
+  "hash": "3229ec63c1eed6e64945",
+  "publicPath": "",
+  "outputPath": "/Users/bar/dev/reactprojects/gisfrontend/server-build",
+  "assetsByChunkName": {
+    "main": [
+      "main.css",
+      "handler.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "fonts/glyphicons-halflings-regular.eot",
+      "size": 20127,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/glyphicons-halflings-regular.svg",
+      "size": 108738,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/glyphicons-halflings-regular.ttf",
+      "size": 45404,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/glyphicons-halflings-regular.woff",
+      "size": 23424,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/glyphicons-halflings-regular.woff2",
+      "size": 18028,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/logo.svg",
+      "size": 2632,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "src/logo.svg"
+      },
+      "emitted": false
+    },
+    {
+      "name": "handler.js",
+      "size": 2980260,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "main.css",
+      "size": 122307,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.css",
+        "handler.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "main",
+      "files": [
+        "main.css",
+        "handler.js"
+      ]
+    }
+  ]
+}

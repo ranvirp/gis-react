@@ -1,0 +1,3386 @@
+[
+  {
+    "vname": "अजमेर",
+    "village_code_census": "129808",
+    "vname_eng": "Ajmer",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "अजाऊ",
+    "village_code_census": "129853",
+    "vname_eng": "Aujanu",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अणूपुरा",
+    "village_code_census": "129995",
+    "vname_eng": "Andupura",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अतरछेड़ी",
+    "village_code_census": "129932",
+    "vname_eng": "Atarchedi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अनिरूदपुर",
+    "village_code_census": "129872",
+    "vname_eng": "Anurudhpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अन्टुआ",
+    "village_code_census": "129961",
+    "vname_eng": "Antua",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अन्तपुर",
+    "village_code_census": "129895",
+    "vname_eng": "Antpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अमरोली",
+    "village_code_census": "129904",
+    "vname_eng": "Amroli",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अम्बरपुर",
+    "village_code_census": "129777",
+    "vname_eng": "Ambarpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "अरवा ऐ0",
+    "village_code_census": "129975",
+    "vname_eng": "Akha Atmali",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "अरवा मु0",
+    "village_code_census": "129976",
+    "vname_eng": "Akha Mustkil",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "अलीगंज",
+    "village_code_census": "217590",
+    "vname_eng": "Aliganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अलीनगर",
+    "village_code_census": "129984",
+    "vname_eng": "Alinagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अवरा",
+    "village_code_census": "217562",
+    "vname_eng": "Avra",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अवादानपुर",
+    "village_code_census": "129917",
+    "vname_eng": "Abadanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अवादानपुरMBA",
+    "village_code_census": "217561",
+    "vname_eng": "Abadanpur MBA",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अहमदनगरउर्फविशारतगं",
+    "village_code_census": "217563",
+    "vname_eng": "Ahmadnagar urf Visharatganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "अंजनी ए0",
+    "village_code_census": "129794",
+    "vname_eng": "Anjani Ahatmali",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "अंजनी मु0",
+    "village_code_census": "129797",
+    "vname_eng": "Anjani Mustkil",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "आकड़ाडी",
+    "village_code_census": "129953",
+    "vname_eng": "Akdandi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "आनन्दपुर",
+    "village_code_census": "130024",
+    "vname_eng": "Anandpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "आराजीमुस्तखारजा/कृपिय्",
+    "village_code_census": "130026",
+    "vname_eng": "Arazi Mustkharja urf Karpia ",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "आराजी व्यौघन बुजर्ग",
+    "village_code_census": "129772",
+    "vname_eng": "Arazi Beodhan Buzurg",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "आलमपुर कोट",
+    "village_code_census": "129821",
+    "vname_eng": "Alampur Kot",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "आलमपुरजाफराबाद",
+    "village_code_census": "130062",
+    "vname_eng": "Alampur Japhrabad",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "आसपुर",
+    "village_code_census": "129999",
+    "vname_eng": "Aspur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "आैंरगावाद",
+    "village_code_census": "130073",
+    "vname_eng": "Aurangabad",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "आंवला",
+    "village_code_census": "129982",
+    "vname_eng": "Aonla(Grameen)",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "इस्माइलपुर",
+    "village_code_census": "129919",
+    "vname_eng": "Ismailpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "इस्लामनगर उर्फ दलीपपुर",
+    "village_code_census": "129818",
+    "vname_eng": "Islamnagar Urf Dalippur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "इस्लामाबाद",
+    "village_code_census": "130028",
+    "vname_eng": "Islamabad",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "इंचौर झूनानगर",
+    "village_code_census": "129874",
+    "vname_eng": "Inchor Jhoonanagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "उ0भानपुर उर्फ आनन्दपुर",
+    "village_code_census": "129822",
+    "vname_eng": "Udaybhanpur Urf Anandpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "उरला",
+    "village_code_census": "129979",
+    "vname_eng": "Urla",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "उसैता",
+    "village_code_census": "129978",
+    "vname_eng": "Usaita",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "औरंगाबाद",
+    "village_code_census": "129802",
+    "vname_eng": "Aurangabad",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "ककरी",
+    "village_code_census": "130111",
+    "vname_eng": "Kakri",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "कचयाना",
+    "village_code_census": "217564",
+    "vname_eng": "Kachyana",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कचूर डाडी",
+    "village_code_census": "129909",
+    "vname_eng": "Kachoor Dandi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कटकाभरत",
+    "village_code_census": "130089",
+    "vname_eng": "Katka Bharat",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कटकारमन",
+    "village_code_census": "130115",
+    "vname_eng": "Katka Raman",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "कटसारी",
+    "village_code_census": "129988",
+    "vname_eng": "Katsari",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कतरोई बुजर्ग",
+    "village_code_census": "129869",
+    "vname_eng": "Katroibuzurg",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कनगांवउरला",
+    "village_code_census": "129989",
+    "vname_eng": "Kangawaurla",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कन्थरी जाफरपुर",
+    "village_code_census": "129852",
+    "vname_eng": "Kanthri Japharpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कन्हरपुर",
+    "village_code_census": "129963",
+    "vname_eng": "Kandharpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कमठेना",
+    "village_code_census": "129841",
+    "vname_eng": "Kamthena",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कमालपुर",
+    "village_code_census": "129887",
+    "vname_eng": "Kamalpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "करपिया",
+    "village_code_census": "130019",
+    "vname_eng": "Karpia Brahmnan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "करमपुर",
+    "village_code_census": "130070",
+    "vname_eng": "Karampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "करुआताल",
+    "village_code_census": "130001",
+    "vname_eng": "Karuatal",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "करेला",
+    "village_code_census": "130008",
+    "vname_eng": "Karela",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कल्यानपुर",
+    "village_code_census": "129875",
+    "vname_eng": "Kalyanpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "कल्यानपुर हैबतपुर",
+    "village_code_census": "129800",
+    "vname_eng": "Kalyanpur Haibatour",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "कल्लिया",
+    "village_code_census": "130009",
+    "vname_eng": "Kallia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कसूमरा",
+    "village_code_census": "129843",
+    "vname_eng": "Kasumra",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कालाभोज",
+    "village_code_census": "129816",
+    "vname_eng": "Kala Bhoj",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "किटौना",
+    "village_code_census": "129836",
+    "vname_eng": "Kitona",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "किदौना",
+    "village_code_census": "129889",
+    "vname_eng": "Kedona",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "किशन पुर",
+    "village_code_census": "129833",
+    "vname_eng": "Kishanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "किशनपुर जायदपुर",
+    "village_code_census": "217567",
+    "vname_eng": "Kishanpur Jayadpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "किशनसिंहपुर",
+    "village_code_census": "129941",
+    "vname_eng": "Kishan Singhpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कीरतपुर",
+    "village_code_census": "130040",
+    "vname_eng": "Kiratpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कीरतपुर",
+    "village_code_census": "130125",
+    "vname_eng": "Keeratpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "कुडढ़ा",
+    "village_code_census": "130045",
+    "vname_eng": "Kuddha",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कुडंरियाफैजुल्लापुर",
+    "village_code_census": "129884",
+    "vname_eng": "Kundaria Faijullapur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कुन्डरियाइखलासपुर",
+    "village_code_census": "129966",
+    "vname_eng": "Kundaria Ekhlaspur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कुन्डरिया खुर्द",
+    "village_code_census": "129945",
+    "vname_eng": "Kundaria Khurd",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कुवंरपुर",
+    "village_code_census": "129899",
+    "vname_eng": "Kunwarpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कुसारी",
+    "village_code_census": "130030",
+    "vname_eng": "Kusari",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "कृपिया खास",
+    "village_code_census": "130020",
+    "vname_eng": "Karpia Khas",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "केसरपुर",
+    "village_code_census": "129807",
+    "vname_eng": "Kesarpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "कैनीशिवनगर",
+    "village_code_census": "129873",
+    "vname_eng": "Kaini Shivnagar",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "कैमुआ",
+    "village_code_census": "130059",
+    "vname_eng": "Kemuwa",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "कोहनी प्रतापपुर",
+    "village_code_census": "130077",
+    "vname_eng": "Kohani Pratappur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "क्योनाशादीपुर",
+    "village_code_census": "130036",
+    "vname_eng": "Keona Sadipuur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "क्योना सूरतपुर",
+    "village_code_census": "129944",
+    "vname_eng": "Keona Suratpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खटेटा",
+    "village_code_census": "129876",
+    "vname_eng": "Khateta",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खनगांवा श्याम",
+    "village_code_census": "129881",
+    "vname_eng": "Khangawa Shyam",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खमरिया डांडी",
+    "village_code_census": "129994",
+    "vname_eng": "Khamariadandi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खरगपुर",
+    "village_code_census": "129805",
+    "vname_eng": "Kharagpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "खरगपुर",
+    "village_code_census": "129839",
+    "vname_eng": "Khargpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खाता बीरान",
+    "village_code_census": "130080",
+    "vname_eng": "Khata Veerana",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "खिरिया",
+    "village_code_census": "129848",
+    "vname_eng": "Khiria",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खुली",
+    "village_code_census": "130052",
+    "vname_eng": "Khuli",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खुसरोपुर",
+    "village_code_census": "130087",
+    "vname_eng": "Khusroopur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खेड़ा",
+    "village_code_census": "130099",
+    "vname_eng": "Khera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "खैलमदेहाजगीर",
+    "village_code_census": "129896",
+    "vname_eng": "Khailam Dehajagir",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गहर्रा",
+    "village_code_census": "130120",
+    "vname_eng": "Gahrra",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "गिदौली",
+    "village_code_census": "129956",
+    "vname_eng": "Gidaolee",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गुरई",
+    "village_code_census": "129792",
+    "vname_eng": "Gurai",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "गुरवा",
+    "village_code_census": "129793",
+    "vname_eng": "Gurwa",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "गुरूगांवा ऐ0",
+    "village_code_census": "129859",
+    "vname_eng": "Gurganwa Ahatmali",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गुरूगांवा मु0",
+    "village_code_census": "129860",
+    "vname_eng": "Gurganwamustkil",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गुलडि़याअरिल",
+    "village_code_census": "129767",
+    "vname_eng": "Gularia Aril",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "गुलडिया उपराला",
+    "village_code_census": "129871",
+    "vname_eng": "Gularia Uprala",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गुलडि़या भूड़",
+    "village_code_census": "129803",
+    "vname_eng": "Gularia Bhoor",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "गुलेली",
+    "village_code_census": "129847",
+    "vname_eng": "Guleli",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गुवरहाई",
+    "village_code_census": "129864",
+    "vname_eng": "Guberhai",
+    "pname": "सिरौली",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "गैनी",
+    "village_code_census": "129939",
+    "vname_eng": "Gainee",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गोजा खेड़ा",
+    "village_code_census": "129913",
+    "vname_eng": "Goja Khera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गोठा खन्डुआ",
+    "village_code_census": "129832",
+    "vname_eng": "Gotha Khandua",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "गौसपुर",
+    "village_code_census": "129937",
+    "vname_eng": "Gauspur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "घिलौरा",
+    "village_code_census": "130093",
+    "vname_eng": "Ghilaora",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "घीरपुर",
+    "village_code_census": "129948",
+    "vname_eng": "Dheerpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "घुन्सी",
+    "village_code_census": "129912",
+    "vname_eng": "Ghunsi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चकरपुर",
+    "village_code_census": "130069",
+    "vname_eng": "Chkarpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चकरपुर",
+    "village_code_census": "129992",
+    "vname_eng": "Chakarpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चकरपुर गही",
+    "village_code_census": "129817",
+    "vname_eng": "Chakarpur Gahi",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "चकरपुर रामनगर",
+    "village_code_census": "130041",
+    "vname_eng": "Chakarpur Ramnagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चन्दूपुरा",
+    "village_code_census": "129806",
+    "vname_eng": "Chandupur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "चन्दूपुरा शिवनगर",
+    "village_code_census": "129819",
+    "vname_eng": "Chandoarur Shiv Nagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चम्पतपुर",
+    "village_code_census": "130071",
+    "vname_eng": "Champatpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चम्पतपुर",
+    "village_code_census": "129835",
+    "vname_eng": "Champatpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चाढ़पुर",
+    "village_code_census": "130060",
+    "vname_eng": "Chandpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "चांदपुर याकूवपुर",
+    "village_code_census": "129935",
+    "vname_eng": "Chandpur Yakubpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चिजरीबालकि शनपुर",
+    "village_code_census": "130021",
+    "vname_eng": "Chigari Wal Kishanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चुरहा नवदिया",
+    "village_code_census": "129940",
+    "vname_eng": "Churha Navdia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चुल्हरा",
+    "village_code_census": "129987",
+    "vname_eng": "Chulhara",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चॉदपुर मटकी",
+    "village_code_census": "130051",
+    "vname_eng": "Chandpur Matki",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "चंदौआ",
+    "village_code_census": "130081",
+    "vname_eng": "Chandowa",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "जगन्नाथपुर",
+    "village_code_census": "129815",
+    "vname_eng": "Jagannathpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "जगमनपुर",
+    "village_code_census": "129931",
+    "vname_eng": "Jagmanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जमापुर",
+    "village_code_census": "129938",
+    "vname_eng": "Jamapur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जमालपुर",
+    "village_code_census": "130100",
+    "vname_eng": "Jamalpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जलाल नगर",
+    "village_code_census": "129924",
+    "vname_eng": "Jalal Nagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जैतपुर शरीफपुर",
+    "village_code_census": "129950",
+    "vname_eng": "Jaitpur Shareefpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जैनपुर कादराबाद",
+    "village_code_census": "129973",
+    "vname_eng": "Jainpur Kadarabad",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जोगीठेर",
+    "village_code_census": "129892",
+    "vname_eng": "Jogither",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जंगतीरा",
+    "village_code_census": "129827",
+    "vname_eng": "Jangteera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "जंगबाजपुर",
+    "village_code_census": "129813",
+    "vname_eng": "Jangbazpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "झाऊनगला",
+    "village_code_census": "129857",
+    "vname_eng": "Jhaoonagla",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "झिझरी",
+    "village_code_census": "130126",
+    "vname_eng": "Jhinjhari",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "टाह",
+    "village_code_census": "129849",
+    "vname_eng": "Taha",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "टांडा",
+    "village_code_census": "130017",
+    "vname_eng": "Tanda",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "टिकुरी",
+    "village_code_census": "130013",
+    "vname_eng": "Tikuri",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "टोडरपुर उर्फ वालपुर",
+    "village_code_census": "129788",
+    "vname_eng": "Todarpur Urf Balapur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "डप्टा श्यामपुर",
+    "village_code_census": "130118",
+    "vname_eng": "Dapta Shyampur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "डरूआपुर",
+    "village_code_census": "129993",
+    "vname_eng": "Daruwapur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "ढका",
+    "village_code_census": "129974",
+    "vname_eng": "Dhaka",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "ढकिया",
+    "village_code_census": "129885",
+    "vname_eng": "Dhakia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "ढकौरा",
+    "village_code_census": "129929",
+    "vname_eng": "Dhakoura",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "ढिलवारी",
+    "village_code_census": "129844",
+    "vname_eng": "Dhilwari",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "तखौरा",
+    "village_code_census": "129798",
+    "vname_eng": "Takhora",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "तजपुरा नवदिया",
+    "village_code_census": "130097",
+    "vname_eng": "Tajpur Nawadia",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "ताडगज",
+    "village_code_census": "217570",
+    "vname_eng": "Tadganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "ताड़गंज M.B.A.",
+    "village_code_census": "217569",
+    "vname_eng": "Tadganj MBA",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "ताडनी मल्हपुर",
+    "village_code_census": "129781",
+    "vname_eng": "Tarni Malhupura",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "तारवाउर्फसुकुटिया",
+    "village_code_census": "129769",
+    "vname_eng": "Takha Urf Sukatia",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "तिगरा खानपुर",
+    "village_code_census": "129831",
+    "vname_eng": "Tigra Khanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "तिगाईदत्त नगर",
+    "village_code_census": "129946",
+    "vname_eng": "Tigai Dattnagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "तुमडिया",
+    "village_code_census": "130006",
+    "vname_eng": "Tumaria",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "तौलकपुर",
+    "village_code_census": "130092",
+    "vname_eng": "Taulakpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "दरका",
+    "village_code_census": "129983",
+    "vname_eng": "Darka",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "दरका M.B.A.",
+    "village_code_census": "217571",
+    "vname_eng": "Darka MBA",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "दरावनगर",
+    "village_code_census": "129850",
+    "vname_eng": "Daraw Nagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "दलपतपुर",
+    "village_code_census": "130109",
+    "vname_eng": "Dalpatpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "दलीपपुर",
+    "village_code_census": "130018",
+    "vname_eng": "Daleep pur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "दसीपुर",
+    "village_code_census": "129968",
+    "vname_eng": "Dasipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "दस्तमपुर",
+    "village_code_census": "129780",
+    "vname_eng": "Dastampur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "दिगोई",
+    "village_code_census": "130015",
+    "vname_eng": "Digoi ",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "देवकोला",
+    "village_code_census": "129837",
+    "vname_eng": "Devkola",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "देवचरा",
+    "village_code_census": "130067",
+    "vname_eng": "Devchara",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "देवसाराउर्फसग्रामपुर",
+    "village_code_census": "129810",
+    "vname_eng": "Devsara Urf Sangrampur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "देवी",
+    "village_code_census": "130011",
+    "vname_eng": "Devi",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "देवीपुर",
+    "village_code_census": "130098",
+    "vname_eng": "Devipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "धनौरा",
+    "village_code_census": "130112",
+    "vname_eng": "Dhanaura",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "धनौरा गौरी",
+    "village_code_census": "129778",
+    "vname_eng": "Dhanora Gauree",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "धर्मपुर",
+    "village_code_census": "130014",
+    "vname_eng": "Dharmpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "धौरेरा ऐ0",
+    "village_code_census": "129795",
+    "vname_eng": "Dhaurera Ahaatmali",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "धौरेरा मु0",
+    "village_code_census": "129796",
+    "vname_eng": "Dhaurera Mustkil",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "नकटपुर",
+    "village_code_census": "130085",
+    "vname_eng": "Nakatpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नगरिया देहाजब्ती",
+    "village_code_census": "130002",
+    "vname_eng": "Nagria Dehajbti",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नगरिया वीरान",
+    "village_code_census": "129951",
+    "vname_eng": "Nagaria Veeran",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नगरिया सतन",
+    "village_code_census": "129918",
+    "vname_eng": "Nagaria Satan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नगरियासतनMBA",
+    "village_code_census": "217572",
+    "vname_eng": "Nagariasatan MBA",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नगला",
+    "village_code_census": "130101",
+    "vname_eng": "Nagla",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "नबावपुरा",
+    "village_code_census": "129773",
+    "vname_eng": "Nawabpura",
+    "pname": "सिरौली",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "नवदिया",
+    "village_code_census": "130061",
+    "vname_eng": "Nabadia",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "नवदिया वीरान",
+    "village_code_census": "130034",
+    "vname_eng": "Nabadia Viran",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नवादा वीरान",
+    "village_code_census": "129954",
+    "vname_eng": "Navadia Veeran",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नामदारगंज",
+    "village_code_census": "129799",
+    "vname_eng": "Namdarganj",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "नितोई",
+    "village_code_census": "130104",
+    "vname_eng": "Nitoi",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "निसोई",
+    "village_code_census": "129925",
+    "vname_eng": "Nisoi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नूरपुर",
+    "village_code_census": "129914",
+    "vname_eng": "Noorpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नूरपुर बुजुर्ग",
+    "village_code_census": "129923",
+    "vname_eng": "Noorpur Buzurg",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नौगवां",
+    "village_code_census": "130049",
+    "vname_eng": "Naugawa",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नौगवां ठाकुरान",
+    "village_code_census": "130088",
+    "vname_eng": "Nogawan Thakuran",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नौगवां ब्रहमनान",
+    "village_code_census": "129933",
+    "vname_eng": "Naugawan Bhiramnan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नौहारा हसनपुर",
+    "village_code_census": "129921",
+    "vname_eng": "Nauhara Hasanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "नौंरगपुर",
+    "village_code_census": "130108",
+    "vname_eng": "Naurangpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "पखुरनी",
+    "village_code_census": "130044",
+    "vname_eng": "Pakhurni",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पचतौर",
+    "village_code_census": "130025",
+    "vname_eng": "Pachtor",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पट्टी कुर्की",
+    "village_code_census": "129828",
+    "vname_eng": "Patti Kurki",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पडरी",
+    "village_code_census": "217573",
+    "vname_eng": "Pandri",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पथरी",
+    "village_code_census": "130004",
+    "vname_eng": "Pathree",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पनवडिया",
+    "village_code_census": "130005",
+    "vname_eng": "Panwaria",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पमारी",
+    "village_code_census": "130033",
+    "vname_eng": "Pamari",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "परावहा वुददीनपुर",
+    "village_code_census": "129964",
+    "vname_eng": "Para Bhauddenpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "परास",
+    "village_code_census": "130029",
+    "vname_eng": "Paras",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पल्था",
+    "village_code_census": "129801",
+    "vname_eng": "Paltha",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "पांडी",
+    "village_code_census": "129901",
+    "vname_eng": "Pandi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पिपरिया उपराला",
+    "village_code_census": "129862",
+    "vname_eng": "Peparia Uprala",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पिपरिया वीरपुर",
+    "village_code_census": "129775",
+    "vname_eng": "Pepereaveerpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "पृथ्वीपुर",
+    "village_code_census": "129770",
+    "vname_eng": "Prathvipur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "पेमराजपुर",
+    "village_code_census": "130066",
+    "vname_eng": "Prem Rajpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "पैगा",
+    "village_code_census": "129910",
+    "vname_eng": "Paiga",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "प्यास ऐ0",
+    "village_code_census": "217557",
+    "vname_eng": "Pyas Atmali",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "प्यास मु0",
+    "village_code_census": "217558",
+    "vname_eng": "Pyas Mustkil",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "प्यास मुश्तकिल टा. ए.",
+    "village_code_census": "217559",
+    "vname_eng": "Pyas Mustkil T.A.",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "प्रहलादपुर",
+    "village_code_census": "129920",
+    "vname_eng": "Prahladpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "फतेहगंज",
+    "village_code_census": "129926",
+    "vname_eng": "Fatheganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "फत्तहपुर सराथू",
+    "village_code_census": "130083",
+    "vname_eng": "Fatehpur Sarathoo",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "फिरोजपुर",
+    "village_code_census": "130096",
+    "vname_eng": "Firozpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "फुन्दापुर उर्फ अटा",
+    "village_code_census": "129809",
+    "vname_eng": "Fundapur urf ataa",
+    "pname": "सिरौली",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "फुलासी",
+    "village_code_census": "129927",
+    "vname_eng": "Fulasi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बचेरा",
+    "village_code_census": "129943",
+    "vname_eng": "Bachera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बढरई कुइयां",
+    "village_code_census": "130079",
+    "vname_eng": "Badrai Kuiyan",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "बनारा",
+    "village_code_census": "130095",
+    "vname_eng": "Banari",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "बरासिरसा",
+    "village_code_census": "129879",
+    "vname_eng": "Bara Sirsa",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बल्लिया",
+    "village_code_census": "130117",
+    "vname_eng": "Ballia",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "बल्लिया वीरान",
+    "village_code_census": "217575",
+    "vname_eng": "Ballia veeran",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बाहनपुर",
+    "village_code_census": "130076",
+    "vname_eng": "Bahanpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "बिलौरी",
+    "village_code_census": "129996",
+    "vname_eng": "Bilauri",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बिहारीपुर",
+    "village_code_census": "130094",
+    "vname_eng": "Biharipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बिहारीपुर",
+    "village_code_census": "217587",
+    "vname_eng": "Biharipur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "बिहारीपुरदेहाजगीर",
+    "village_code_census": "217576",
+    "vname_eng": "Biharipur Dehajageer",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बेहटा चौहान",
+    "village_code_census": "129990",
+    "vname_eng": "Behta Chauhan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "बेहटा लालच",
+    "village_code_census": "130042",
+    "vname_eng": "Bheta Laluch",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "ब्राहमपुर",
+    "village_code_census": "130122",
+    "vname_eng": "Brahampur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "भगवानपुर",
+    "village_code_census": "130121",
+    "vname_eng": "Bhagwanpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "भजनई",
+    "village_code_census": "129877",
+    "vname_eng": "Bhajnai",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भमोरा",
+    "village_code_census": "130103",
+    "vname_eng": "Bhamora",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भरताना",
+    "village_code_census": "130043",
+    "vname_eng": "Bhartana",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भिण्डौरा",
+    "village_code_census": "217577",
+    "vname_eng": "Bhindaora",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भीकमपुर",
+    "village_code_census": "129942",
+    "vname_eng": "Bheekampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भीकमपुर",
+    "village_code_census": "130047",
+    "vname_eng": "Bheekampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भीमपुर",
+    "village_code_census": "129991",
+    "vname_eng": "Bheempur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भीमपुर कटौती",
+    "village_code_census": "129820",
+    "vname_eng": "Bheempur Kathauti",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भीमलौर रसूलपुर",
+    "village_code_census": "129880",
+    "vname_eng": "Bheemlaur Rasulpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भूड़ा",
+    "village_code_census": "130022",
+    "vname_eng": "Bhoora",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भूड़ा",
+    "village_code_census": "129865",
+    "vname_eng": "Bhoora",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "भूरीपुर",
+    "village_code_census": "129838",
+    "vname_eng": "Bhoori Pur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भोजपुर",
+    "village_code_census": "130058",
+    "vname_eng": "Bhojpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "भोजपुर रसूलपुर",
+    "village_code_census": "129936",
+    "vname_eng": "Bhojpur Rasoolpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मईकीरतपुर",
+    "village_code_census": "130124",
+    "vname_eng": "Mai Keeratpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "मऊचन्दपुर",
+    "village_code_census": "129825",
+    "vname_eng": "Mauchand Pur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मकरन्दपुरताराचन्दपुर",
+    "village_code_census": "130046",
+    "vname_eng": "Makrandpur Tarachand",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मकरन्दपुर धाराजीत",
+    "village_code_census": "130063",
+    "vname_eng": "Makrandpur Dharajit",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मजनूपुर",
+    "village_code_census": "130074",
+    "vname_eng": "Majnupur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मजरा दौलतपुर",
+    "village_code_census": "129829",
+    "vname_eng": "Mazra Daulatpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मझगवां",
+    "village_code_census": "129906",
+    "vname_eng": "Majhgawan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मझारा",
+    "village_code_census": "217578",
+    "vname_eng": "Majhara",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मझौआ",
+    "village_code_census": "130107",
+    "vname_eng": "Majhaoa",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मदौनाउर्फपटपरागंज",
+    "village_code_census": "129888",
+    "vname_eng": "Madauna Urf Patparaganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मनपुरा",
+    "village_code_census": "129981",
+    "vname_eng": "Manpura",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मनौना",
+    "village_code_census": "129846",
+    "vname_eng": "Manauna",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मनौना M.B.A.",
+    "village_code_census": "217579",
+    "vname_eng": "Manaona",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मन्डोरा",
+    "village_code_census": "129898",
+    "vname_eng": "Mandora",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मलगांवा",
+    "village_code_census": "130027",
+    "vname_eng": "Malgawan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "महतिया डांडी",
+    "village_code_census": "130037",
+    "vname_eng": "Mhaitia Dandi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "महमूदपुर",
+    "village_code_census": "129826",
+    "vname_eng": "Mahmood Pur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "महोलिया",
+    "village_code_census": "129891",
+    "vname_eng": "Maholia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मानपुर",
+    "village_code_census": "129900",
+    "vname_eng": "Manpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मिर्जापुर",
+    "village_code_census": "129971",
+    "vname_eng": "Mirjapur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मिर्जापुर",
+    "village_code_census": "129915",
+    "vname_eng": "Mirjapur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मिलकमझारा",
+    "village_code_census": "130084",
+    "vname_eng": "Milak Majhara",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "मिलकमंसा रामपुर",
+    "village_code_census": "130064",
+    "vname_eng": "Milak Mansarampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मीरपुरचिती उर्फ फुन्‍दननगर",
+    "village_code_census": "129845",
+    "vname_eng": "Meerpurchiti urf Fundan nagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मुगलपुर",
+    "village_code_census": "129868",
+    "vname_eng": "Mugalpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "मुतलकपुर",
+    "village_code_census": "129830",
+    "vname_eng": "Mutlak Pur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मुशरफपुर",
+    "village_code_census": "129970",
+    "vname_eng": "Mushrafpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मुसराह",
+    "village_code_census": "130016",
+    "vname_eng": "Musraha",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मोहम्मद गंज",
+    "village_code_census": "129958",
+    "vname_eng": "Mohammad Ganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मोहम्मदपुर पथरा",
+    "village_code_census": "130003",
+    "vname_eng": "Mohammadpur Pathra",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "मंसा रामपुर",
+    "village_code_census": "129893",
+    "vname_eng": "Mansarampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "यूसुफपुर",
+    "village_code_census": "130053",
+    "vname_eng": "Yusufpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रफियाबाद",
+    "village_code_census": "217580",
+    "vname_eng": "Rafiabad",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रफियाबाद",
+    "village_code_census": "129949",
+    "vname_eng": "Rafiabad",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "रम्पुरा",
+    "village_code_census": "129903",
+    "vname_eng": "Rampura Khurd",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रम्पुरा खुर्द",
+    "village_code_census": "129883",
+    "vname_eng": "Rampura Khurd",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रम्पुरा भूड़",
+    "village_code_census": "129785",
+    "vname_eng": "Rampura Bhoor",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "रम्पुरा भोपत नगर",
+    "village_code_census": "129812",
+    "vname_eng": "Ramppara Bhopat Nagar",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "रसूला",
+    "village_code_census": "129986",
+    "vname_eng": "Rasoola",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रहगॉवा",
+    "village_code_census": "129907",
+    "vname_eng": "Rehagawan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रहटुईया",
+    "village_code_census": "129911",
+    "vname_eng": "Rahtuiya",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रहमानपुर",
+    "village_code_census": "129967",
+    "vname_eng": "Rahmanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "राजपुर कलां",
+    "village_code_census": "129878",
+    "vname_eng": "Rajpur Kalan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "राजपुर खुर्द",
+    "village_code_census": "130000",
+    "vname_eng": "Rajpur Khurd",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "राजूपुर",
+    "village_code_census": "130055",
+    "vname_eng": "Rajupur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रामनगर",
+    "village_code_census": "129823",
+    "vname_eng": "Ram Nagar",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "रामपुर कांकर",
+    "village_code_census": "130119",
+    "vname_eng": "Rampur Kakar",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "रामपुर बुजुर्ग",
+    "village_code_census": "130065",
+    "vname_eng": "Rampur Buzurg",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रायपुर",
+    "village_code_census": "129977",
+    "vname_eng": "Raipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रूखाड़ा",
+    "village_code_census": "129861",
+    "vname_eng": "Rukhara",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रूटिया",
+    "village_code_census": "129957",
+    "vname_eng": "Rutia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रेवती",
+    "village_code_census": "129834",
+    "vname_eng": "Revati",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "रौहतापुर",
+    "village_code_census": "129866",
+    "vname_eng": "Rautapur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "लक्ष्मीपुर",
+    "village_code_census": "129952",
+    "vname_eng": "Lachmepur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "लहर",
+    "village_code_census": "130127",
+    "vname_eng": "Lahar",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "लीलौर चाहरम",
+    "village_code_census": "129783",
+    "vname_eng": "Lelaur Charam",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "लीलौर बुजुर्ग",
+    "village_code_census": "129782",
+    "vname_eng": "Lelaur Buzurg",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "लीलौर सहसा",
+    "village_code_census": "129786",
+    "vname_eng": "Lelaur Sahasa",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "लोधीपुर",
+    "village_code_census": "129856",
+    "vname_eng": "Lodhipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "लोहारी",
+    "village_code_census": "129928",
+    "vname_eng": "Lohari",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "लँगुरा",
+    "village_code_census": "130082",
+    "vname_eng": "Langura",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "वझेड़ा",
+    "village_code_census": "129882",
+    "vname_eng": "Bajhera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वड़ागॉव",
+    "village_code_census": "129870",
+    "vname_eng": "Baragaon",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वमयाना",
+    "village_code_census": "130057",
+    "vname_eng": "Bamiana",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वरसेर सिकन्दरपुर",
+    "village_code_census": "129787",
+    "vname_eng": "Barser Sikandrapur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "वराथानपुर",
+    "village_code_census": "129776",
+    "vname_eng": "Barathanpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "वलेई भगवन्तपुर",
+    "village_code_census": "217581",
+    "vname_eng": "Valei Bhagvantpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वसन्तपुर",
+    "village_code_census": "129863",
+    "vname_eng": "Basantpur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "वहजुइया",
+    "village_code_census": "129997",
+    "vname_eng": "Bhajuia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वहोडा खेडा",
+    "village_code_census": "129840",
+    "vname_eng": "Bahodakhera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वाकरगंज",
+    "village_code_census": "130032",
+    "vname_eng": "Bakarganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वागरपुर",
+    "village_code_census": "130050",
+    "vname_eng": "Bagarpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वारीखेडा",
+    "village_code_census": "129824",
+    "vname_eng": "Bari Khera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "विछुरैया सिरसा",
+    "village_code_census": "130090",
+    "vname_eng": "Bichuraiya Sirsa",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "विजई नगला",
+    "village_code_census": "129851",
+    "vname_eng": "Vijai Nagla",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "विढौंली",
+    "village_code_census": "130113",
+    "vname_eng": "Bidauli",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "विलासपुर",
+    "village_code_census": "130116",
+    "vname_eng": "Bilaspur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "विहारीपुर",
+    "village_code_census": "129768",
+    "vname_eng": "Behari Pur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "वीरपुरा",
+    "village_code_census": "129980",
+    "vname_eng": "Veer Pura",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वीवनी",
+    "village_code_census": "129886",
+    "vname_eng": "Beebni",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वीहट",
+    "village_code_census": "129985",
+    "vname_eng": "Bihat",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वेहटाजनूं MBA",
+    "village_code_census": "217584",
+    "vname_eng": "Vehtajunu MBA",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वेहटाजुनूं",
+    "village_code_census": "217585",
+    "vname_eng": "Vehtajunu",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "वेहटा वुजर्ग",
+    "village_code_census": "217583",
+    "vname_eng": "Vehta Bujurg",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "व्यौघन खुर्द",
+    "village_code_census": "129774",
+    "vname_eng": "Beudhan Khurd",
+    "pname": "सिरौली",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "व्यौघन बुजर्ग",
+    "village_code_census": "129771",
+    "vname_eng": "Beudhan Buzurg",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "शहवाजपुर",
+    "village_code_census": "129972",
+    "vname_eng": "Shahabaj Pur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "शहवाजपुर",
+    "village_code_census": "129811",
+    "vname_eng": "Shahbajpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "शादीनगर",
+    "village_code_census": "129908",
+    "vname_eng": "Shadinagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "शाहपुर ऐ0",
+    "village_code_census": "129790",
+    "vname_eng": "Shahpur Ahatmali",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "शाहपुर मु0",
+    "village_code_census": "129789",
+    "vname_eng": "Shahpur Mustkil",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "शिवनगर चम्पतपुर",
+    "village_code_census": "129962",
+    "vname_eng": "Shivnagar Champatpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "शिवनगर नौगवां",
+    "village_code_census": "217586",
+    "vname_eng": "Shivnagar Naogawan",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "शिवपुरी",
+    "village_code_census": "129855",
+    "vname_eng": "Shivpuri",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "शेखूपुर खालसा",
+    "village_code_census": "129890",
+    "vname_eng": "Sekhupur Khalsa",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सग्रांमपुर",
+    "village_code_census": "129998",
+    "vname_eng": "Sangrampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सत्तार नगर",
+    "village_code_census": "129897",
+    "vname_eng": "Sattarnagar",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सरदार नगर",
+    "village_code_census": "130078",
+    "vname_eng": "Sardar Nagar",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "सराऊ",
+    "village_code_census": "130123",
+    "vname_eng": "Sarau",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "सरेरी",
+    "village_code_census": "130106",
+    "vname_eng": "Sareri",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सहासा",
+    "village_code_census": "130023",
+    "vname_eng": "Sahasa ",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सादुल्लागंज",
+    "village_code_census": "129930",
+    "vname_eng": "Sadullaganj",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सिकरोङा",
+    "village_code_census": "130010",
+    "vname_eng": "Sikrora",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सिकोडा",
+    "village_code_census": "130114",
+    "vname_eng": "Sikora",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "सिखा",
+    "village_code_census": "129858",
+    "vname_eng": "Sikha",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सिघां",
+    "village_code_census": "130110",
+    "vname_eng": "Singha",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "सिरोही",
+    "village_code_census": "130105",
+    "vname_eng": "Sirohi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सिरौली ए0",
+    "village_code_census": "217588",
+    "vname_eng": "Siroli Atmali",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "सिरौली मु0",
+    "village_code_census": "129791",
+    "vname_eng": "Siroli Mustkil",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "सिरौली मु0 टाउन एरिया",
+    "village_code_census": "217589",
+    "vname_eng": "Siroli Mustkil T.A.",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "सिसौना",
+    "village_code_census": "129947",
+    "vname_eng": "Sisona",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सिहोलिया",
+    "village_code_census": "130012",
+    "vname_eng": "Siholia",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सुतैरा",
+    "village_code_census": "129905",
+    "vname_eng": "Sutera",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सुनरासी",
+    "village_code_census": "129784",
+    "vname_eng": "Sunrasi",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "सुल्तानपुर",
+    "village_code_census": "130056",
+    "vname_eng": "Sultanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "Y",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सेखूपुरउर्फविहारीपुर",
+    "village_code_census": "130031",
+    "vname_eng": "Shekhpur Urf Biharipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सेधां",
+    "village_code_census": "130038",
+    "vname_eng": "Sendha",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सेंघी",
+    "village_code_census": "130039",
+    "vname_eng": "Sendhi",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सैदपुर कनी",
+    "village_code_census": "130068",
+    "vname_eng": "Saidpur Kani",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "सोना",
+    "village_code_census": "129779",
+    "vname_eng": "Sona",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "हजरतपुर",
+    "village_code_census": "130048",
+    "vname_eng": "Hazratpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "हरदासपुर",
+    "village_code_census": "129814",
+    "vname_eng": "Hardaspur",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "हर्रामपुर",
+    "village_code_census": "130091",
+    "vname_eng": "Harirampur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "हसनपुर",
+    "village_code_census": "130102",
+    "vname_eng": "Hasanpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "हाजीपुर",
+    "village_code_census": "129854",
+    "vname_eng": "Hazipur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "हाफिसगंज",
+    "village_code_census": "129867",
+    "vname_eng": "Hafizganj",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "हासमपुर",
+    "village_code_census": "130086",
+    "vname_eng": "Hasampur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "हिम्मतपुर",
+    "village_code_census": "130129",
+    "vname_eng": "Himmatpur",
+    "pname": "बल्लिया",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00208"
+  },
+  {
+    "vname": "हिम्मतपुर ताहरपुर",
+    "village_code_census": "130054",
+    "vname_eng": "Himmatpur Taharpur",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  },
+  {
+    "vname": "हींगानगला",
+    "village_code_census": "129804",
+    "vname_eng": "Heenga Nagla ",
+    "pname": "सिरौली",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00211"
+  },
+  {
+    "vname": "हुसैनपुर वीरान",
+    "village_code_census": "129955",
+    "vname_eng": "Husainpur Veeran",
+    "pname": "आंवला",
+    "flg_chakbandi": "N",
+    "flg_survey": "N",
+    "pargana_code_new": "00209"
+  }
+]
