@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/gisfrontend/static/css/main.dab032e9.chunk.css",
+    "main.js": "/gisfrontend/static/js/main.e08851d4.chunk.js",
+    "main.js.map": "/gisfrontend/static/js/main.e08851d4.chunk.js.map",
+    "runtime-main.js": "/gisfrontend/static/js/runtime-main.f6839d16.js",
+    "runtime-main.js.map": "/gisfrontend/static/js/runtime-main.f6839d16.js.map",
+    "static/css/2.016d901b.chunk.css": "/gisfrontend/static/css/2.016d901b.chunk.css",
+    "static/js/2.ef0482f4.chunk.js": "/gisfrontend/static/js/2.ef0482f4.chunk.js",
+    "static/js/2.ef0482f4.chunk.js.map": "/gisfrontend/static/js/2.ef0482f4.chunk.js.map",
+    "static/js/3.11f9259d.chunk.js": "/gisfrontend/static/js/3.11f9259d.chunk.js",
+    "static/js/3.11f9259d.chunk.js.map": "/gisfrontend/static/js/3.11f9259d.chunk.js.map",
+    "index.html": "/gisfrontend/index.html",
+    "precache-manifest.048bcaa1ffc7c8916e0b1006d898e792.js": "/gisfrontend/precache-manifest.048bcaa1ffc7c8916e0b1006d898e792.js",
+    "service-worker.js": "/gisfrontend/service-worker.js",
+    "static/css/2.016d901b.chunk.css.map": "/gisfrontend/static/css/2.016d901b.chunk.css.map",
+    "static/css/main.dab032e9.chunk.css.map": "/gisfrontend/static/css/main.dab032e9.chunk.css.map",
+    "static/js/2.ef0482f4.chunk.js.LICENSE.txt": "/gisfrontend/static/js/2.ef0482f4.chunk.js.LICENSE.txt",
+    "static/media/bootstrap.min.css": "/gisfrontend/static/media/glyphicons-halflings-regular.fa277232.woff",
+    "static/media/logo.svg": "/gisfrontend/static/media/logo.06e73328.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f6839d16.js",
+    "static/css/2.016d901b.chunk.css",
+    "static/js/2.ef0482f4.chunk.js",
+    "static/css/main.dab032e9.chunk.css",
+    "static/js/main.e08851d4.chunk.js"
+  ]
+}
