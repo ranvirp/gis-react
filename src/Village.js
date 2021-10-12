@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StickyHeadTable from './tables/table1';
+import StickyHeadTable from './components/tables/table1';
 import VillageList from './reports/villages';
 class MyComponent extends React.Component {
     constructor(props) {
@@ -13,7 +13,17 @@ class MyComponent extends React.Component {
 
     componentDidMount() {
       //  fetch("http://upbhulekh.gov.in/public/public_ror/action/public_action.jsp?act=fillVillage&district_code=150&tehsil_code=00786")
-           fetch("http://localhost:3000/villages.json")
+           fetch("./gisfrontend/villages.json", {
+
+               headers : {
+
+                   'Content-Type': 'application/json',
+
+                   'Accept': 'application/json'
+
+               }
+
+           })
             .then(res => res.json())
             .then(
                 (result) => {

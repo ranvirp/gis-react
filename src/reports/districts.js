@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import StickyHeadTable from "../tables/table1";
-import FetchFromJsonComponent from "../fetcher/fetchFromJson";
+import StickyHeadTable from "../components/tables/table1";
+import FetchFromJsonComponent from "../components/fetcher/fetchFromJson";
 const columns = [
 
     {
@@ -37,7 +37,7 @@ export default class  DistrictList extends React.Component
         const mainC = StickyHeadTable;
 
         return  (
-           <FetchFromJsonComponent url='http://localhost:3000/districts.json' columns={columns} mainC={mainC}></FetchFromJsonComponent>
+           <FetchFromJsonComponent url='./districts.json' columns={columns} mainC={mainC}></FetchFromJsonComponent>
         );
     }
 }

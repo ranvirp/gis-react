@@ -4,14 +4,14 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
-import WithMaterialUI from "../../components/forms/formikform";
+import SignUp from "../../components/authentication/SignUp/signup";
 
-export default function LoginFormSideBarItem(props) {
-    const login = 'login';
+export default function SignUpFormSideBarItem(props) {
+    const signup = 'Sign Up';
     return (
-        <ListItem button key={login} onClick={()=> {props.handleClick(WithMaterialUI)}}>
+        <ListItem button key={signup} onClick={()=> {props.handleClick(SignUp)}}>
             <ListItemIcon> <InboxIcon/> </ListItemIcon>
-            <ListItemText primary='Login'/>
+            <ListItemText primary='Sign Up'/>
         </ListItem>
     );
 }

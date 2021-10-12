@@ -15,6 +15,7 @@ import VillageSideBarItem from "./sidebar_items/VillageSideBarItem";
 import LoginFormSideBarItem from "./sidebar_items/LoginFormSideBarItem";
 import DistrictList from "../reports/districts";
 import MainComponent from "../Village"
+import SignUpFormSideBarItem from "./sidebar_items/SignUpFormSideBarItem";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -71,6 +72,7 @@ export default function PermanentDrawerLeft(props) {
                    <DistrictSideBarItem handleClick={handleClick}/>
                     <VillageSideBarItem handleClick={handleClick}/>
                     <LoginFormSideBarItem handleClick={handleClick}/>
+                    <SignUpFormSideBarItem handleClick={handleClick}/>
 
                 </List>
                 <Divider />

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import FacebookForm from "./facebook";
 
 const validationSchema = yup.object({
     email: yup
@@ -23,6 +24,7 @@ export default function WithMaterialUI ()  {
             password: 'foobar',
         },
         validationSchema: validationSchema,
+
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
         },
@@ -56,6 +58,7 @@ export default function WithMaterialUI ()  {
                     Submit
                 </Button>
             </form>
+         <FacebookForm></FacebookForm>
         </div>
     );
 };
