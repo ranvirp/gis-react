@@ -58,7 +58,6 @@ export default function WithMaterialUI ()  {
                     Submit
                 </Button>
             </form>
-         <FacebookForm></FacebookForm>
         </div>
     );
 };

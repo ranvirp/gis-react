@@ -19,5 +19,6 @@ signup.args = {
   // More on composing args: https://storybook.js.org/docs/react/writing-stories/args#args-composition
 m:4,
   pt:5,
-  handleValues:(values)=>{console.log(values)}
+  handleValues:(values)=>{console.log(values)},
+  afterHandle:()=>{}
 };

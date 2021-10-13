@@ -4,8 +4,8 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
-import DistrictList from "../../reports/districts";
-import VillageList from "../../reports/villages";
+import DistrictList from "../../../reports/districts";
+import VillageList from "../../../reports/villages";
 export default function VillageSideBarItem(props) {
     const districts = 'districts';
     return (

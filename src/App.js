@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react';
-import Collapsible from 'react-collapsible';
+import React, {useContext} from 'react';
 import MyComponent from "./Village";
-import DependentForm from "./components/forms/dependent";
-import Form1 from "./components/forms/form2";
-import PrimarySearchAppBar from "./toolbar/toolbar1";
-import PermanentDrawerLeft from "./sidebar/sidebar1";
-import TestDrawerLeft from "./sidebar/sidebar2";
-import Signup from "./components/authentication/SignUp/signup";
+
+import PrimarySearchAppBar from "./components/toolbar/toolbar1";
+import PermanentDrawerLeft from "./components/sidebar/sidebar1";
+import SignInPage from "./components/pages/signinpage";
+var authenticated = {
+    'authenticated': true,
+    'email': null
+}
+const  setAuthenticated = (authenticatedstatus,email) => {
+    console.log(authenticatedstatus)
+    authenticated.authenticated = authenticatedstatus
+    authenticated.email = email
+}
+export const myContext = React.createContext([authenticated, setAuthenticated])
+
 function App() {
+    const [context, setContext] = React.useState(authenticated);
 
-  return (
-    <div className="App">
+    console.log(context.authenticated)
+    if ((context.authenticated) ) {
+        return (
+            <myContext.Provider value={[context, setContext]}>
+            <div className="App">
 
-        <PrimarySearchAppBar/>
+                <PrimarySearchAppBar/>
 
-        <PermanentDrawerLeft  mainc={MyComponent}/>
+                <PermanentDrawerLeft mainc={MyComponent}/>
 
-    </div>
-  );
+            </div>
+            </myContext.Provider>
+
+        );
+    } else {
+        return   (<myContext.Provider value={[authenticated, setAuthenticated]}>
+                <SignInPage txt={"This is my first website"}/>
+                </myContext.Provider>)
+
+            }
 }
 
 export default App;

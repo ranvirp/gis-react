@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     },
     root2: {
         backgroundColor: "white",
-        minHeight:"400px",
+        minHeight:"100px",
         margin: "auto"
     }
 });

@@ -13,9 +13,10 @@ import MailIcon from '@material-ui/icons/Mail';
 import DistrictSideBarItem from "./sidebar_items/DistrictSideBarItem";
 import VillageSideBarItem from "./sidebar_items/VillageSideBarItem";
 import LoginFormSideBarItem from "./sidebar_items/LoginFormSideBarItem";
-import DistrictList from "../reports/districts";
-import MainComponent from "../Village"
+import DistrictList from "../../reports/districts";
+import MainComponent from "../../Village"
 import SignUpFormSideBarItem from "./sidebar_items/SignUpFormSideBarItem";
+import LogoutSideBarItem from "./sidebar_items/LogoutSideBarItem";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -73,6 +74,7 @@ export default function PermanentDrawerLeft(props) {
                     <VillageSideBarItem handleClick={handleClick}/>
                     <LoginFormSideBarItem handleClick={handleClick}/>
                     <SignUpFormSideBarItem handleClick={handleClick}/>
+                    <LogoutSideBarItem handleClick={handleClick}/>
 
                 </List>
                 <Divider />

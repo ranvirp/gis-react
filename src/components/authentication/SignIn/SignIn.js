@@ -52,7 +52,7 @@ export default function SignIn(props)  {
         validateOnChange: true,
 
         onSubmit: (values) => {
-            props.handleValues(values)
+            props.handleValues(values, props.afterHandle)
         },
     });
 
