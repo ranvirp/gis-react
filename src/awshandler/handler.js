@@ -18,7 +18,7 @@ const path = require("path");
 
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import App from '../App'
+import App from '../components/App'
 //import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ChunkExtractor } from '@loadable/server'

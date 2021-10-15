@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -17,6 +17,8 @@ import DistrictList from "../../reports/districts";
 import MainComponent from "../../Village"
 import SignUpFormSideBarItem from "./sidebar_items/SignUpFormSideBarItem";
 import LogoutSideBarItem from "./sidebar_items/LogoutSideBarItem";
+import {myContext} from "../App";
+import LeafletSideBarItem from "./sidebar_items/LeafletSideBarItem";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -47,14 +49,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PermanentDrawerLeft(props) {
     const classes = useStyles();
-    const Cl = props.mainc;
-    const [MainC, setMainC] = useState(()=>{return props.mainc});
 
-    const handleClick = ( comp) => {
-         console.log("clicked");
-         console.log(comp);
-         setMainC( ()=>{return comp});
+    const [state, setState] = useState({comp:props.mainc, props:null});
+    const [context, setContext] = useContext(myContext)
+
+    const handleClick = ( comp, props=null) => {
+        // console.log("clicked");
+        // console.log(comp);
+         setState({comp:comp, props:props});
     };
+    let loginOrLogout = <LoginFormSideBarItem handleClick={handleClick}/>
+    //loginOrLogout += <SignUpFormSideBarItem handleClick={handleClick}/>
+if (context.authenticated == 'true') {
+    loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
+}
+console.log(loginOrLogout)
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -72,10 +81,15 @@ export default function PermanentDrawerLeft(props) {
                 <List>
                    <DistrictSideBarItem handleClick={handleClick}/>
                     <VillageSideBarItem handleClick={handleClick}/>
-                    <LoginFormSideBarItem handleClick={handleClick}/>
-                    <SignUpFormSideBarItem handleClick={handleClick}/>
-                    <LogoutSideBarItem handleClick={handleClick}/>
+                    {
+                        context.authenticated == 'true' && <LogoutSideBarItem handleClick={handleClick}/>
+                    }
+                    {
+                        context.authenticated != 'true' && <><LoginFormSideBarItem handleClick={handleClick}/>
+                        <SignUpFormSideBarItem handleClick={handleClick}/></>
+                    }
 
+                <LeafletSideBarItem handleClick={handleClick}/>
                 </List>
                 <Divider />
                 <List>
@@ -90,7 +104,7 @@ export default function PermanentDrawerLeft(props) {
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                     <MainC/>
+                {React.cloneElement(state.comp, state.props)}
           </main>
         </div>
     );

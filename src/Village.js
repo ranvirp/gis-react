@@ -13,7 +13,7 @@ class MyComponent extends React.Component {
 
     componentDidMount() {
       //  fetch("http://upbhulekh.gov.in/public/public_ror/action/public_action.jsp?act=fillVillage&district_code=150&tehsil_code=00786")
-           fetch("./gisfrontend/villages.json", {
+           fetch("./villages.json", {
 
                headers : {
 

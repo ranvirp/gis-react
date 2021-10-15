@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
@@ -42,6 +42,7 @@ const useStyles = makeStyles({
 });
 export default function SignIn(props)  {
     const classes = useStyles()
+    const [state, setState] = useState({disabled: false, error: ''})
     const formik = useFormik({
         initialValues: {
             email: 'foobar@example.com',
@@ -52,6 +53,7 @@ export default function SignIn(props)  {
         validateOnChange: true,
 
         onSubmit: (values) => {
+            setState({disabled:true})
             props.handleValues(values, props.afterHandle)
         },
     });
@@ -89,7 +91,7 @@ export default function SignIn(props)  {
 
                     <Grid item xs={12} className={classes.marginall}>
 
-                        <Button color="primary" variant="contained" fullWidth type="submit">
+                        <Button color="primary" variant="contained" fullWidth type="submit" disabled={state.disabled}>
                             Submit
                         </Button>
                     </Grid>
