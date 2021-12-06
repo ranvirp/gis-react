@@ -9,7 +9,7 @@ import WithMaterialUI from "../../forms/formikform";
 export default function LoginFormSideBarItem(props) {
     const login = 'login';
     return (
-        <ListItem button key={login} onClick={()=> {props.handleClick(WithMaterialUI)}}>
+        <ListItem button key={login} onClick={()=> {props.handleClick(<WithMaterialUI/>)}}>
             <ListItemIcon> <InboxIcon/> </ListItemIcon>
             <ListItemText primary='Login'/>
         </ListItem>

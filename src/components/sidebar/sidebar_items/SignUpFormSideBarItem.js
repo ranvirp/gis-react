@@ -9,7 +9,7 @@ import SignUp from "../../authentication/SignUp/signup";
 export default function SignUpFormSideBarItem(props) {
     const signup = 'Sign Up';
     return (
-        <ListItem button key={signup} onClick={()=> {props.handleClick(SignUp)}}>
+        <ListItem button key={signup} onClick={()=> {props.handleClick(<SignUp/>)}}>
             <ListItemIcon> <InboxIcon/> </ListItemIcon>
             <ListItemText primary='Sign Up'/>
         </ListItem>

@@ -9,7 +9,7 @@ import VillageList from "../../../reports/villages";
 export default function VillageSideBarItem(props) {
     const districts = 'districts';
     return (
-        <ListItem button key={districts} onClick={()=> {props.handleClick(VillageList)}}>
+        <ListItem button key={districts} onClick={()=> {props.handleClick(<VillageList/>)}}>
             <ListItemIcon> <InboxIcon/> </ListItemIcon>
             <ListItemText primary='Villages'/>
         </ListItem>

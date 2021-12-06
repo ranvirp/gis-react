@@ -56,19 +56,19 @@ export default function PermanentDrawerLeft(props) {
     const classes = useStyles();
     const [context, setContext] = useContext(myContext)
 
-    const [state, setState] = useState({comp:props.mainc, props:null});
+    const [state, setState] = useState({comp:null, props:null});
 
     const handleClick = ( comp, props=null) => {
         // console.log("clicked");
         // console.log(comp);
-         setState({comp:comp, props:props});
+        setState({comp:comp, props:props});
     };
     let loginOrLogout = <LoginFormSideBarItem handleClick={handleClick}/>
     //loginOrLogout += <SignUpFormSideBarItem handleClick={handleClick}/>
-if (context.authenticated == 'true') {
-    loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
-}
-console.log(loginOrLogout)
+    if (context.authenticated == 'true') {
+        loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
+    }
+    //console.log(loginOrLogout)
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -84,8 +84,7 @@ console.log(loginOrLogout)
                 <div className={classes.toolbar} />
                 <Divider />
                 <List>
-                    <DistrictSideBarItem handleClick={handleClick}/>
-                    <VillageSideBarItem handleClick={handleClick}/>
+
                     {
                         context.authenticated == 'true' && <LogoutSideBarItem handleClick={handleClick}/>
                     }
@@ -93,32 +92,16 @@ console.log(loginOrLogout)
                         context.authenticated != 'true' && <><LoginFormSideBarItem handleClick={handleClick}/>
                             <SignUpFormSideBarItem handleClick={handleClick}/></>
                     }
-
-                    <LeafletSideBarItem handleClick={handleClick}/>
-                    <SideBarItem comp={{url:'http://localhost:8080/aligarh/acs/ac_72.geojson'}} title={'Map1'} key={'map1'}
-                                 handleClick={addLayer}/>
-                    <SideBarItem comp={{url:'/aligarh-centroids.geojson'}} title={'Revenue Villages'} key={'villmap'}
-                                 handleClick={addLayer}/>
-                    <SideBarItem comp={{url:'http://localhost:8080/aligarh/booths/district_n_Aligarh.geojson'}} title={'Booth Maps'} key={'boothmap'}
-                                 handleClick={addLayer}/>
-                    <SideBarItem comp={<DistVillForm/>} key={'form1'} title='DistVillForm' handleClick={handleClick}/>
-                    <SchemaFormSideBarItem schema={testschema} key={'haha'} handleClick={handleClick}/>
-                </List>
+                    {props.sidebaritems(handleClick)}
+                     </List>
                 <Divider />
-                <List>
-
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                {React.cloneElement(state.comp, state.props)}
-          </main>
+
+                {state.comp!=null && React.cloneElement(state.comp, state.props)}
+
+            </main>
         </div>
     );
 }

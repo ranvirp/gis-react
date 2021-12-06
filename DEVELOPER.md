@@ -86,4 +86,7 @@ const linkTags = extractor.getLinkTags() // or extractor.getLinkElements();
 // And you can even collect your style tags (if you use "mini-css-extract-plugin")
 const styleTags = extractor.getStyleTags() // or extractor.getStyleElements();
 
-
+-----
+Install react-schema based form
+npm install @rjsf/core --save (for bootstrap)
+@rjsf/material-ui (for material-ui)

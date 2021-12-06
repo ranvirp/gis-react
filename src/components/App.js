@@ -1,14 +1,14 @@
 import './App.css';
 import React, {useContext} from 'react';
-import MyComponent from "../Village";
 
 import PrimarySearchAppBar from "./toolbar/toolbar1";
-import PermanentDrawerLeft from "./sidebar/sidebar1";
+import PermanentDrawerLeft from "./sidebar/sidebar";
 import SignInPage from "./pages/signinpage";
 export const authenticated = {
     'authenticated': localStorage.getItem('authenticated'),
     'userid': localStorage.getItem('userid'),
-    'token': localStorage.getItem('token')
+    'token': localStorage.getItem('token'),
+    'map': null
 }
 export const  setAuthenticated = (result) => {
     console.log(result.success)
@@ -22,7 +22,7 @@ export const  setAuthenticated = (result) => {
 }
 export const myContext = React.createContext([authenticated, setAuthenticated])
 
-function App() {
+function App(props) {
     const authenticated = {
         'authenticated': localStorage.getItem('authenticated'),
         'userid': localStorage.getItem('userid'),
@@ -37,9 +37,9 @@ function App() {
             <myContext.Provider value={[context, setContext]}>
             <div className="App">
 
-                <PrimarySearchAppBar title={"Election App"}/>
+                <PrimarySearchAppBar title={props.title}/>
 
-                <PermanentDrawerLeft mainc={MyComponent}/>
+                <PermanentDrawerLeft sidebaritems={props.sidebaritems}/>
 
             </div>
             </myContext.Provider>
