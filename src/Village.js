@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StickyHeadTable from './components/tables/table1';
+import StickyHeadTable from './components/tables/stickyheadtable';
 import VillageList from './reports/villages';
 class MyComponent extends React.Component {
     constructor(props) {

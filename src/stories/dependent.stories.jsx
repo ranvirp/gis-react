@@ -1,6 +1,6 @@
 import React from "react";
-import DependentForm from "../components/forms/dependent";
-import {Dependentdropdown} from "../components/forms/dependentdropdown";
+import DependentForm from "../experimentalcomponents/forms/dependent";
+import {Dependentdropdown} from "../experimentalcomponents/forms/dependentdropdown";
 import {MenuItem} from "@material-ui/core";
 
 export default {

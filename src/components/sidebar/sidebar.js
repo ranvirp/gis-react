@@ -22,9 +22,10 @@ import LeafletSideBarItem from "./sidebar_items/LeafletSideBarItem";
 import SideBarItem from "./sidebar_items/SideBarItem";
 import LeafletMap from "../leaflet/components/leafletmap";
 import GeoJSONFromURL, {addLayer} from "../leaflet/components/geojsonurltoleaflet";
-import DistVillForm from "../forms/distvill";
+import DistVillForm from "../../experimentalcomponents/forms/distvill";
 import SchemaFormSideBarItem from "./sidebar_items/SchemaFormSidebarItem";
 import testschema from "../../form-schemas/testschema";
+import ErrorBoundary from 'antd/lib/alert/ErrorBoundary';
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,7 +55,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PermanentDrawerLeft(props) {
     const classes = useStyles();
-    const [context, setContext] = useContext(myContext)
+    const context = props.context
+    console.log(context)
 
     const [state, setState] = useState({comp:null, props:null});
 
@@ -63,7 +65,7 @@ export default function PermanentDrawerLeft(props) {
         // console.log(comp);
         setState({comp:comp, props:props});
     };
-    let loginOrLogout = <LoginFormSideBarItem handleClick={handleClick}/>
+    var loginOrLogout = <LoginFormSideBarItem handleClick={handleClick}/>
     //loginOrLogout += <SignUpFormSideBarItem handleClick={handleClick}/>
     if (context.authenticated == 'true') {
         loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
@@ -86,10 +88,10 @@ export default function PermanentDrawerLeft(props) {
                 <List>
 
                     {
-                        context.authenticated == 'true' && <LogoutSideBarItem handleClick={handleClick}/>
+                        context.auth.authenticated == true && <LogoutSideBarItem logout={context.logout} handleClick={handleClick}/>
                     }
                     {
-                        context.authenticated != 'true' && <><LoginFormSideBarItem handleClick={handleClick}/>
+                        context.auth.authenticated != true && <><LoginFormSideBarItem handleClick={handleClick}/>
                             <SignUpFormSideBarItem handleClick={handleClick}/></>
                     }
                     {props.sidebaritems(handleClick)}
@@ -98,9 +100,10 @@ export default function PermanentDrawerLeft(props) {
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
+                <ErrorBoundary>
 
                 {state.comp!=null && React.cloneElement(state.comp, state.props)}
-
+                </ErrorBoundary>
             </main>
         </div>
     );

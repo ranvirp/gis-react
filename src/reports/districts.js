@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import StickyHeadTable from "../components/tables/table1";
+import StickyHeadTable from "../components/tables/stickyheadtable";
 import FetchFromJsonComponent from "../components/fetcher/fetchFromJson";
 const columns = [
 

@@ -1,4 +1,4 @@
-const schema = {
+const testschema = {
     title: "Todo",
     type: "object",
     required: ["title"],
@@ -8,4 +8,4 @@ const schema = {
         dd:{type: "number", title:"My Form", enum: [1, 2, 3], enumNames: ["one", "two", "three"]}
     }
 };
-export default schema;
+export default testschema;

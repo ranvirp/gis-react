@@ -1,13 +1,17 @@
 import React, {useContext} from 'react';
 import MultiColumnGrid from "./multicolumngrid";
-import Typography from "@material-ui/core/Typography";
-import SignIn from "../authentication/SignIn/SignIn";
+import Typography from "@mui/material/Typography";
+import {SignIn} from "../authentication/SignIn/signinreacthook";
 import {myContext} from "../App";
-import {authenticated, setAuthenticated} from "../App";
+import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
+import {graphqlurl} from "../../apps/chakbandi/settings";
+import {setAuthenticated} from "../AppWithLogin";
+
 
 const axios = require("axios")
 
-const LOGIN_QUERY = (values) => {return `
+const LOGIN_QUERY = (values) => {
+    return `
   query Login{ 
       userauth(userinfo: {userid:"${values.email}", passwd:"${values.password}", deviceid:"deviceid 1.0", os:"ios14", clienttype:"safari"}) {
         userid
@@ -17,39 +21,23 @@ const LOGIN_QUERY = (values) => {return `
       }
 
 `;}
-const handleValues = (values, afterHandle) => {
-    axios({
-        url: 'http://localhost:3001/graphql',
-        method: 'post',
-        data: {
-            query: LOGIN_QUERY(values)
-        }
-    }).then((result) => {
-        //console.log(result.data)
-        //console.log(result.data.userauth)
-        const myOut = result.data.userauth
-        if (myOut.error != true) {
-           // console.log(myOut)
-            setAuthenticated(myOut)
-            afterHandle(authenticated)
-        }
-    });
-}
-export default function SignInPage(props) {
-    const [context, setContext] = useContext(myContext)
-    const afterHandle = (result)=>{
-        if (!result.error  && result.success) {
-            localStorage.setItem('authenticated', 1)
-            localStorage.setItem('userid', result.userid)
-            localStorage.setItem('token', result.token)
+const GET_AUTH_TOKEN_MUTATION = `
+mutation ($email:String!,$password:String!) {token_auth(username:$email, password:$password)
+{token}
+}`
 
-        }
-    }
-    const elems = {'6': <SignIn handleValues={handleValues} afterHandle={props.afterHandle}/>, '5':  <Typography gutterBottom={true} align="justify"  variant="h6"  sx={{marginLeft:'40px'}} component="div">
-            {props.txt}
-        </Typography>}
+export default function SignInPage(props) {
+
+    const heading = <Typography variant={"h5"} sx={{color:"white"}}>Welcome to Chakbandi, Uttar Pradesh</Typography>
+    var elems = {'21': <SignIn  afterHandle={props.afterHandle} sx={{ backgroundColor:"#7897AB"}}/>}
+    elems['11'] = heading
+    //elems['21'] = heading
+    var styles = {'61':{backgroundColor:"black"}}
+    //styles['21'] = {backgroundColor:"green"}
+    const containerStyle = {backgroundColor:"#655D8A"}
+
     return (
 
-        <MultiColumnGrid elems={elems} noofcolumns={4} numrows={2} />
+        <MultiColumnGrid containerStyle={containerStyle} styles={styles} defaultStyle={{backgroundColor:"#655D8A"}} elems={elems} left={0} right={0} colwidths={[[100],[27, 46, 27], [37, 26, 37], [100]]} rowheights={[10,5,45,40]} />
     );
 }

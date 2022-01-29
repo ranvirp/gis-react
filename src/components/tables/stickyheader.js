@@ -1,5 +1,5 @@
 import React from "react";
-import StickyHeadTable from "./table1";
+import StickyHeadTable from "./stickyheadtable";
 
 export default class  RpStickyHeaderTable  extends React.Component
 {

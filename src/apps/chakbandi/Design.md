@@ -7,7 +7,6 @@
 4. Where Chak Nigranis are pending and for how long?
 5. Where there are complaints of frauds?
 6. What is the performance of my officers?
-7. Which of my o
 ### Database
   1. Village Details
   2. High Court Cases

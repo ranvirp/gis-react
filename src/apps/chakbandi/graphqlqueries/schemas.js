@@ -1,0 +1,1 @@
+/Users/ranvirprasad/PycharmProjects/djangochakbandi/upchakbandi/schemas/schemas.js

@@ -22,7 +22,7 @@ import LeafletSideBarItem from "./sidebar_items/LeafletSideBarItem";
 import SideBarItem from "./sidebar_items/SideBarItem";
 import LeafletMap from "../leaflet/components/leafletmap";
 import GeoJSONFromURL, {addLayer} from "../leaflet/components/geojsonurltoleaflet";
-import DistVillForm from "../forms/distvill";
+import DistVillForm from "../../experimentalcomponents/forms/distvill";
 import SchemaFormSideBarItem from "./sidebar_items/SchemaFormSidebarItem";
 import testschema from "../../form-schemas/testschema";
 const drawerWidth = 240;

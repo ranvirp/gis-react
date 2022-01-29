@@ -39,7 +39,7 @@ export function Dependentdropdown(props) {
                  >
                      <em>None</em>
                      {props.fieldAValues.map((value)=>(
-                         <MenuItem value={value.value} key={value.value}>{value.label}</MenuItem>
+                         <MenuItem value={value.value} key={value.key}>{value.label}</MenuItem>
                      ))}
                  </Select>
              </FormControl>
@@ -61,7 +61,7 @@ export function Dependentdropdown(props) {
                      <em>None</em>
 
                      {props.getFieldBValues(state.fieldA).map((value)=>(
-                         <MenuItem value={value.value} key={value.value}>{value.label}</MenuItem>
+                         <MenuItem value={value.value} key={value.key}>{value.label}</MenuItem>
                      ))}
                  </Select>
              </FormControl>
