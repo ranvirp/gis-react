@@ -1,0 +1,38 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gisfrontend-dev-71326-authRole",
+      "UnauthRoleArn": "arn:aws:iam::083119309291:role/amplify-gisfrontend-dev-71326-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::083119309291:role/amplify-gisfrontend-dev-71326-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gisfrontend-dev-71326-deployment",
+      "UnauthRoleName": "amplify-gisfrontend-dev-71326-unauthRole",
+      "StackName": "amplify-gisfrontend-dev-71326",
+      "StackId": "arn:aws:cloudformation:us-east-1:083119309291:stack/amplify-gisfrontend-dev-71326/d2c51dd0-1cd8-11ec-8f63-1293b79fe18b",
+      "AmplifyAppId": "d2g4h3333dqeax"
+    }
+  },
+  "auth": {
+    "gisfrontende0bebb50": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gisfrontend-dev-71326-deployment/amplify-cfn-templates/auth/gisfrontende0bebb50-cloudformation-template.yml",
+        "logicalId": "authgisfrontende0bebb50"
+      },
+      "lastPushTimeStamp": "2021-09-24T01:52:11.733Z",
+      "output": {
+        "AppClientSecret": "1o942235gd6g9s1mh9tb51iujd6c4o5s45qla1dfsstkjnpg566h",
+        "UserPoolId": "us-east-1_RsnpFZbwi",
+        "AppClientIDWeb": "174hhrvr45vq56mvs2g2h3gngj",
+        "AppClientID": "63rfjpsm3vbjffj75fht0clpar",
+        "IdentityPoolId": "us-east-1:a6da93c1-557f-421b-b266-8a31491bd1fc",
+        "IdentityPoolName": "gisfrontende0bebb50_identitypool_e0bebb50__dev",
+        "UserPoolName": "gisfrontende0bebb50_userpool_e0bebb50"
+      },
+      "lastPushDirHash": "C2kvS/c6lFRJAQyzmUSz1AJ1Yco="
+    }
+  }
+}

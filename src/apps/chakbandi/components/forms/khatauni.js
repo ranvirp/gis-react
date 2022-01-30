@@ -14,7 +14,7 @@ class Khatauni(models.Model):
     */
 import {Button, Stack, TextField} from "@mui/material";
 import React from "react";
-import {myInput, MyInput, text} from "./formutilities";
+import {myInput, ReactHookFormInput, text} from "./formutilities";
 import * as yup from "yup";
 import {GenericForm} from "../../../../components/forms/genericreacthookform";
 import {varsKhatauni} from "../../generated/variables"
@@ -28,11 +28,11 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {createKhatauniMutation} from "../../generated/mutations";
 
 export const schema = yup.object({
-    village:yup.string().required(),
+   // village:yup.string().required(),
    // fasli_year: yup.number().integer().required(),
     //type: yup.string().required(),
     //no_of_khatas:yup.number().required(),
-    area:yup.number().required()
+   // area:yup.number().required()
 }).required();
 const FormComponent = (props) => {
     return (
@@ -41,7 +41,7 @@ const FormComponent = (props) => {
             <Typography variant="h5" textAlign="center"> Form for Entering details of Khaatauni </Typography>
             {
 
-                <MyInput {...props} comp={<Villagedropdown/>} id='village' props={{
+                <ReactHookFormInput {...props} comp={<Villagedropdown/>} id='village' props={{
 
                     fieldALabel: 'District',
                     fieldBLabel: 'Tehsil',

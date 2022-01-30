@@ -8,7 +8,7 @@ import * as yup from "yup";
 import {Paper, Typography, Grid, Button} from "@mui/material";
 import Email from "../common/email";
 import Password from "../common/password";
-import {MyInput} from "../../../apps/chakbandi/components/forms/formutilities";
+import {ReactHookFormInput} from "../../../apps/chakbandi/components/forms/formutilities";
 import {Villagedropdown} from "../../forms/villagedropdown";
 
 const yupschema = yup.object({
@@ -33,7 +33,7 @@ const LoginFormComponent = (props) => {
 
                 <Grid container  spacing={3}  >
                     <Grid item xs={12} sx={{margin:margin}}>
-                        <MyInput {...props} comp={<Email/>} id='email' props={{
+                        <ReactHookFormInput {...props} comp={<Email/>} id='email' props={{
 
 
                             label: 'Email',
@@ -45,7 +45,7 @@ const LoginFormComponent = (props) => {
 
                     </Grid>
                     <Grid item xs={12} sx={{margin:margin}}>
-                        <MyInput {...props} comp={<Password/>} id='password' props={{
+                        <ReactHookFormInput {...props} comp={<Password/>} id='password' props={{
 
 
                             label: 'Password',

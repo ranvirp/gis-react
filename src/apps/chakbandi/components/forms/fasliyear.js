@@ -6,5 +6,6 @@ export const  FasliYearForm = (props)=>{
         list.push(i);
     }
     const years = list.map((value)=>{return {key:value, label:value, value:value.toString()}})
-    return <Dropdown values={years} {...props}/>
+    console.log(props.register)
+    return <Dropdown  values={years} {...props}/>
 }

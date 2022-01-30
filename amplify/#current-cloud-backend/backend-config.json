@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "gisfrontende0bebb50": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

@@ -10,17 +10,20 @@ export function Dropdown(props)
 
             <Select
 
+
                 labelId= {props.id + "field-label"}
                 id={props.id}
                 name={props.name}
                 label={props.label}
-                onChange={props.onChange}
+                onChange={e=>props.onChange(e.target.value)}
+                defaultValue={props.defaultValue}
+                value={props.value}
 
             >
                 <em>None</em>
 
                 {props.values != 'undefined' && props.values.map((value)=>(
-                    <MenuItem value={value.value} key={value.key}>{value.label}</MenuItem>
+                       <MenuItem  value={value.value} key={value.key}>{value.label}</MenuItem>
                 ))}
             </Select>
         </FormControl>

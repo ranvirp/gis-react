@@ -47,7 +47,7 @@ export function Villagedropdown(props) {
                 setState({...state,fieldA: dists['districts'], fieldB:[], fieldC:[]})
     }
     const getTehsils = async (e)=> {
-        const dist = e.target.value
+        const dist = e//.target.value
         setState({...state,fieldB: [{label:'Loading..', value:'Loading', key:'..'}], fieldC:[]})
         var tehsils = await postGraphSqlQuery(graphqlurl, querytehsil,{'dist':dist})
         tehsils = tehsils.errors? {tehsils:{value:'error'}}:tehsils.data
@@ -66,17 +66,14 @@ export function Villagedropdown(props) {
         getDists()},[])
 
     const changeFunctionA = (e) => {
-        state.selectedValues.fieldA = e.target.value
+        state.selectedValues.fieldA = e//.target.value
         getTehsils(e)
     }
     const changeFunctionB = (e) => {
-        state.selectedValues.fieldB = e.target.value
+        state.selectedValues.fieldB = e//.target.value
         getVillages(e)
     }
-    const changeFunctionC = (e) => {
-        state.selectedValues.fieldC = e.target.value
-        console.log("villages selected " + e.target.value)
-    }
+
 
     return (
         <Stack direction="rows">
@@ -85,7 +82,7 @@ export function Villagedropdown(props) {
             <Dropdown values={state.fieldB} onChange={changeFunctionB} id={props.fieldBId}
                       name={props.fieldBName} label={props.fieldBLabel?props.fieldBLabel:'Tehsil'}/>
             <Dropdown values={state.fieldC} onChange={props.onChange} id={props.fieldCId}
-                      name={props.name} label={props.label}/>
+                      name={props.name} label={props.label} {...props}/>
 
 
         </Stack>

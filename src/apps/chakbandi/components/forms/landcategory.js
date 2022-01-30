@@ -11,7 +11,7 @@ import {Stack, TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import React from 'react';
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
-import {MyInput, text1} from "./formutilities";
+import {ReactHookFormInput, text1} from "./formutilities";
 import {graphqlurl} from "../../settings";
 import {landCategoryMutation} from "../../graphqlqueries/queries";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -37,8 +37,8 @@ export function LandCategoryForm(props)
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Stack>
-                {MyInput(<TextField/>,'category', {label:'Category', required:true}, control,errors)}
-                {MyInput(<TextField/>,'name', {label:'Name', required:true}, control,errors)}
+                {ReactHookFormInput(<TextField/>,'category', {label:'Category', required:true}, control,errors)}
+                {ReactHookFormInput(<TextField/>,'name', {label:'Name', required:true}, control,errors)}
     {text1('name_eng', 'Name in English', control)}
     <Button type="submit">Submit</Button>
         </Stack>

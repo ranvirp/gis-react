@@ -12,20 +12,20 @@ export function text1(id,label, control){
     />)
     // return <TextField id={id} label={label} ></TextField>
 }
-export function MyInput(props){
+export function ReactHookFormInput(props){
     return ( <Controller
         name={props.id}
         control={props.control}
+        defaultValue={props.defaultValue }
         render={({ field: { onChange, value } }) => (
 
-                <>
-                {React.cloneElement(props.comp, {...props.props, onChange:onChange,value:value })}
+            <>
+                {React.cloneElement(props.comp, {label:props.label, onChange:onChange,value:value, defaultValue:props.defaultValue })}
                 <p hidden={!props.errors[props.id]}>{props.errors[props.id]?.message}</p>
-                </>
+            </>
 
-            )}
+        )}
     />)
-    // return <TextField id={id} label={label} ></TextField>
 }
 export function myInput(comp,id,props,control,errors){
     return ( <Controller
