@@ -1,7 +1,7 @@
 export async function postGraphSqlQuery(url,query,variables)  {
 
     // fetch(graphqlurl(querytehsil("'" + district_code + "'")))
-    //console.log(variables)
+    console.log(query, variables)
    var headers = {
        'Content-Type': 'application/json',
    }
@@ -12,7 +12,7 @@ export async function postGraphSqlQuery(url,query,variables)  {
            'Authorization' : 'JWT ' + localStorage.getItem('token')
        }
    }
-  console.log(headers)
+  //console.log(headers)
     const res = await  fetch(url, {
         method: 'POST',
         headers: headers,

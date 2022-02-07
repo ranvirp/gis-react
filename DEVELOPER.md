@@ -1,9 +1,10 @@
-1. npm install react-collapsible --save
-2. Testing on docker - aws handler. Using a serverless template.yml
+export NODE_OPTIONS=--openssl-legacy-provider
+2. npm install react-collapsible --save
+3. Testing on docker - aws handler. Using a serverless template.yml
 and sam local start-api command
 in the template.yml :
-3. Follow https://evilmartians.com/chronicles/serverless-typescript-a-complete-setup-for-aws-sam-lambda
-4. 
+4. Follow https://evilmartians.com/chronicles/serverless-typescript-a-complete-setup-for-aws-sam-lambda
+5. 
 CodeUri: ./
 Handler: src/awshandler/handler.lambdaHandler
 Typescript not working. Hence would use layers

@@ -1,15 +1,13 @@
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import ListItemText from "@material-ui/core/ListItemText";
-import SchemaForm from "../../../experimentalcomponents/forms/schemabasedform";
+
 import React from "react";
+import {InboxRounded} from "@mui/icons-material";
+import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
 
 export default function SchemaFormSideBarItem(props) {
     const genform = 'genform' + props.key;
     return (
-        <ListItem button key={genform} onClick={()=> {props.handleClick(<SchemaForm schema={props.schema}/>)}}>
-            <ListItemIcon> <InboxIcon/> </ListItemIcon>
+        <ListItem button key={genform} onClick={()=> {props.handleClick(<></>)}}>
+            <ListItemIcon> <InboxRounded/> </ListItemIcon>
             <ListItemText primary='Schema Form'/>
         </ListItem>
     );

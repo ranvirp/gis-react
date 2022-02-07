@@ -39,7 +39,7 @@ function App(props) {
         setAuthenticated({authenticated:false, userid:null, token:null})
         setContext({authenticated:false, userid:null, token:null})
     }
-    console.log(context)
+    //console.log(context)
 
         return (
              (context.authenticated == true)?

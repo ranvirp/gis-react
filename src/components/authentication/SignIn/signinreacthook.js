@@ -1,15 +1,11 @@
 import {GenericForm} from "../../forms/genericreacthookform";
-import {KhatauniFormComponent} from "../../../apps/chakbandi/generated/inputformcomponents";
-import {createKhatauniMutation} from "../../../apps/chakbandi/generated/mutations";
-import {varsKhatauni} from "../../../apps/chakbandi/generated/variables";
+
 import React from "react";
-import {schema} from "../../../apps/chakbandi/components/forms/khatauni";
 import * as yup from "yup";
 import {Paper, Typography, Grid, Button} from "@mui/material";
 import Email from "../common/email";
 import Password from "../common/password";
-import {ReactHookFormInput} from "../../../apps/chakbandi/components/forms/formutilities";
-import {Villagedropdown} from "../../forms/villagedropdown";
+import {ReactHookFormInput} from "../../../apps/upchakbandi/components/forms/formutilities";
 
 const yupschema = yup.object({
     email: yup

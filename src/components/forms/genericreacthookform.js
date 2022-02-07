@@ -4,23 +4,24 @@ import {useForm} from "react-hook-form";
 import React, {useEffect} from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
-import {graphqlurl} from "../../apps/chakbandi/settings";
+import {graphqlurl} from "../../apps/upchakbandi/settings";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import {TestReactHookFormInput} from "../../experimentalcomponents/forms/testreactform";
+import PropTypes from 'prop-types'
 
 export function GenericForm(props)
 {
     const defaultProps = {debug:false, formProps:{}, formElementsProps:{}}
+    const [state, setState] = React.useState({reset:false, fields:props.defaultValues??{} })
+
     props = {defaultProps, ...props}
    if (props.debug === 'undefined') props.debug = false
     const { control, handleSubmit, reset, formState:{ errors } } = useForm( {
-        defaultValues: props.defaultValues??{},
+      //  defaultValues: state.fields,
         resolver: yupResolver(props.yupSchema)
     });
-    const [state, setState] = React.useState({reset:false, fields:{}})
     useEffect(()=>{
-        if (state.reset) {reset(state.fields);  }
+        if (state.reset) {reset({});  }
 
     },[state.reset])
 
@@ -32,10 +33,10 @@ export function GenericForm(props)
         props.debug && console.log(result)
         if (props.afterSubmitFn != 'undefined')
               props.afterSubmitFn(data, result)
-        console.log(result)
+        //console.log(result)
         if (!result.errors) setState({reset:true, fields:{}})
         else setState({...state,fields:data})
-        //reset()
+        reset({})
 
     }
     return (
@@ -48,7 +49,7 @@ export function GenericForm(props)
 
             <form onSubmit={handleSubmit(onSubmit)} {...props.formProps??{}}>
 
-            {React.cloneElement(props.formComponent, {...props.formComponentProps, control:control, errors:errors}) }
+            {React.cloneElement(props.formComponent, {...props.formComponentProps, control:control, errors:errors, defaultValues:state.fields}) }
 
         </form>
         </Stack>:   <Stack>
@@ -57,7 +58,7 @@ export function GenericForm(props)
 
                     <form onSubmit={handleSubmit(onSubmit)} {...props.formProps??{}}>
 
-                        {React.cloneElement(props.formComponent, {...props.formComponentProps, value:null, control:control, errors:errors}) }
+                        {React.cloneElement(props.formComponent, {...props.formComponentProps, control:control, errors:errors,defaultValues:state.fields}) }
 
                     </form>
                 </Stack>

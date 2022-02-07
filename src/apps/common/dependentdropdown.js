@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {Dropdown} from "../../../components/forms/dropdown";
-import {postGraphSqlQuery} from "../../../components/fetcher/graphsqlfetcher";
+import {Dropdown} from "../../components/forms/dropdown";
+import {postGraphSqlQuery} from "../../components/fetcher/graphsqlfetcher";
+import {graphqlurl} from "../upchakbandi/settings";
 
 export function Dependentdropdownthree(props) {
     // console.log(props)
@@ -14,7 +15,9 @@ export function Dependentdropdownthree(props) {
     const getB = async (e)=> {
         const aValue = e.target.value
         setState({...state,fieldB: [{label:'Loading..', value:'Loading', key:'..'}], fieldC:[]})
-        const bValues = await postGraphSqlQuery(props.graphqlurl, queryB,{props.fieldAName:aValue})
+        const x = {}
+        x[props[fieldAName]] = aValue
+        const bValues = await postGraphSqlQuery(graphqlurl, queryB,x)
         setState({...state,fieldB: bValues[props.bName], fieldC:[]})
 
     }
@@ -22,7 +25,9 @@ export function Dependentdropdownthree(props) {
         var aValue = state.selectedValues.fieldA
         var bValue = state.selectedValues.fieldB
         setState({...state,fieldC:[{label:'Loading..', value:'Loading', key:'..'}] })
-        const cValues = await postGraphSqlQuery(props.graphqlurl, queryC,{ props.fieldBName:bValue})
+        var x = { }
+        x[props[fieldBName]] = bValue
+        const cValues = await postGraphSqlQuery(graphqlurl, queryC, x)
          setState({...state,fieldC: cValues[props.fieldCName]})
     }
     useEffect(()=>{

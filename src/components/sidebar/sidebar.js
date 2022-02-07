@@ -5,27 +5,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import DistrictSideBarItem from "./sidebar_items/DistrictSideBarItem";
-import VillageSideBarItem from "./sidebar_items/VillageSideBarItem";
+
 import LoginFormSideBarItem from "./sidebar_items/LoginFormSideBarItem";
 import DistrictList from "../../reports/districts";
 import MainComponent from "../../Village"
 import SignUpFormSideBarItem from "./sidebar_items/SignUpFormSideBarItem";
 import LogoutSideBarItem from "./sidebar_items/LogoutSideBarItem";
-import {myContext} from "../App";
-import LeafletSideBarItem from "./sidebar_items/LeafletSideBarItem";
-import SideBarItem from "./sidebar_items/SideBarItem";
-import LeafletMap from "../leaflet/components/leafletmap";
-import GeoJSONFromURL, {addLayer} from "../leaflet/components/geojsonurltoleaflet";
-import DistVillForm from "../../experimentalcomponents/forms/distvill";
-import SchemaFormSideBarItem from "./sidebar_items/SchemaFormSidebarItem";
-import testschema from "../../form-schemas/testschema";
-import ErrorBoundary from 'antd/lib/alert/ErrorBoundary';
+
+import ErrorBoundary from "antd/es/alert/ErrorBoundary";
+import Typography from "@mui/material/Typography";
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(3),
     },
 }));
-
+//TODO: replace this with context or something
+export var globalState = {}
 export default function PermanentDrawerLeft(props) {
     const classes = useStyles();
     const context = props.context
@@ -65,12 +54,21 @@ export default function PermanentDrawerLeft(props) {
         // console.log(comp);
         setState({comp:comp, props:props});
     };
+    globalState.handleClick = handleClick
+
     var loginOrLogout = <LoginFormSideBarItem handleClick={handleClick}/>
     //loginOrLogout += <SignUpFormSideBarItem handleClick={handleClick}/>
     if (context.authenticated == 'true') {
         loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
     }
     //console.log(loginOrLogout)
+    var list = []
+    var dict1 = props.sidebaritems(handleClick)
+    for (var key of Object.keys(dict1)) {
+        list.push( <Typography variant="h7">{key}</Typography>)
+        list.push(<Divider/>)
+        list = list.concat(dict1[key])
+    }
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -84,8 +82,11 @@ export default function PermanentDrawerLeft(props) {
                 anchor="left"
             >
                 <div className={classes.toolbar} />
+                <Typography variant="h6">MENU</Typography>
                 <Divider />
                 <List>
+                    {list}
+                    <Divider />
 
                     {
                         context.auth.authenticated == true && <LogoutSideBarItem logout={context.logout} handleClick={handleClick}/>
@@ -94,17 +95,19 @@ export default function PermanentDrawerLeft(props) {
                         context.auth.authenticated != true && <><LoginFormSideBarItem handleClick={handleClick}/>
                             <SignUpFormSideBarItem handleClick={handleClick}/></>
                     }
-                    {props.sidebaritems(handleClick)}
+
                      </List>
                 <Divider />
             </Drawer>
+            <ErrorBoundary>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <ErrorBoundary>
+                
 
                 {state.comp!=null && React.cloneElement(state.comp, state.props)}
-                </ErrorBoundary>
+
             </main>
+            </ErrorBoundary>
         </div>
     );
 }

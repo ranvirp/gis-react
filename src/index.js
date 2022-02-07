@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import ChakbandiSettings from "./apps/chakbandi/settings";
+import ChakbandiSettings from "./apps/upchakbandi/settings";
 import AppWithoutLogin from './components/AppWithoutLogin';
 import {ComponentTester} from "./components/ComponentTester";
 import AppWithLogin from "./components/AppWithLogin";
@@ -13,7 +13,7 @@ ReactDOM.hydrate(
 
       {
        //   <AppWithoutLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
-        //  <ComponentTester/>
+       //  <ComponentTester/>
       <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       }
   </React.StrictMode>,

@@ -2,10 +2,7 @@ import React, {useContext} from 'react';
 import MultiColumnGrid from "./multicolumngrid";
 import Typography from "@mui/material/Typography";
 import {SignIn} from "../authentication/SignIn/signinreacthook";
-import {myContext} from "../App";
-import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
-import {graphqlurl} from "../../apps/chakbandi/settings";
-import {setAuthenticated} from "../AppWithLogin";
+
 
 
 const axios = require("axios")

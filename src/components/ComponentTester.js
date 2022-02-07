@@ -1,10 +1,18 @@
 import React from "react";
-import {KhatauniForm} from "../apps/chakbandi/components/forms/khatauni";
-import ErrorBoundary from "antd/es/alert/ErrorBoundary";
+import {ErrorBoundary} from 'react-error-boundary'
 import Typography from "@mui/material/Typography";
-import {Grid} from "@mui/material";
-import {TestReactForm} from "../experimentalcomponents/forms/testreactform";
-
+import {Grid, TextField, Button} from "@mui/material";
+import {GenericForm} from "./forms/genericreacthookform";
+import {createKhatauniMutation} from "../apps/upchakbandi/generated/mutations";
+import {varsKhatauni} from "../apps/upchakbandi/generated/variables";
+import {Villagedropdown} from "./forms/villagedropdown";
+import ChooseakhatauniStories from "../stories/chakbandi/chooseakhatauni.stories";
+import {ChooseDefaultKhatauni} from "../apps/upchakbandi/components/reports/chooseakhatauni";
+import {
+    PetitionWithClaimsFormAndAddClaimButton
+} from "../apps/upchakbandi/components/PetitionWithClaimsFormAndAddClaimButton";
+import {PetitionWithEdit} from "../apps/upchakbandi/generated/reports/petition";
+const fn = (value) => {value.khatauni = value.khatauni.id}
 export function ComponentTester(props)
 {
     return (
@@ -20,8 +28,15 @@ export function ComponentTester(props)
                 </Typography>
                 </Grid>
                 */
+                //<GenericForm title="Create Khatauni" afterSubmitFn={()=>{}} debug={false} yupSchema={null} formComponent={<div><TextField name={"firstname"}/><Button type="submit">Submit</Button></div>}  mutationQuery={createKhatauniMutation} variables={varsKhatauni}/>
+               // <Villagedropdown/>
+               // <ChooseDefaultKhatauni/>
+
+               <PetitionWithEdit fn={fn}/>
+                //<PetitionWithClaimsFormAndAddClaimButton id={"34af786c-fffa-4553-88b5-be8ed3b38f28"}/>
+
             }
-            <TestReactForm/>
+
         </ErrorBoundary>
     )
 }

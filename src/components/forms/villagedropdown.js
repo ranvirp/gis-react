@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Dropdown} from "./dropdown";
 import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
 import Stack from "@mui/material/Stack";
-import {graphqlurl} from "../../apps/chakbandi/settings";
+import {graphqlurl} from "../../apps/upchakbandi/settings";
 
 const  queryvillage = ` query something($teh:String!){
 villages(vill: { tehsil_code:$teh}) {
@@ -47,7 +47,7 @@ export function Villagedropdown(props) {
                 setState({...state,fieldA: dists['districts'], fieldB:[], fieldC:[]})
     }
     const getTehsils = async (e)=> {
-        const dist = e//.target.value
+        const dist = e.target.value
         setState({...state,fieldB: [{label:'Loading..', value:'Loading', key:'..'}], fieldC:[]})
         var tehsils = await postGraphSqlQuery(graphqlurl, querytehsil,{'dist':dist})
         tehsils = tehsils.errors? {tehsils:{value:'error'}}:tehsils.data
@@ -66,18 +66,19 @@ export function Villagedropdown(props) {
         getDists()},[])
 
     const changeFunctionA = (e) => {
-        state.selectedValues.fieldA = e//.target.value
+        state.selectedValues.fieldA = e.target.value
+        console.log('tehsil',e.target.value)
         getTehsils(e)
     }
     const changeFunctionB = (e) => {
-        state.selectedValues.fieldB = e//.target.value
+        state.selectedValues.fieldB = e.target.value
         getVillages(e)
     }
 
 
     return (
         <Stack direction="rows">
-            <Dropdown values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId}
+            <Dropdown values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId} onBlur={getDists}
                       name={props.fieldAName} label={props.fieldALabel?props.fieldALabel:'District'} onBlur={getDists}/>
             <Dropdown values={state.fieldB} onChange={changeFunctionB} id={props.fieldBId}
                       name={props.fieldBName} label={props.fieldBLabel?props.fieldBLabel:'Tehsil'}/>

@@ -1,16 +1,13 @@
-import ListItem from "@material-ui/core/ListItem";
-import DistrictList from "../../../reports/districts";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
-import WithMaterialUI from "../../../experimentalcomponents/forms/formikform";
+import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
+import {SignIn} from "../../authentication/SignIn/signinreacthook";
+import {InboxRounded} from "@mui/icons-material";
 
 export default function LoginFormSideBarItem(props) {
     const login = 'login';
     return (
-        <ListItem button key={login} onClick={()=> {props.handleClick(<WithMaterialUI/>)}}>
-            <ListItemIcon> <InboxIcon/> </ListItemIcon>
+        <ListItem button key={login} onClick={()=> {props.handleClick(<SignIn/>)}}>
+            <ListItemIcon> <InboxRounded/> </ListItemIcon>
             <ListItemText primary='Login'/>
         </ListItem>
     );

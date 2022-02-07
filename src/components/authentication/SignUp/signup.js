@@ -1,12 +1,11 @@
 import React from 'react';
-import { useFormik } from 'formik';
 import * as yup from 'yup';
-import Button from '@material-ui/core/Button';
 import Password from "../common/password";
 import Email from "../common/email";
-import Grid from "@material-ui/core/Grid";
-import {makeStyles} from "@material-ui/core/styles";
-import {Paper, Typography} from "@material-ui/core";
+import {makeStyles} from "@mui/styles";
+import {Paper, Typography, Grid, Button} from "@mui/material";
+import {useForm} from "react-hook-form";
+import {GenericForm} from "../../forms/genericreacthookform";
 
 const validationSchema = yup.object({
     email: yup
@@ -46,71 +45,48 @@ const useStyles = makeStyles({
 });
 export default function Signup(props)  {
     const classes = useStyles()
-    const formik = useFormik({
-        initialValues: {
-            email: 'foobar@example.com',
-            password: 'foobar',
-            confirmPassword:'foobar'
-        },
-        validationSchema: validationSchema,
-        validateOnChange: true,
+   const formComponent =         <Grid container  spacing={3}>
+       <Grid item xs={12} className={classes.marginall}>
+           <Email
+               fullWidth
+               id="email"
+               name="email"
+               label="Email"
 
-        onSubmit: (values) => {
-            props.handleValues(values)
-        },
-    });
+           />
+       </Grid>
+       <Grid item xs={12} className={classes.marginall}>
+           <Password
+               fullWidth
+               id="password"
+               name="password"
+               label="Password"
+
+           />
+       </Grid>
+       <Grid item xs={12} className={classes.marginall}>
+           <Password
+               fullWidth
+               id="confirmPassword"
+               name="confirmPassword"
+               label="Confirm Password"
+
+
+           />
+       </Grid>
+       <Grid item xs={12} className={classes.marginall}>
+
+           <Button color="primary" variant="contained" fullWidth type="submit">
+               Submit
+           </Button>
+       </Grid>
+
+   </Grid>
 
     return (
         <Paper elevation={4} className={classes.marginall}>
             <Typography align={"center"} variant={"h6"} className={classes.margintop}>Please Sign Up</Typography>
-        <form onSubmit={formik.handleSubmit}>
-
-        <Grid container  spacing={3}>
-                <Grid item xs={12} className={classes.marginall}>
-                <Email
-                    fullWidth
-                    id="email"
-                    name="email"
-                    label="Email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    error={formik.touched.email && Boolean(formik.errors.email)}
-                    helperText={formik.touched.email && formik.errors.email}
-                />
-                </Grid>
-                <Grid item xs={12} className={classes.marginall}>
-                <Password
-                    fullWidth
-                    id="password"
-                    name="password"
-                    label="Password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    error={formik.touched.password && Boolean(formik.errors.password)}
-                    helperText={formik.touched.password && formik.errors.password}
-                />
-                </Grid>
-                <Grid item xs={12} className={classes.marginall}>
-                <Password
-                    fullWidth
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    label="Confirm Password"
-                    value={formik.values.confirmPassword}
-                    onChange={formik.handleChange}
-                    error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
-                    helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
-                />
-                </Grid>
-                    <Grid item xs={12} className={classes.marginall}>
-
-                <Button color="primary" variant="contained" fullWidth type="submit">
-                    Submit
-                </Button>
-                    </Grid>
-
-    </Grid>
-</form>
+        <GenericForm formComponent={formComponent}/>
         </Paper>
     );
 };
