@@ -65,7 +65,7 @@ export default function PermanentDrawerLeft(props) {
     var list = []
     var dict1 = props.sidebaritems(handleClick)
     for (var key of Object.keys(dict1)) {
-        list.push( <Typography variant="h7">{key}</Typography>)
+        list.push( <Typography key={key} variant="h7">{key}</Typography>)
         list.push(<Divider/>)
         list = list.concat(dict1[key])
     }

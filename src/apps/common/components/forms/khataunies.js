@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import {graphqlurl} from "../../../upchakbandi/settings";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
-import {Dropdown} from "../../../../components/forms/dropdown";
+import {Dropdown} from "../../../../components/forms/Dropdown";
 const KhatauniQuery = `query a {all_khatauni { id village{vname} fasli_year type_of_khatauni  }  }`
 
 const  KhatauniDropdown =  (props) => {

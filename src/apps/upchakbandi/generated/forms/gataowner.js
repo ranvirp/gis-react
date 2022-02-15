@@ -32,12 +32,16 @@ amaldaramad: yup.string().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createGataOwnerMutation)
 export const GataOwnerCreateForm = <GenericCreateUpdateForm title="Create Gata Owner" formObject={formObject}/>
 export const GataOwnerCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("khatauni","Khatauni"),FormField("gata","Gata"),FormField("owner","Owner"),FormField("owned_share","Owned Share"),FormField("owned_area","Owned Area"),FormField("amaldaramad","Amaldaramad")]
-   const mutation = props.pk? updateGataOwnerMutation:createGataOwnerMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateGataOwnerMutation:createGataOwnerMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_gata_owner { id khatauni_id gata owner_id owned_share owned_area amaldaramad }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Gata Owner"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Gata Owner"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

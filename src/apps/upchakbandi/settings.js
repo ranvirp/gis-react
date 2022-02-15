@@ -1,41 +1,17 @@
-import DistrictSideBarItem from "../../components/sidebar/sidebar_items/DistrictSideBarItem";
 import React from "react";
-import {handleClick} from "../../components/sidebar/sidebar";
 import SideBarItem from "../../components/sidebar/sidebar_items/SideBarItem";
-//import { KhataForm } from "./components/forms/khata";
-//import { GataForm } from "./components/forms/gata";
-import { KhataCorrectionForm } from "./components/forms/khatacorrection";
-import {FarmerForm} from "./components/forms/farmer";
-import {KhataForm} from "./components/forms/khata";
-import {GataForm, MyGataForm} from "./components/forms/gata";
-import {KhatedarForm} from "./components/forms/khatedar";
-import {CourtOrderForm} from "./components/forms/courtorder";
-import {CourtForm} from "./components/forms/court";
-import {PresidingOfficerForm} from "./components/forms/presidingofficer";
-import {LandTransferForm} from "./components/forms/landtransfer";
-import {LandCategoryForm} from "./components/forms/landcategory";
-import {Gatadelta} from "./components/forms/gatadelta";
-import {KhatauniCreateForm} from "./generated/forms/khatauni";
-import {KhatauniForm} from "./components/forms/khatauni";
 
 
-import {KhatauniList} from "./generated/reports/khatauni";
-import {Dashboard} from "./components/reports/dashboard";
-import {KhataCreateForm} from "./components/forms/khata";
-import KhataList from "./components/reports/khata";
-import {LandCategoryCreateForm} from "../upvillages/generated/forms/landcategory";
-import LandCategoryList from "../upvillages/generated/reports/landcategory";
 import {ChooseDefaultKhatauni} from "./components/reports/chooseakhatauni";
-import {GataCreateForm} from "./generated/forms/gata";
-import {GataList, GataWithEdit} from "./generated/reports/gata";
+import { GataCreateUpdateForm} from "./generated/forms/gata";
+import { GataWithEdit} from "./generated/reports/gata";
 import {FarmerCreateForm} from "./generated/forms/farmer";
-import {FarmerList} from "./components/reports/farmer";
-import {CourtPosting} from "./components/forms/courtposting";
-import {ClaimCreateForm} from "./generated/forms/claim";
-import ClaimList from "./generated/reports/claim";
 import {Claims} from "./components/forms/claims";
-import PetitionList from "./generated/reports/petition";
 import {PetitionReport} from "./functions/functionres";
+import {KhataAll, KhataWithEdit} from "./generated/reports/khata";
+import {FarmerAll} from "./generated/reports/farmer";
+import {ChooseDefaultChakbandi} from "./components/reports/chooseaChakbandi";
+import {KhataEntryForm} from "./components/forms/KhataEntryForm";
 
 export const graphqlurl = 'http://127.0.0.1:8000/graphql'
 const defaultValue = {khatauni:localStorage.khatauni_id}
@@ -67,15 +43,18 @@ const ChakbandiSettings = ()=> {
     return {'sidebaritems':(handleClick)=> {
         return {
             '':[<SideBarItem comp={<ChooseDefaultKhatauni/>} title='Chooose default khatauni' handleClick={handleClick}/>,],
-            Khatauni:[   <SideBarItem comp={<KhatauniCreateForm />} title='Khatauni Form' handleClick={handleClick}/>,
-                <SideBarItem comp={KhatauniList} title='Khatauni List' handleClick={handleClick}/>,],
+            '  ':[<SideBarItem comp={<ChooseDefaultChakbandi/>} title='Chooose default Chakbandi' handleClick={handleClick}/>,],
 
-            Khata:[   <SideBarItem comp={<KhataCreateForm mutationQuery={khataquery} defaultValues={defaultValue}/>} title='Khata Form' handleClick={handleClick}/>,
-                <SideBarItem comp={KhataList} title='Khata List' handleClick={handleClick}/>,],
-            Gata:[   <SideBarItem comp={<GataCreateForm mutationQuery={createGataMutation} defaultValues={defaultValue}/>} title='Gata Form' handleClick={handleClick}/>,
+            // Khatauni:[   <SideBarItem comp={<KhatauniCreateForm />} title='Khatauni Form' handleClick={handleClick}/>,
+            //    <SideBarItem comp={KhatauniList} title='Khatauni List' handleClick={handleClick}/>,],
+
+            Khata:[
+                <SideBarItem comp={<KhataEntryForm mutationQuery={khataquery} defaultValues={defaultValue}/>} title='Khata Form' handleClick={handleClick}/>,
+                <SideBarItem comp={<KhataAll fn={(val)=>{val.category=val.category.name;val.khatauni= val.khatauni.id}}/>} title='Khata List' handleClick={handleClick}/>,],
+            Gata:[   <SideBarItem comp={<GataCreateUpdateForm edit={false} debug={false}  defaultValues={defaultValue}/>} title='Gata Form' handleClick={handleClick}/>,
                 <SideBarItem comp={<GataWithEdit fn={fn} formFn={(val)=>{val.khatauni= val.khatauni.id}}/>} title='Gata List' handleClick={handleClick}/>,],
             Farmer:[   <SideBarItem comp={FarmerCreateForm} title='Farmer Form' handleClick={handleClick}/>,
-                <SideBarItem comp={FarmerList} title='Farmer List' handleClick={handleClick}/>,],
+                <SideBarItem comp={<FarmerAll fn={fn}/>} title='Farmer List' handleClick={handleClick}/>,],
             Claim:[   <SideBarItem comp={<Claims  defaultValues={defaultValue}/>} title='claim Form' handleClick={handleClick}/>,
                // <SideBarItem comp={<PetitionList fn={(value)=>{value.khatauni = value.khatauni.id;return value}}/>} title='Petition List' handleClick={handleClick}/>,
                 <SideBarItem comp={PetitionReport} title='Petition List' handleClick={handleClick}/>,

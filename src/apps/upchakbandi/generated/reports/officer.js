@@ -4,10 +4,9 @@ import {Button} from '@mui/material';
 import {ClickableItem} from "../../../../components/clickableitem";
 import GenericReportWithStickyHead, {ReportObject} from "../../../../components/reports/GenericReport";
 import {OfficerCreateUpdateForm} from "../forms/officer";
-const OfficerQuery = `query a {all_officer { id  name  name_eng  mobile_no  unique_id }  }`
-const OfficerFilterQuery = `query a($filter:String!) {officer_by_filter(filter: $filter){ id  name  name_eng  mobile_no  unique_id }  }`
+export const OfficerQuery = `query a {all_officer { id  name  name_eng  mobile_no  unique_id }  }`
+export const OfficerFilterQuery = `query a($filter:String!) {officer_by_filter(filter: $filter){ id  name  name_eng  mobile_no  unique_id }  }`
 const OfficerColumns = [
-{ id: 'id',label: 'Id',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 { id: 'name',label: 'Name',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 { id: 'name_eng',label: 'Name Eng',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 { id: 'mobile_no',label: 'Mobile No',minWidth: 10, align: 'center', format: (value) => value.toString(),},
@@ -49,9 +48,12 @@ OfficerColumns[0] = { id: 'editBtn',label: 'Action',minWidth: 10, align: 'center
 
 const OfficerReportObject = new ReportObject(props.columns??OfficerColumns,OfficerQuery,{},(value)=>{
     const results = value['all_officer']
-     const comp = <OfficerCreateUpdateForm pk="id" defaultValues={results} />
     
     const fn =  (value)=>{ 
+         const myValue = JSON.parse(JSON.stringify(value))
+         if (props.formFn) props.formFn(myValue)
+         const comp = <OfficerCreateUpdateForm pk="id" defaultValues={myValue} />
+
     value.editBtn = <ClickableItem comp={comp} title="Edit"/>
     if (props.fn) props.fn(value)
     return value}

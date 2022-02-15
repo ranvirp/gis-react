@@ -30,12 +30,16 @@ area: yup.number().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createKhataMutation)
 export const KhataCreateForm = <GenericCreateUpdateForm title="Create Khata" formObject={formObject}/>
 export const KhataCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("khatauni","Khatauni"),FormField("khata_no","Khata No"),FormField("category","Category"),FormField("area","Area")]
-   const mutation = props.pk? updateKhataMutation:createKhataMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateKhataMutation:createKhataMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_khata { id khatauni_id khata_no category_id area status }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Khata"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Khata"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

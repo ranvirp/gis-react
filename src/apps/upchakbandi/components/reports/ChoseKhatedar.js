@@ -2,6 +2,7 @@ import React from 'react'
 import {Villagedropdown} from "../../../../components/forms/villagedropdown";
 import {Button, TextField, Typography} from "@mui/material";
 import GenericReportWithStickyHead, {ReportObject} from "../../../../components/reports/GenericReport";
+import {FarmerFilterQuery} from "../../generated/reports/farmer";
 export const ChooseKhatedar = (props) => {
 
     const [state, setState] = React.useState({khatedar_id:null, name:'hi', initial:true, variables:{}})
@@ -20,11 +21,12 @@ export const ChooseKhatedar = (props) => {
         { id: 'gender',label: 'Gender',minWidth: 10, align: 'center', format: (value) => value.toString(),},
         { id: 'majra',label: 'Majra',minWidth: 10, align: 'center', format: (value) => value.toString(),},
     ];
+
     const query = `query a($filter:String!){farmer_by_filter (filter:$filter){id khatauni{ id village{ vname  
     village_code_census  vname_eng  pname  flg_chakbandi  flg_survey  pargana_code_new  
     tehsil_code{ district_code{ dname  district_code_census  dname_eng }  tname  tehsil_code_census  tname_eng }  
     district_code{ dname  district_code_census  dname_eng } }  fasli_year  type_of_khatauni  no_of_khatas  area  status }  
-    unique_id  khatedar_code  mobile_no  name  relationship  relative_name  year_of_birth  gender  majra  status }  }`
+    unique_id  khatedar_code  mobile_no  name  relationship  relative_name  year_of_birth  gender  address  status }  }`
     var khatauni = null
     const chooseKhatedar = (e) => {
 
@@ -49,7 +51,7 @@ export const ChooseKhatedar = (props) => {
         setState({name:name, initial:false, variables:{"filter":  JSON.stringify(q)}})
 
     }
-    const reportObject = new ReportObject(FarmerColumns, query,state.variables, fn)
+    const reportObject = new ReportObject(FarmerColumns, FarmerFilterQuery ,state.variables, fn)
     return (
         <>
         <TextField disabled={true} value={state.id} {...props}/>

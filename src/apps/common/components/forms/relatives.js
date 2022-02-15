@@ -1,5 +1,5 @@
 import React from "react";
-import {Dropdown} from "../../../../components/forms/dropdown";
+import {Dropdown} from "../../../../components/forms/Dropdown";
 export const  RelativesDropdown = (props)=>{
     var list = {f:'Father', w:'Wife', m:'Mother', h:'Husband', n:'None'};
 

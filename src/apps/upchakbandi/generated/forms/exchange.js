@@ -34,12 +34,16 @@ areaB: yup.number().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createExchangeMutation)
 export const ExchangeCreateForm = <GenericCreateUpdateForm title="Create Exchange" formObject={formObject}/>
 export const ExchangeCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("claim","Claim"),FormField("partyA","Partya"),FormField("partyB","Partyb"),FormField("date_of_exchange","Date Of Exchange"),FormField("date_of_order","Date Of Order"),FormField("gataA","Gataa"),FormField("gataB","Gatab"),FormField("areaA","Areaa"),FormField("areaB","Areab")]
-   const mutation = props.pk? updateExchangeMutation:createExchangeMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateExchangeMutation:createExchangeMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_exchange { id claim_id partyA_id partyB_id date_of_exchange date_of_order gataA gataB areaA areaB }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Exchange"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Exchange"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

@@ -24,7 +24,7 @@ export function Dropdown(props)
                 <em>None</em>
 
                 {props.values != 'undefined' && props.values.map((value)=>(
-                       <MenuItem   value={value.value} >{value.label}</MenuItem>
+                       <MenuItem  key={value.key??Math.random()} value={value.value} >{value.label}</MenuItem>
                 ))}
             </Select>
         </FormControl>

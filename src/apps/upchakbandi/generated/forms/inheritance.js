@@ -30,12 +30,16 @@ share: yup.number().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createInheritanceMutation)
 export const InheritanceCreateForm = <GenericCreateUpdateForm title="Create Inheritance" formObject={formObject}/>
 export const InheritanceCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("claim","Claim"),FormField("dead_khatedar","Dead Khatedar"),FormField("date_of_death","Date Of Death"),FormField("legal_heir","Legal Heir"),FormField("share","Share")]
-   const mutation = props.pk? updateInheritanceMutation:createInheritanceMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateInheritanceMutation:createInheritanceMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_inheritance { id claim_id dead_khatedar_id date_of_death legal_heir_id share }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Inheritance"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Inheritance"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

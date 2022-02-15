@@ -1,5 +1,5 @@
 import React from "react";
-import {Dropdown} from "../../../../components/forms/dropdown";
+import {Dropdown} from "../../../../components/forms/Dropdown";
 export const  DesignationDropdown = (props)=>{
     var list = {co:'Chakbandi Adhikari', aco:'Assistance CO', soc:'Bandobast Adhikari', ddc:'DDC'};
 

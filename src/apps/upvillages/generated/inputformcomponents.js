@@ -1,7 +1,7 @@
 import React from "react";
 import {Stack} from "@mui/material"
 import {getInputParameters, getButton} from "../inputparameters"
-import {ReactHookFormInput} from "../../../components/forms/reacthookforminput";
+import {ReactHookFormInput} from "../../../components/forms/ReactHookFormInput";
  
 export function DistrictFormComponent(props)  {
     return ( <Stack>

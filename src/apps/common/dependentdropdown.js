@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Dropdown} from "../../components/forms/dropdown";
+import {Dropdown} from "../../components/forms/Dropdown";
 import {postGraphSqlQuery} from "../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../upchakbandi/settings";
 

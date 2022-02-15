@@ -1,5 +1,5 @@
 import React from "react";
-import {Dropdown} from "../../../../components/forms/dropdown";
+import {Dropdown} from "../../../../components/forms/Dropdown";
 const types = ['1', '1A', '2', '3', '4', '5', '6', '7', '8', '9']
 const categories = [
     {label:'1', value:'1', key:'1'},

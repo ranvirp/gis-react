@@ -30,12 +30,16 @@ tname_eng: yup.string().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createTehsilMutation)
 export const TehsilCreateForm = <GenericCreateUpdateForm title="Create Tehsil" formObject={formObject}/>
 export const TehsilCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("district_code","District Code"),FormField("tname","Tname"),FormField("tehsil_code_census","Tehsil Code Census"),FormField("tname_eng","Tname Eng")]
-   const mutation = props.pk? updateTehsilMutation:createTehsilMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateTehsilMutation:createTehsilMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_tehsil { district_code_id tname tehsil_code_census tname_eng }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Tehsil"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Tehsil"} pk={"tehsil_code_census"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

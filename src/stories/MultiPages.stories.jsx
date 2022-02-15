@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MultiColumnGrid from "../components/pages/multicolumngrid";
+import MultiColumnGrid from "../components/pages/MultiColumnGrid";
 import Signup from "../components/authentication/SignUp/signup";
 import Typography from "@material-ui/core/Typography";
 import LeafletMap from "../components/leaflet/components/leafletmap";

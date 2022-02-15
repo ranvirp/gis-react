@@ -32,12 +32,16 @@ sold_share: yup.number().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createTransferBeforeAadharvarshMutation)
 export const TransferBeforeAadharvarshCreateForm = <GenericCreateUpdateForm title="Create Transfer Before Aadharvarsh" formObject={formObject}/>
 export const TransferBeforeAadharvarshCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("claim","Claim"),FormField("transferor","Transferor"),FormField("transferee","Transferee"),FormField("date_of_transfer","Date Of Transfer"),FormField("gata","Gata"),FormField("sold_area","Sold Area"),FormField("sold_share","Sold Share")]
-   const mutation = props.pk? updateTransferBeforeAadharvarshMutation:createTransferBeforeAadharvarshMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateTransferBeforeAadharvarshMutation:createTransferBeforeAadharvarshMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_transfer_before_aadharvarsh { id claim_id transferor_id transferee_id date_of_transfer gata sold_area sold_share }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Transfer Before Aadharvarsh"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Transfer Before Aadharvarsh"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

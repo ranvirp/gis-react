@@ -7,6 +7,8 @@ import LandCategoryDropdown from "../common/components/forms/landcategories";
 import KhatauniDropdown from "../common/components/forms/khataunies";
 import {RelativesDropdown} from "../common/components/forms/relatives";
 import {GendersDropdown} from "../common/components/forms/genders";
+import {KhatedarCodeForm} from "./components/forms/KhatedarCode";
+import {ChakbandiDefaultField} from "./components/forms/ChakbandiDefaultField";
 export function getButton()
 {
     return (<Button type="submit">Submit</Button>)
@@ -65,8 +67,26 @@ defaultComponents.date_of_petition =       <TextField
         shrink: true,
     }}
 />
+defaultComponents.date_of_deed =       <TextField
+
+    type="date"
+    defaultValue="2017-05-24"
+    sx={{ width: 220 }}
+    InputLabelProps={{
+        shrink: true,
+    }}
+/>
+defaultComponents.khatedar_code = <KhatedarCodeForm/>
+defaultComponents.chakbandi = <ChakbandiDefaultField/>
+defaultComponents.transferor = <KhatedarCodeForm/>
+defaultComponents.transferee = <KhatedarCodeForm/>
+
+
 var myprops = {}
 myprops.no_of_khatas = {type:'number'}
-myprops.khatauni = {defaultValue:localStorage.khatauni_id, disabled:true}
+myprops.khatauni = {defaultValue:localStorage.khatauni_id}
+myprops.chakbandi = {defaultValue:localStorage.chakbandi_id}
+
+
 export default defaultComponents
 export const defaultProps = myprops

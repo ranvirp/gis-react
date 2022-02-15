@@ -34,12 +34,16 @@ pargana_code_new: yup.string().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createRevenueVillageMutation)
 export const RevenueVillageCreateForm = <GenericCreateUpdateForm title="Create Revenue Village" formObject={formObject}/>
 export const RevenueVillageCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("vname","Vname"),FormField("village_code_census","Village Code Census"),FormField("vname_eng","Vname Eng"),FormField("pname","Pname"),FormField("flg_chakbandi","Flg Chakbandi"),FormField("flg_survey","Flg Survey"),FormField("pargana_code_new","Pargana Code New"),FormField("tehsil_code","Tehsil Code"),FormField("district_code","District Code")]
-   const mutation = props.pk? updateRevenueVillageMutation:createRevenueVillageMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateRevenueVillageMutation:createRevenueVillageMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_revenue_village { vname village_code_census vname_eng pname flg_chakbandi flg_survey pargana_code_new tehsil_code_id district_code_id }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Revenue Village"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Revenue Village"} pk={"village_code_census"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

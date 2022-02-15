@@ -7,9 +7,8 @@ import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../apps/upchakbandi/settings";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import PropTypes from 'prop-types'
 
-export function GenericForm(props)
+export function GenericReactHookForm(props)
 {
     const defaultProps = {debug:false, formProps:{}, formElementsProps:{}}
     const [state, setState] = React.useState({reset:false, fields:props.defaultValues??{} })
@@ -17,7 +16,7 @@ export function GenericForm(props)
     props = {defaultProps, ...props}
    if (props.debug === 'undefined') props.debug = false
     const { control, handleSubmit, reset, formState:{ errors } } = useForm( {
-      //  defaultValues: state.fields,
+        defaultValues: state.fields,
         resolver: yupResolver(props.yupSchema)
     });
     useEffect(()=>{
@@ -34,7 +33,7 @@ export function GenericForm(props)
         if (props.afterSubmitFn != 'undefined')
               props.afterSubmitFn(data, result)
         //console.log(result)
-        if (!result.errors) setState({reset:true, fields:{}})
+        if (!result.errors) setState({...state,reset:true, fields:{}})
         else setState({...state,fields:data})
         reset({})
 

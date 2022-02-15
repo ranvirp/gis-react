@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Dropdown} from "./dropdown";
+import {Dropdown} from "./Dropdown";
 import Stack from "@mui/material/Stack";
 
 export function Dependentdropdowntwo(props) {

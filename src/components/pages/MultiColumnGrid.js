@@ -36,7 +36,7 @@ export default function MultiColumnGrid(props) {
             // note: we are adding a key prop here to allow react to uniquely identify each
             // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
             var elem = props.elems[i.toString() + j.toString()]?? defaultElem
-            var style = props.styles?.[i.toString() + i.toString()] ?? props.defaultStyle
+            var style = props.styles?.[i.toString() + j.toString()] ?? props.defaultStyle
             var xsvalue = 11.5 * props.colwidths[i][j] / 100
             const elemHeight = (height * props.rowheights[i] / 100).toString() + "px"
 

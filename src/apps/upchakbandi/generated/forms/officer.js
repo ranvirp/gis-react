@@ -32,12 +32,16 @@ unique_id: yup.string().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createOfficerMutation)
 export const OfficerCreateForm = <GenericCreateUpdateForm title="Create Officer" formObject={formObject}/>
 export const OfficerCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("name","Name"),FormField("name_eng","Name Eng"),FormField("mobile_no","Mobile No"),FormField("unique_id","Unique Id")]
-   const mutation = props.pk? updateOfficerMutation:createOfficerMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateOfficerMutation:createOfficerMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_officer { id name name_eng mobile_no unique_id }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Officer"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Officer"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

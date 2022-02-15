@@ -1,8 +1,8 @@
-import {GenericForm} from "./genericreacthookform";
+import {GenericReactHookForm} from "./GenericReactHookForm";
 import React from "react";
 import PropTypes from 'prop-types'
 import {Grid, Stack, TextField} from "@mui/material";
-import {ReactHookFormInput} from "./reacthookforminput";
+import {ReactHookFormInput} from "./ReactHookFormInput";
 import {KhataFormComponent} from "../../apps/upchakbandi/generated/inputformcomponents";
 import {KhataYupSchema} from "../../apps/upvillages/functions/functionres";
 import {getButton} from "../../apps/upchakbandi/inputparameters";
@@ -23,30 +23,36 @@ export function FormObject(defaultProps, defaultComponents, formfields,  yupSche
     this.variablesFn = variablesFn ?? varsFn
     this.debug = debug
 }
-export function GenericCreateUpdateForm({formObject, defaultValues, ...props})
+
+export function GenericCreateUpdateForm({formObject, ...props})
 {
 
     const deffn = ()=>{}
+   // console.log(props)
     const afterSubmitFn = formObject.afterSubmitFn ?? deffn
     const debug = formObject.debug ?? false
     const yupSchema = formObject.yupSchema
     const mutationQuery = formObject.mutationQuery
     const vars = formObject.variablesFn
-    console.log("defaultvalue",defaultValues)
+    const direction = props?.horizontal? "row":"column"
+    const defaultValues = props.defaultValues ?? {}
+    //console.log("defaultvalues",defaultValues)
+    if (!props.edit)
+        formObject.formfields = formObject.formfields?.filter(item=>(item.id!=props.pk))
 
     const FormComponent = (props) => {return (
-        <Stack >{formObject.formfields.map((value)=> {
+        <Stack direction={direction}>{formObject.formfields.map((value)=> {
             value.comp = value.comp ?? formObject.defaultComponents[value.id] ?? <TextField/>
            // console.log(value.comp, formObject.defaultComponents[value.id])
             const size=value.size??12
             value.required = formObject.yupSchema.fields[value.id]?.exclusiveTests.required
-            const otherprops = props[value.id] ?? {}
-            value.defaultValue = defaultValues[value.id]
+            const otherprops = {...formObject.defaultProps[value.id],...props[value.id] }
+            if (defaultValues[value.id]) value.defaultValue = defaultValues[value.id]
            // console.log("mydefaultvalue", value.defaultValue, value.id, defaultValues)
             //console.log(formObject.defaultProps)
             if (props.pk == value.id)
 
-             value.comp = <TextField disabled={"true"}/>
+                value.comp = debug?<input />:<input type={"hidden"}/>
 
                 return React.cloneElement(<ReactHookFormInput />, { ...formObject.defaultProps[value.id]??{},...value, ...otherprops, ...props})
 
@@ -56,7 +62,7 @@ export function GenericCreateUpdateForm({formObject, defaultValues, ...props})
 
 
     return (
-        <GenericForm  {...props} defaultValues={defaultValues}  afterSubmitFn={afterSubmitFn} debug={debug} yupSchema={yupSchema} formComponent={<FormComponent {...props}/>}  mutationQuery={mutationQuery} variables={vars}/>
+        <GenericReactHookForm defaultValues={defaultValues} afterSubmitFn={afterSubmitFn} debug={debug} yupSchema={yupSchema} formComponent={<FormComponent {...props}/>} mutationQuery={mutationQuery} variables={vars} {...props}/>
 
     )
 }

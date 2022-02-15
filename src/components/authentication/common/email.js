@@ -9,6 +9,7 @@ export default function Email(props) {
 
             <TextField
                 {...props}
+                defaultValue={props.defaultValue}
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">

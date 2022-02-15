@@ -30,12 +30,16 @@ dname_eng: yup.string().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createDistrictMutation)
 export const DistrictCreateForm = <GenericCreateUpdateForm title="Create District" formObject={formObject}/>
 export const DistrictCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("dname","Dname"),FormField("district_code_census","District Code Census"),FormField("dname_eng","Dname Eng")]
-   const mutation = props.pk? updateDistrictMutation:createDistrictMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateDistrictMutation:createDistrictMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_district { dname district_code_census dname_eng }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "District"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "District"} pk={"district_code_census"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

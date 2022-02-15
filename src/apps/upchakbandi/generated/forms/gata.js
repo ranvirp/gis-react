@@ -23,21 +23,25 @@ export const createGataMutation = `mutation something($khatauni:String!, $gata_n
 
 const formFields = [FormField("khatauni","Khatauni"),FormField("gata_no","Gata No"),FormField("area","Area"),FormField("khata_no","Khata No"),FormField("bhaumik_year","Bhaumik Year")]
 const yupSchema = yup.object({
-gata_no: yup.number().integer().required(),
+gata_no: yup.string().required(),
 area: yup.number().required(),
 khata_no: yup.number().integer().required(),
-bhaumik_year: yup.number().integer().required(),
+bhaumik_year: yup.string().required(),
  }).required();
 
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createGataMutation)
 export const GataCreateForm = <GenericCreateUpdateForm title="Create Gata" formObject={formObject}/>
 export const GataCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("khatauni","Khatauni"),FormField("gata_no","Gata No"),FormField("area","Area"),FormField("khata_no","Khata No"),FormField("bhaumik_year","Bhaumik Year")]
-   const mutation = props.pk? updateGataMutation:createGataMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
-   const title = props.pk?"Update":"Create"
+   const mutation = props.edit? updateGataMutation:createGataMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_gata { id khatauni_id gata_no area khata_no bhaumik_year status }}`
+   
+
    return (
-   <GenericCreateUpdateForm title={ title + "Gata"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Gata"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

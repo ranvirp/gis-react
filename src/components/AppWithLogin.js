@@ -3,6 +3,7 @@ import React from 'react';
 import PrimarySearchAppBar from "./toolbar/toolbar1";
 import PermanentDrawerLeft from "./sidebar/sidebar";
 import SignInPage from "./pages/signinpage";
+import './App.css'
 
 export const  setAuthenticated = (result) => {
 

@@ -34,12 +34,16 @@ action_on: yup.date().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createAuditlogsMutation)
 export const AuditlogsCreateForm = <GenericCreateUpdateForm title="Create Auditlogs" formObject={formObject}/>
 export const AuditlogsCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("id","Id"),FormField("object_id","Object Id"),FormField("object_name","Object Name"),FormField("object_value","Object Value"),FormField("object_hash","Object Hash"),FormField("type_of_action","Type Of Action"),FormField("hash_code","Hash Code"),FormField("action_by","Action By"),FormField("action_on","Action On")]
-   const mutation = props.pk? updateAuditlogsMutation:createAuditlogsMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateAuditlogsMutation:createAuditlogsMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_auditlogs { id object_id object_name object_value object_hash type_of_action hash_code action_by action_on }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Auditlogs"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Auditlogs"} pk={"id"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     

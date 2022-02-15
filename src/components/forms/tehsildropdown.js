@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Dropdown} from "./dropdown";
+import {Dropdown} from "./Dropdown";
 import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
 import Stack from "@mui/material/Stack";
 import {graphqlurl} from "../../apps/upchakbandi/settings";

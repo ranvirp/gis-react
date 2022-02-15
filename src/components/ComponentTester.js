@@ -2,7 +2,7 @@ import React from "react";
 import {ErrorBoundary} from 'react-error-boundary'
 import Typography from "@mui/material/Typography";
 import {Grid, TextField, Button} from "@mui/material";
-import {GenericForm} from "./forms/genericreacthookform";
+import {GenericReactHookForm} from "./forms/GenericReactHookForm";
 import {createKhatauniMutation} from "../apps/upchakbandi/generated/mutations";
 import {varsKhatauni} from "../apps/upchakbandi/generated/variables";
 import {Villagedropdown} from "./forms/villagedropdown";
@@ -12,9 +12,15 @@ import {
     PetitionWithClaimsFormAndAddClaimButton
 } from "../apps/upchakbandi/components/PetitionWithClaimsFormAndAddClaimButton";
 import {PetitionWithEdit} from "../apps/upchakbandi/generated/reports/petition";
+import {Claims} from "../apps/upchakbandi/components/forms/claims";
+import {ReactHookFormInput} from "./forms/ReactHookFormInput";
+import {KhatedarCodeForm} from "../apps/upchakbandi/components/forms/KhatedarCode";
+import {useForm} from "react-hook-form";
+import {KhataEntryForm} from "../apps/upchakbandi/components/forms/KhataEntryForm";
 const fn = (value) => {value.khatauni = value.khatauni.id}
 export function ComponentTester(props)
 {
+    const { control, handleSubmit, reset, formState:{ errors } } = useForm()
     return (
         <ErrorBoundary>
             {
@@ -32,7 +38,11 @@ export function ComponentTester(props)
                // <Villagedropdown/>
                // <ChooseDefaultKhatauni/>
 
-               <PetitionWithEdit fn={fn}/>
+              // <PetitionWithEdit fn={fn}/>
+                //<Claims/>
+               // <ReactHookFormInput comp={<KhatedarCodeForm/>} control={control} errors={errors}/>
+               // <KhatedarCodeForm/>
+                <KhataEntryForm/>
                 //<PetitionWithClaimsFormAndAddClaimButton id={"34af786c-fffa-4553-88b5-be8ed3b38f28"}/>
 
             }

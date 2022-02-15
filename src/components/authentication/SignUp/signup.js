@@ -4,8 +4,7 @@ import Password from "../common/password";
 import Email from "../common/email";
 import {makeStyles} from "@mui/styles";
 import {Paper, Typography, Grid, Button} from "@mui/material";
-import {useForm} from "react-hook-form";
-import {GenericForm} from "../../forms/genericreacthookform";
+import {GenericReactHookForm} from "../../forms/GenericReactHookForm";
 
 const validationSchema = yup.object({
     email: yup
@@ -86,7 +85,7 @@ export default function Signup(props)  {
     return (
         <Paper elevation={4} className={classes.marginall}>
             <Typography align={"center"} variant={"h6"} className={classes.margintop}>Please Sign Up</Typography>
-        <GenericForm formComponent={formComponent}/>
+        <GenericReactHookForm formComponent={formComponent}/>
         </Paper>
     );
 };

@@ -32,12 +32,16 @@ name_eng: yup.string().required(),
 const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createLandCategoryMutation)
 export const LandCategoryCreateForm = <GenericCreateUpdateForm title="Create Land Category" formObject={formObject}/>
 export const LandCategoryCreateUpdateForm = (props)=> {
+   
    const formFields = [FormField("code","Code"),FormField("category","Category"),FormField("category_eng","Category Eng"),FormField("name","Name"),FormField("name_eng","Name Eng")]
-   const mutation = props.pk? updateLandCategoryMutation:createLandCategoryMutation
-   const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,mutation)
+   const mutation = props.edit? updateLandCategoryMutation:createLandCategoryMutation
+   const defprops = props.edit ? {}: defaultProps
+   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
+   //const myQuery = `query a{all_land_category { code category category_eng name name_eng }}`
+   
 
    return (
-   <GenericCreateUpdateForm title={props.pk?"Update":"Create" + "Land Category"} pk={props.pk} defaultValues={props.defaultValues} formObject={formObject}/>
+   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "Land Category"} pk={"code"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
    )
 }
     
