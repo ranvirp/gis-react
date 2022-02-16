@@ -11,7 +11,7 @@ import {PetitionReport} from "./functions/functionres";
 import {KhataAll, KhataWithEdit} from "./generated/reports/khata";
 import {FarmerAll} from "./generated/reports/farmer";
 import {ChooseDefaultChakbandi} from "./components/reports/chooseaChakbandi";
-import {KhataEntryForm} from "./components/forms/KhataEntryForm";
+import {AddGataForm, GataListForm, KhataEntryForm} from "./components/forms/KhataEntryForm";
 
 export const graphqlurl = 'http://127.0.0.1:8000/graphql'
 const defaultValue = {khatauni:localStorage.khatauni_id}
@@ -49,7 +49,11 @@ const ChakbandiSettings = ()=> {
             //    <SideBarItem comp={KhatauniList} title='Khatauni List' handleClick={handleClick}/>,],
 
             Khata:[
-                <SideBarItem comp={<KhataEntryForm mutationQuery={khataquery} defaultValues={defaultValue}/>} title='Khata Form' handleClick={handleClick}/>,
+                <SideBarItem comp={<AddGataForm khata_no={10}/>} title='Add Gata Form' handleClick={handleClick}/>,
+
+                <SideBarItem comp={<GataListForm khata_no={30}/>} title='Khata Form' handleClick={handleClick}/>,
+
+                <SideBarItem comp={<KhataWithEdit mutationQuery={khataquery} defaultValues={defaultValue}/>} title='Khata Form' handleClick={handleClick}/>,
                 <SideBarItem comp={<KhataAll fn={(val)=>{val.category=val.category.name;val.khatauni= val.khatauni.id}}/>} title='Khata List' handleClick={handleClick}/>,],
             Gata:[   <SideBarItem comp={<GataCreateUpdateForm edit={false} debug={false}  defaultValues={defaultValue}/>} title='Gata Form' handleClick={handleClick}/>,
                 <SideBarItem comp={<GataWithEdit fn={fn} formFn={(val)=>{val.khatauni= val.khatauni.id}}/>} title='Gata List' handleClick={handleClick}/>,],

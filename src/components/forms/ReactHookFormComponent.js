@@ -1,6 +1,6 @@
 import {Stack, TextField} from "@mui/material";
 import React, {useEffect, useRef} from "react";
-import {ReactHookFormInput} from "./ReactHookFormInput";
+import {ReactHookFormControlledInput, ReactHookFormInput} from "./ReactHookFormInput";
 import {getButton} from "../../apps/upchakbandi/inputparameters";
 import {useFieldArray, useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
@@ -15,20 +15,71 @@ export function ReactHookFormObject(defaultProps, defaultComponents, formFields)
     this.formFields = formFields
 
 }
+export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, control, componentRootName,debug=false, ...props}) => {
+
+console.log('fields', fields, fieldInfo)
+
+    function doFields(fields){
+
+        return Object.keys(fieldInfo).map((value1,index)=> {
+                const field = fieldInfo[value1]
+
+
+
+                const myProps = {}
+                //console.log(value.id)
+                myProps.required = field.required ?? false
+
+                myProps.name = `${componentRootName}.${value1}`
+                myProps.comp = field.comp ?? formObject.defaultComponents[value1] ?? <TextField/>
+                myProps.onChange = field.onChange
+                myProps.label = field.label
+                myProps.defaultValue = fields[value1]
+                // console.log(value.comp, formObject.defaultComponents[value.id])
+                //const size=value.size??12
+                // value.required = props.formObject.yupSchema.fields[value.id]?.exclusiveTests.required
+
+                //const otherprops = {...formObject.defaultProps[value.name],...props[value.name] }
+                //myProps.defaultValue = field.defaultValue
+
+
+                return React.cloneElement(<ReactHookFormControlledInput/>, {
+
+
+                    control: control,
+                    ...myProps
+
+                })
+
+
+        })
+    }
+    return (
+        <Stack direction={props.direction??"row"}>
+            {doFields(fields)}
+        </Stack>)}
 export const FieldArrayReactHookFormComponent = ({formObject,control,errors, componentRootName, defaultValues={},debug=false, ...props}) => {
 
     const mounted = useRef();
-    const {append,replace,fields} = useFieldArray({control,name:componentRootName})
+    const {remove,append,replace,fields} = useFieldArray({control,name:componentRootName})
     useEffect(
         ()=>{
             if (!mounted.current) {
+                console.log("mounting")
                 replace(formObject.formFields)
+            }
+            return () => {
+                console.log("unmounting")
+                replace(null)
             }
         },[formObject]
     )
 
     function doFields(fields){
+
         return fields.map((value,index)=> {
+            console.log(value[value.name])
+
 
             const myProps = {}
             //console.log(value.id)

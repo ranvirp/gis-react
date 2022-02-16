@@ -1,13 +1,14 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useMemo, useRef, useState} from "react"
 import * as yup from 'yup'
 import defaultComponents, {defaultProps, getButton} from "../../inputparameters";
 import {
+    DynamicReactHookFormComponent,
     FieldArrayReactHookFormComponent,
     ReactHookForm,
     ReactHookFormComponent,
     ReactHookFormObject
 } from "../../../../components/forms/ReactHookFormComponent";
-import {Stack} from "@mui/material";
+import {Stack, TextField} from "@mui/material";
 import {control} from "leaflet/dist/leaflet-src.esm";
 import Button from "@material-ui/core/Button";
 import {GenericReport, ReportObject} from "../../../../components/reports/GenericReport";
@@ -15,6 +16,9 @@ import BasicTable from "../../../../components/tables/tables";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../settings";
 import {useFieldArray, useForm} from "react-hook-form";
+import { v4 as uuidv4 } from 'uuid';
+import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
+import {ReactHookFormControlledInput} from "../../../../components/forms/ReactHookFormInput";
 
 
 const fields2 = [
@@ -35,7 +39,138 @@ const mycolumns = [
     //{ id: 'bhaumik_year',label: 'Fasli Year',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 
 ];
+const query = 'query a($filter:String!){gata_by_filter(filter:$filter){gata_no area bhaumik_year}}'
+const defaultValues = {gata_no:'', area:0,bhaumik_year:1423}
+export function AddGataForm (props)
+{
+    const newForm = useForm()
+    const [khata_no,setKhataNo] = useState("")
+    function fn1(e) {
+        console.log("khata_no", e.target.value)
+        setKhataNo(e.target.value)
+    }
+    return (<><ReactHookFormControlledInput comp={<TextField/>} label="Khata No" name={"khata_no"} onChange={fn1} control={newForm.control}/>
+   <DataEntryForKhata khata_no={khata_no} newForm={newForm}/></> )
+}
+export function DataEntryForKhata({khata_no, newForm}) {
 
+
+    const items = useGraphQlQuery(query, {
+        filter: JSON.stringify({
+            khatauni_id: localStorage.khatauni_id,
+            khata_no: khata_no
+        })
+    },'gata_by_filter', khata_no)
+    console.log("myitems", items)
+
+   // return (<p>Hi</p>)
+    return (<><DisplayGatas items={items} newForm={newForm}/></>)
+    return (<DisplayGatas items={items}/>)
+}
+export function DisplayGatas({items, newForm}){
+
+
+    const fieldArray = useFieldArray({control: newForm.control, name: 'gatas'})
+    console.log("newitems", items)
+
+    useEffect (()=>
+    {
+        console.log("running useEffect", items)
+         fieldArray.replace(items)
+        //items.map((item,i)=>{fieldArray.append(item)})
+    },[items])
+
+    const fn1 = (e)=>{
+        fieldArray.append({'gata_no':'', 'area':0,bhaumik_year:1432})
+
+    }
+    const removeElement = (e)=>{
+        const indexToBeRemoved = e.target.getAttribute('value')
+        fieldArray.remove(indexToBeRemoved)
+
+    }
+    const showValues = (e) => {
+        console.log(newForm.watch('gatas'))
+    }
+    console.log("rerendered")
+    const fieldInfo = {
+    gata_no:{ label: 'Gata No', required: true, defaultValue: defaultValues['gata_no']},
+    area:{label: 'Area', required: true, defaultValue: defaultValues['area']},
+    bhaumik_year:{ label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
+    }
+    console.log(fieldArray.fields)
+    return (
+         <Stack direction={"column"}>
+
+             <Stack direction={"row"}> <Button onClick={fn1}>Add Gata</Button><Button onClick={showValues}>Show Values</Button></Stack>
+             {fieldArray.fields.map((value,index1) => {
+
+                 console.log("I am here", index1)
+                     return <>
+                  <Stack  direction={"row"}> <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value, control:newForm.control, componentRootName:`gatas[${index1}]`}}/><Button value={index1} onClick={removeElement}>Remove</Button></Stack>
+                     </>
+
+                 // return <h2>Hello</h2>
+             })}
+
+         </Stack>
+    )
+}
+export function GataSingleForm({index, newForm, defaultValues})
+{
+    const fields = [
+        {name: `gata_no`, label: 'Gata No', required: true, defaultValue: defaultValues['gata_no']},
+        {name: `area`, label: 'Area', required: true, defaultValue: defaultValues['area']},
+        {name: `bhaumik_year`, label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
+
+    ]
+    const form2 = new ReactHookFormObject(defaultProps, defaultComponents, fields)
+
+    return (
+
+            <FieldArrayReactHookFormComponent  componentRootName={`gatas[${index}]`} direction={"row"}
+                                               formObject={form2} {...newForm}  />
+
+    )
+}
+export function GataListForm({khata_no}) {
+    const newForm = useForm()
+
+    const filterVar = {filter:JSON.stringify({khatauni_id:localStorage.khatauni_id, khata_no:khata_no})}
+
+    const fn = data => {
+        var no = 0
+        const results = data['gata_by_filter']
+
+        const newresults =  results.map((d,index) => {
+            no = no + 1
+            // console.log(no)
+            const fields = [
+                {name: `gata_no`, label: 'Gata No', required: true, defaultValue: d['gata_no']},
+                {name: `area`, label: 'Area', required: true, defaultValue: d['area']},
+                {name: `bhaumik_year`, label: 'Fasli Year', required: true, defaultValue: d['bhaumik_year']},
+
+            ]
+            const form2 = new ReactHookFormObject(defaultProps, defaultComponents, fields)
+
+            return {
+                form: <FieldArrayReactHookFormComponent  componentRootName={`gatas[${index}]`} direction={"row"}
+                                                         formObject={form2} {...newForm}  />
+            }
+        })
+
+        //props.setState(no)
+        return newresults
+
+    }
+    const reportObject = new ReportObject(mycolumns, query,filterVar, fn)
+
+    return (
+
+    <GenericReport tableComponent={<BasicTable/>} reportObject={reportObject} />
+
+    )
+}
 export function KhataEntryForm(props)
 {
      const [state,setState] = React.useState({khata_no:''})
@@ -132,13 +267,14 @@ console.log(finalGatas)
             //setState({...state, prevGatas:no })
         const query = 'query a($filter:String!){gata_by_filter(filter:$filter){gata_no area bhaumik_year}}'
         const filterVar = {filter:JSON.stringify({khatauni_id:localStorage.khatauni_id, khata_no:state.khata_no})}
+    const reportObject = new ReportObject(mycolumns, query,filterVar, fn)
 
-        const reportObject = new ReportObject(mycolumns, query,filterVar, fn)
+
 
         return ( <Stack><Stack direction={"column"}><ReactHookFormComponent formObject={form1} componentRootName={"existing"} {...mainForm}  /></Stack>
             <VariableGata form={gataForm} />
 
-            <GenericReport tableComponent={<BasicTable/>} reportObject={reportObject} key={"report1"}/>
+            <GenericReport tableComponent={<BasicTable/>} reportObject={reportObject} />
         </Stack>)
 
 
@@ -146,6 +282,7 @@ console.log(finalGatas)
     const VariableGata = (props) => {
         const [state,setState] = React.useState({children:[]})
         function removeElement(e){
+            e.stopPropagation()
             props.form.reset()
             const index = state.children.length
             state.children.pop()
