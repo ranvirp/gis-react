@@ -17,7 +17,7 @@ export function ReactHookFormObject(defaultProps, defaultComponents, formFields)
 }
 export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, control, componentRootName,debug=false, ...props}) => {
 
-console.log('fields', fields, fieldInfo)
+//console.log('fields', fields, fieldInfo)
 
     function doFields(fields){
 
@@ -35,6 +35,8 @@ console.log('fields', fields, fieldInfo)
                 myProps.onChange = field.onChange
                 myProps.label = field.label
                 myProps.defaultValue = fields[value1]
+                if (field.pk)
+                    myProps.comp = <TextField type={"hidden"}/>
                 // console.log(value.comp, formObject.defaultComponents[value.id])
                 //const size=value.size??12
                 // value.required = props.formObject.yupSchema.fields[value.id]?.exclusiveTests.required

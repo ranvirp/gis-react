@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {postGraphSqlQuery} from "../../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../upchakbandi/settings";
 
-export function useGraphQlQuery(query, variables, queryName, changeVar)
+export function useGraphQlQuery(query, variables, queryName)
 {
     const [items,setItems] = useState([])
     useEffect( ()=> {
@@ -11,6 +11,7 @@ export function useGraphQlQuery(query, variables, queryName, changeVar)
 
             if (!result.errors) {
                 const allitems = result.data[queryName]
+                console.log("firstobject", allitems[0])
 
 
                 setItems(allitems)
@@ -21,6 +22,6 @@ export function useGraphQlQuery(query, variables, queryName, changeVar)
         }
 
         fetchData()
-    },[changeVar])
+    },[JSON.stringify(variables), query])
     return items
 }

@@ -19,6 +19,7 @@ import {useFieldArray, useForm} from "react-hook-form";
 import { v4 as uuidv4 } from 'uuid';
 import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
 import {ReactHookFormControlledInput} from "../../../../components/forms/ReactHookFormInput";
+import {yupResolver} from "@hookform/resolvers/yup";
 
 
 const fields2 = [
@@ -28,22 +29,26 @@ const fields2 = [
 ]
 const yupSchema = yup.object({
     khata_no:yup.number().integer().required(),
+    gatas:yup.array(yup.object({
 
-    gata_no:yup.array(yup.string().required()),
-    area:yup.array(yup.number().required()),
-    fasli_year:yup.array(yup.number().required())
-}).required()
+
+
+    gata_no:yup.string().required(),
+    area:yup.number().required(),
+    bhaumik_year:yup.number().required()
+
+}))}).required()
 const mycolumns = [
     { id: 'form',label: 'Previous Values',minWidth: 10, align: 'center', format: (value) => value.toString(),},
    // { id: 'area',label: 'Area',minWidth: 10, align: 'center', format: (value) => value.toString(),},
     //{ id: 'bhaumik_year',label: 'Fasli Year',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 
 ];
-const query = 'query a($filter:String!){gata_by_filter(filter:$filter){gata_no area bhaumik_year}}'
+const query = 'query a($filter:String!){gata_by_filter(filter:$filter){id gata_no area bhaumik_year}}'
 const defaultValues = {gata_no:'', area:0,bhaumik_year:1423}
 export function AddGataForm (props)
 {
-    const newForm = useForm()
+    const newForm = useForm({resolver:yupResolver(yupSchema)})
     const [khata_no,setKhataNo] = useState("")
     function fn1(e) {
         console.log("khata_no", e.target.value)
@@ -60,8 +65,8 @@ export function DataEntryForKhata({khata_no, newForm}) {
             khatauni_id: localStorage.khatauni_id,
             khata_no: khata_no
         })
-    },'gata_by_filter', khata_no)
-    console.log("myitems", items)
+    },'gata_by_filter')
+   // console.log("myitems", items)
 
    // return (<p>Hi</p>)
     return (<><DisplayGatas items={items} newForm={newForm}/></>)
@@ -70,18 +75,21 @@ export function DataEntryForKhata({khata_no, newForm}) {
 export function DisplayGatas({items, newForm}){
 
 
-    const fieldArray = useFieldArray({control: newForm.control, name: 'gatas'})
-    console.log("newitems", items)
+    const fieldArray = useFieldArray({control: newForm.control, name: 'gatas', keyName:'code'})
+    //console.log("newitems", items)
 
     useEffect (()=>
     {
-        console.log("running useEffect", items)
+       // console.log("running useEffect", items)
          fieldArray.replace(items)
+        return ()=>{
+             fieldArray.remove()
+        }
         //items.map((item,i)=>{fieldArray.append(item)})
-    },[items])
+    },[JSON.stringify(items)])
 
     const fn1 = (e)=>{
-        fieldArray.append({'gata_no':'', 'area':0,bhaumik_year:1432})
+        fieldArray.append({id:'','gata_no':'', 'area':0,bhaumik_year:1432})
 
     }
     const removeElement = (e)=>{
@@ -89,20 +97,27 @@ export function DisplayGatas({items, newForm}){
         fieldArray.remove(indexToBeRemoved)
 
     }
+    const onSubmit = (data) => {
+       // console.log(newForm.formState.errors)
+
+        console.log(data)
+    }
     const showValues = (e) => {
+        console.log(newForm.formState.errors)
         console.log(newForm.watch('gatas'))
     }
-    console.log("rerendered")
+   // console.log("rerendered")
     const fieldInfo = {
+        id:{ label: 'ID', pk:true,required: false, defaultValue: ''},
     gata_no:{ label: 'Gata No', required: true, defaultValue: defaultValues['gata_no']},
     area:{label: 'Area', required: true, defaultValue: defaultValues['area']},
     bhaumik_year:{ label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
     }
-    console.log(fieldArray.fields)
     return (
+        <form onSubmit={newForm.handleSubmit(onSubmit)}>
          <Stack direction={"column"}>
 
-             <Stack direction={"row"}> <Button onClick={fn1}>Add Gata</Button><Button onClick={showValues}>Show Values</Button></Stack>
+             <Stack direction={"row"}> <Button onClick={fn1}>Add Gata</Button><Button onClick={showValues}>Show Values</Button><Button type={"submit"}>Submit</Button></Stack>
              {fieldArray.fields.map((value,index1) => {
 
                  console.log("I am here", index1)
@@ -114,6 +129,7 @@ export function DisplayGatas({items, newForm}){
              })}
 
          </Stack>
+        </form>
     )
 }
 export function GataSingleForm({index, newForm, defaultValues})

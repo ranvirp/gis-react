@@ -1,8 +1,8 @@
 import {Controller} from "react-hook-form";
 import React from "react";
 import { useController, useForm } from "react-hook-form";
-import {Box} from "@material-ui/core";
-import {Typography} from "@mui/material";
+import {Typography, Box} from "@mui/material";
+import {ErrorMessage} from "@hookform/error-message";
 const errorStyles = {
 
     border: 1,
@@ -34,6 +34,7 @@ export function ReactHookFormInput(props){
     />)
 }
 export function ReactHookFormControlledInput(props){
+   // console.log("name",props.name)
     return ( <Controller
         name={props.name}
         control={props.control}
@@ -46,7 +47,11 @@ export function ReactHookFormControlledInput(props){
                 {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{const r = props.onChange?props.onChange(e):true;onChange(e)},
 
                 })}
-
+                {
+                 // <Box hidden={!eval("errors." + props.name.replace("[", "?.["))}><Typography
+                   //    sx={{color: 'error.main'}}>{eval("errors." + props.name.replace("[", "?.["))?.message}</Typography></Box>
+                }
+                <ErrorMessage errors={errors} name={props.name}/>
 
             </>
 
