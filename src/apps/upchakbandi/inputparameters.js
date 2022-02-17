@@ -51,6 +51,7 @@ export function getInputParameters(component, input)
     return x
 }
 var defaultComponents = {}
+defaultComponents.village = <Villagedropdown/>
 defaultComponents.fasli_year = <FasliYearForm/>
 defaultComponents.bhaumik_year = <FasliYearForm/>
 defaultComponents.type_of_khatauni = <KhatauniTypeForm/>
@@ -58,7 +59,7 @@ defaultComponents.category = <LandCategoryDropdown/>
 defaultComponents.khatauni = <KhatauniDropdown/>
 defaultComponents.relationship = <RelativesDropdown/>
 defaultComponents.gender = <GendersDropdown/>
-defaultComponents.date_of_petition =       <TextField
+defaultComponents.date_of_4notification = defaultComponents.date_of_petition =       <TextField
 
     type="date"
     defaultValue="2017-05-24"

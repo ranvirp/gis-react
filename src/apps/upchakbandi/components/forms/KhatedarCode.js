@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import {Stack, TextField} from "@mui/material";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../settings";
 export function KhatedarCodeForm (props)
 {
     const [state,setState] = React.useState({val:'',id:'',name:''})
+    useEffect(
+        ()=>{
+            const  value =  fetchData(props.defaultValue ?? '')
+
+            setState({...state, name:value.name, id:value.id})
+            },[]
+    )
      async function fetchData(value) {
         const query = 'query a($filter:String){farmer_by_filter(filter:$filter){khatedar_code name relationship relative_name address}}'
         const q = {}
@@ -33,7 +40,7 @@ export function KhatedarCodeForm (props)
     }
     return (
         <Stack direction={"row"}>
-        <TextField  {...props} onChange={fn}  />
+        <TextField  {...props}  onChange={fn}  />
             <TextField  key={state.name} value={state.name} size={100}/>
         </Stack>
     )

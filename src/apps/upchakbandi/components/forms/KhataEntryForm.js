@@ -60,7 +60,7 @@ export function AddGataForm (props)
 export function DataEntryForKhata({khata_no, newForm}) {
 
 
-    const items = useGraphQlQuery(query, {
+    const {items} = useGraphQlQuery(query, {
         filter: JSON.stringify({
             khatauni_id: localStorage.khatauni_id,
             khata_no: khata_no
@@ -70,7 +70,7 @@ export function DataEntryForKhata({khata_no, newForm}) {
 
    // return (<p>Hi</p>)
     return (<><DisplayGatas items={items} newForm={newForm}/></>)
-    return (<DisplayGatas items={items}/>)
+
 }
 export function DisplayGatas({items, newForm}){
 
