@@ -59,7 +59,7 @@ export function AddGataMapForm (props)
         console.log("New Gata_no", e.target.value)
         setNewGataNo(e.target.value)
     }
-    return (<><ReactHookFormControlledInput comp={<TextField/>} label="New Gata No" name={"new_gata_no"} onChange={fn1} control={newForm.control}/>
+    return (<><ReactHookFormControlledInput comp={<TextField/>} label="New Gata No" name={"new_gata_no"} onChange={fn1} form={newForm}/>
    <DataEntryForGataMap new_gata_no={new_gata_no} newForm={newForm}/></> )
 }
 export function DataEntryForGataMap({new_gata_no, newForm}) {

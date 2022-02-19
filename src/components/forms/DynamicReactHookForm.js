@@ -27,11 +27,20 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
         fieldArray.append(defaultValues)
 
     }
+    /*
     const removeElement = (e)=>{
         const indexToBeRemoved = e.target.getAttribute('value')
         fieldArray.remove(indexToBeRemoved)
 
     }
+    const markForDeletion = (e)=>{
+        const indexToBeDeleted = e.target.getAttribute('value')
+        const prevValue = fieldArray.fields[indexToBeDeleted]
+        prevValue.delete = 1
+        fieldArray.update(indexToBeDeleted, prevValue)
+
+    }
+    */
     const onSubmit = (data) => {
          console.log(newForm.formState.errors)
 
@@ -51,7 +60,17 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
 
                     props.debug && console.log("I am here", index1)
                     return <>
-                        <Stack  direction={"row"}> <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value,'fieldArray':fieldArray,  form:newForm,index:index1, componentRootName:`${componentName}[${index1}]`}}/><Button value={index1} onClick={removeElement}>Remove</Button></Stack>
+                        <Stack  direction={"row"} sx={{backgroundColor:(value.delete === 1)?'red':''}}>
+                            {props.beforeComponent?.(value)}
+                            <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value,'fieldArray':fieldArray,  form:newForm,index:index1, componentRootName:`${componentName}[${index1}]`}}/>
+                            {
+                               // <Button value={index1} onClick={removeElement}>Remove</Button>
+                                //<Button value={index1} onClick={markForDeletion}>Delete</Button>
+                            }
+
+
+                        {props.afterComponent?.(value)}
+                        </Stack>
                     </>
 
                     // return <h2>Hello</h2>

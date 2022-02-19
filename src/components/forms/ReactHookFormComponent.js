@@ -1,4 +1,4 @@
-import {Stack, TextField} from "@mui/material";
+import {Stack, TextField, Button} from "@mui/material";
 import React, {useEffect, useRef} from "react";
 import {ReactHookFormControlledInput, ReactHookFormInput} from "./ReactHookFormInput";
 import {getButton} from "../../apps/upchakbandi/inputparameters";
@@ -7,7 +7,6 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../apps/upchakbandi/settings";
 import * as yup from "yup"
-import Button from "@material-ui/core/Button";
 export function ReactHookFormObject(defaultProps, defaultComponents, formFields)
 {
     this.defaultComponents = defaultComponents
@@ -18,6 +17,26 @@ export function ReactHookFormObject(defaultProps, defaultComponents, formFields)
 export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fieldArray,form,index, componentRootName,debug=false, ...props}) => {
 
 //console.log('fields', fields, fieldInfo)
+    const removeElement = (e)=>{
+        fieldArray.remove(index)
+
+    }
+    let pk = false
+    const markForDeletion = (e)=>{
+        let deleteText = 'Delete'
+        var deleteValue = e.target.getAttribute('delete')
+        if (deleteValue == 1) deleteValue = 0
+        else if (deleteValue == 0) deleteValue = 1
+        if (deleteValue === 1) deleteText = 'UnDelete'
+
+        const prevValue = fieldArray.fields[index]
+        e.target.setAttribute('delete', deleteValue)
+        e.target.textContent = e.target.innerText = deleteText
+
+        prevValue.delete = deleteValue
+        fieldArray.update(index, prevValue)
+
+    }
 
     function doFields(fields){
 
@@ -35,8 +54,10 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
                 myProps.onChange = field.onChange
                 myProps.label = field.label
                 myProps.defaultValue = fields[value1]
-                if (field.pk)
+                if (field.pk) {
                     myProps.comp = <TextField type={"hidden"}/>
+                    if (fields[value1]) pk = true
+                }
                 // console.log(value.comp, formObject.defaultComponents[value.id])
                 //const size=value.size??12
                 // value.required = props.formObject.yupSchema.fields[value.id]?.exclusiveTests.required
@@ -65,6 +86,10 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
     return (
         <Stack direction={props.direction??"row"}>
             {doFields(fields)}
+            { !pk && <Button  onClick={removeElement}>Remove</Button>} 
+
+            { pk && <Button delete={0} onClick={markForDeletion}>  Delete</Button>}
+
         </Stack>)}
 export const FieldArrayReactHookFormComponent = ({formObject,control,errors, componentRootName, defaultValues={},debug=false, ...props}) => {
 
