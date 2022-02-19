@@ -1,12 +1,7 @@
-import React, {cloneElement, useEffect, useState} from "react";
-import PropTypes from 'prop-types'
-import * as yup from "yup"
-import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
-import {graphqlurl} from "../../apps/upchakbandi/settings";
+import React from "react";
+
 import StickyHeadTable from "../tables/stickyheadtable";
-import {FormObject, GenericCreateUpdateForm} from "../forms/GenericCreateForm";
-import BasicTable from "../tables/tables";
-import {Stack} from "@mui/material";
+
 /*
     const PetitionQuery = `query a {all_petition { id khatauni{ id village{ vname  village_code_census  vname_eng  pname  flg_chakbandi  flg_survey  pargana_code_new  tehsil_code{ district_code{ dname  district_code_census  dname_eng }  tname  tehsil_code_census  tname_eng }  district_code{ dname  district_code_census  dname_eng } }  fasli_year  type_of_khatauni  no_of_khatas  area  status }  date_of_petition  name_of_petitioner  case_no }  }`
 const PetitionColumns = [

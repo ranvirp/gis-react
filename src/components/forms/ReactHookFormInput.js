@@ -1,7 +1,5 @@
 import {Controller} from "react-hook-form";
 import React from "react";
-import { useController, useForm } from "react-hook-form";
-import {Typography, Box} from "@mui/material";
 import {ErrorMessage} from "@hookform/error-message";
 const errorStyles = {
 
@@ -21,13 +19,15 @@ export function ReactHookFormInput(props){
                      formState:{errors}}) => (
 
             <>
-                {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{const r = props.onChange?props.onChange(e):true;onChange(e)},
+                {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{ if (props.onChange) props.onChange(e);onChange(e)},
 
                     sx:errors[props.id]?errorStyles:{}
                 })}
-
-                <Box hidden={!eval("errors?." + props.id.replace("[","?.["))}><Typography sx={{color:'error.main'}}>{eval("errors?." + props.id.replace("[","?.["))?.message}</Typography></Box>
-
+                 <ErrorMessage errors={errors} name={props.id}/>
+                {
+                 //   <Box hidden={!eval("errors?." + props.id.replace("[", "?.["))}><Typography
+                   //     sx={{color: 'error.main'}}>{eval("errors?." + props.id.replace("[", "?.["))?.message}</Typography></Box>
+                }
             </>
 
         )}
@@ -44,7 +44,7 @@ export function ReactHookFormControlledInput({name,form,fieldArray,componentRoot
                      formState}) => (
 
             <>
-                {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{const r = props.onChange?props.onChange(e):true;onChange(e)},
+                {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{if (props.onChange) props.onChange(e);onChange(e)},
                     fieldArray:fieldArray,componentRootName:componentRootName,form:form,index:index
 
                 })}

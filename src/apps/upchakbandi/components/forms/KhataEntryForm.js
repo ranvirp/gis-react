@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useRef, useState} from "react"
+import React, {useEffect,useState} from "react"
 import * as yup from 'yup'
 import defaultComponents, {defaultProps, getButton} from "../../inputparameters";
 import {
@@ -9,25 +9,19 @@ import {
     ReactHookFormObject
 } from "../../../../components/forms/ReactHookFormComponent";
 import {Stack, TextField} from "@mui/material";
-import {control} from "leaflet/dist/leaflet-src.esm";
 import Button from "@material-ui/core/Button";
 import {GenericReport, ReportObject} from "../../../../components/reports/GenericReport";
 import BasicTable from "../../../../components/tables/tables";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../settings";
 import {useFieldArray, useForm} from "react-hook-form";
-import { v4 as uuidv4 } from 'uuid';
 import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
 import {ReactHookFormControlledInput} from "../../../../components/forms/ReactHookFormInput";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {DynamicReactHookForm} from "../../../../components/forms/DynamicReactHookForm";
 
 
-const fields2 = [
-   // {id:'gata_no[0]',label:'Gata No'},
-   // {id:'area[0]',label:'Area'},
 
-]
 const yupSchema = yup.object({
     khata_no:yup.number().integer().required(),
     gatas:yup.array(yup.object({
@@ -53,10 +47,7 @@ const fieldInfo = {
     area:{label: 'Area', required: true, defaultValue: defaultValues['area']},
     bhaumik_year:{ label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
 }
-function defaultSubmitFn(data)
-{
-    console.log(data)
-}
+
 export function AddGataForm (props)
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
@@ -65,6 +56,7 @@ export function AddGataForm (props)
         console.log("khata_no", e.target.value)
         setKhataNo(e.target.value)
     }
+
     return (<><ReactHookFormControlledInput comp={<TextField/>} label="Khata No" name={"khata_no"} onChange={fn1} form={newForm}/>
    <DataEntryForKhata khata_no={khata_no} newForm={newForm}/></> )
 }
@@ -80,7 +72,27 @@ export function DataEntryForKhata({khata_no, newForm}) {
    // console.log("myitems", items)
 
    // return (<p>Hi</p>)
-    return (<><DynamicReactHookForm debug={true} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"khatedars"} newForm={newForm}/></>)
+    async function defaultSubmitFn(data)
+    {
+        const mutation = `mutation a($type:String!,$obj_json:String!){
+    mutate_multiple_objects(type:$type,obj_json:$obj_json){
+        ok
+        errormessage
+        obj_errors
+        created_obj_ids updated_obj_ids deleted_obj_ids
+    }
+}`
+        const variables = {}
+        variables.type = 'gatasinkhata'
+        data.khatauni_id = localStorage.khatauni_id
+        data.chakbandi_id = localStorage.chakbandi_id
+        variables.obj_json = JSON.stringify(data)
+        const results = await postGraphSqlQuery(graphqlurl, mutation, variables)
+        console.log(results)
+        newForm.reset()
+
+    }
+    return (<><DynamicReactHookForm debug={true} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"gatas"} newForm={newForm}/></>)
 
 
 

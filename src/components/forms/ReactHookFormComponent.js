@@ -25,8 +25,8 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
     const markForDeletion = (e)=>{
         let deleteText = 'Delete'
         var deleteValue = e.target.getAttribute('delete')
-        if (deleteValue == 1) deleteValue = 0
-        else if (deleteValue == 0) deleteValue = 1
+        if (deleteValue === 1) deleteValue = 0
+        else if (deleteValue === 0) deleteValue = 1
         if (deleteValue === 1) deleteText = 'UnDelete'
 
         const prevValue = fieldArray.fields[index]
@@ -86,7 +86,7 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
     return (
         <Stack direction={props.direction??"row"}>
             {doFields(fields)}
-            { !pk && <Button  onClick={removeElement}>Remove</Button>} 
+            { !pk && <Button  onClick={removeElement}>Remove</Button>}
 
             { pk && <Button delete={0} onClick={markForDeletion}>  Delete</Button>}
 
@@ -94,18 +94,18 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
 export const FieldArrayReactHookFormComponent = ({formObject,control,errors, componentRootName, defaultValues={},debug=false, ...props}) => {
 
     const mounted = useRef();
-    const {remove,append,replace,fields} = useFieldArray({control,name:componentRootName})
+    const {replace,fields} = useFieldArray({control,name:componentRootName})
     useEffect(
         ()=>{
             if (!mounted.current) {
-                console.log("mounting")
+                //console.log("mounting")
                 replace(formObject.formFields)
             }
             return () => {
-                console.log("unmounting")
+                //console.log("unmounting")
                 replace(null)
             }
-        },[formObject]
+        },[formObject.formFields,replace]
     )
 
     function doFields(fields){
@@ -148,16 +148,7 @@ export const FieldArrayReactHookFormComponent = ({formObject,control,errors, com
         </Stack>)}
 export const ReactHookFormComponent = ({formObject,control, errors,reset,setValue, componentRootName, defaultValues={},debug=false, ...props}) => {
 
-    const mounted = useRef();
-    const {remove,append} = useFieldArray({control,name:'test'})
-    useEffect(
-        ()=>{
-            if (!mounted.current) {
-                //remove()
-               // append(formObject.formFields)
-            }
-        }
-    )
+
 
     return (
     <Stack direction={props.direction??"column"}>{formObject.formFields.map((value)=> {
