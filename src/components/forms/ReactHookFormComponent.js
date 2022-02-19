@@ -15,13 +15,13 @@ export function ReactHookFormObject(defaultProps, defaultComponents, formFields)
     this.formFields = formFields
 
 }
-export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, control, componentRootName,debug=false, ...props}) => {
+export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fieldArray,form,index, componentRootName,debug=false, ...props}) => {
 
 //console.log('fields', fields, fieldInfo)
 
     function doFields(fields){
 
-        return Object.keys(fieldInfo).map((value1,index)=> {
+        return Object.keys(fieldInfo).map((value1,index1)=> {
                 const field = fieldInfo[value1]
 
 
@@ -45,11 +45,17 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, cont
                 //myProps.defaultValue = field.defaultValue
 
 
+
                 return React.cloneElement(<ReactHookFormControlledInput/>, {
+                    ...myProps,
+
+                    form: form,
+                    fieldArray:fieldArray,
+                    componentRootName:componentRootName,
+                    index:index,
 
 
-                    control: control,
-                    ...myProps
+
 
                 })
 

@@ -2,15 +2,21 @@ import React, {useEffect, useRef} from "react";
 import {Stack, TextField} from "@mui/material";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../settings";
+
+
 export function KhatedarCodeForm (props)
 {
     const [state,setState] = React.useState({val:'',id:'',name:''})
+
     useEffect(
         ()=>{
-            const  value =  fetchData(props.defaultValue ?? '')
+            console.log('khatedar code useeffect')
+            if (props.defaultValue?.length > 0) {
+                const value = fetchData(props.defaultValue)
 
-            setState({...state, name:value.name, id:value.id})
-            },[]
+                setState({...state, name: value.name, id: value.id})
+            }
+            },[props.defaultValue]
     )
      async function fetchData(value) {
         const query = 'query a($filter:String){farmer_by_filter(filter:$filter){khatedar_code name relationship relative_name address}}'
@@ -38,10 +44,14 @@ export function KhatedarCodeForm (props)
         props.onChange(e)
 
     }
+    console.log('rerendered')
     return (
+        <Stack>
         <Stack direction={"row"}>
         <TextField  {...props}  onChange={fn}  />
-            <TextField  key={state.name} value={state.name} size={100}/>
+            <TextField  disabled key={state.name} value={state.name} width={300}/>
+        </Stack>
+
         </Stack>
     )
 }

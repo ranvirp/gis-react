@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import StickyHeadTable from "../components/tables/stickyheadtable";
 import FetchFromJsonComponent from "../components/fetcher/fetchFromJson";
 const columns = [
@@ -29,10 +29,7 @@ const columns = [
 export default class  DistrictList extends React.Component
 {
 
-    constructor(props) {
-        super(props);
 
-    }
     render() {
         const mainC = StickyHeadTable;
 

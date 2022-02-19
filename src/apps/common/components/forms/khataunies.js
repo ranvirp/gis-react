@@ -30,7 +30,7 @@ const  KhatauniDropdown =  (props) => {
     useEffect( ()=> {
        // console.log('items being loaded')
         fetchData()
-    },[])
+    },[JSON.stringify(query), JSON.stringify(props.variables)])
     return (
         <Dropdown {...props} values={items} onChange={props.onChange} id={props.id} onBlur={fetchData}
                   name={props.name} label={props.label} required={props.required}/>

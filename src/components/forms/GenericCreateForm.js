@@ -6,9 +6,9 @@ import {ReactHookFormInput} from "./ReactHookFormInput";
 import {KhataFormComponent} from "../../apps/upchakbandi/generated/inputformcomponents";
 import {KhataYupSchema} from "../../apps/upvillages/functions/functionres";
 import {getButton} from "../../apps/upchakbandi/inputparameters";
-export function FormField(id, label,comp=null,size=12)
+export function FormField(id, label,comp=null,xs=12,sx={})
 {
-   return {id, label,comp,size}
+   return {id, label,comp,xs,sx}
 }
 export function FormObject(defaultProps, defaultComponents, formfields,  yupSchema, mutationQuery,afterSubmitFn=null, variablesFn=null, debug=false)
 {
@@ -23,11 +23,11 @@ export function FormObject(defaultProps, defaultComponents, formfields,  yupSche
     this.variablesFn = variablesFn ?? varsFn
     this.debug = debug
 }
-
+const deffn = ()=>{}
 export function GenericCreateUpdateForm({formObject, ...props})
 {
 
-    const deffn = ()=>{}
+
    // console.log(props)
     const afterSubmitFn = formObject.afterSubmitFn ?? deffn
     const debug = formObject.debug ?? false
@@ -41,10 +41,10 @@ export function GenericCreateUpdateForm({formObject, ...props})
         formObject.formfields = formObject.formfields?.filter(item=>(item.id!=props.pk))
 
     const FormComponent = (props) => {return (
-        <Stack direction={direction}>{formObject.formfields.map((value)=> {
+        <Grid container>{formObject.formfields.map((value)=> {
             value.comp = value.comp ?? formObject.defaultComponents[value.id] ?? <TextField/>
            // console.log(value.comp, formObject.defaultComponents[value.id])
-            const size=value.size??12
+
             value.required = formObject.yupSchema.fields[value.id]?.exclusiveTests.required
             const otherprops = {...formObject.defaultProps[value.id],...props[value.id] }
             if (defaultValues[value.id]) value.defaultValue = defaultValues[value.id]
@@ -54,10 +54,10 @@ export function GenericCreateUpdateForm({formObject, ...props})
 
                 value.comp = debug?<input />:<input type={"hidden"}/>
 
-                return React.cloneElement(<ReactHookFormInput />, { ...formObject.defaultProps[value.id]??{},...value, ...otherprops, ...props})
+            return <Grid item xs={value.xs} sx={value.sx}>{React.cloneElement(<ReactHookFormInput />, { ...formObject.defaultProps[value.id]??{},...value, ...otherprops, ...props})}</Grid>
 
 
-        })} {getButton()} </Stack>)}
+        })} {getButton()} </Grid>)}
 
 
 

@@ -11,7 +11,7 @@ import Stack from "@mui/material/Stack";
 export function GenericReactHookForm(props)
 {
     const defaultProps = {debug:false, formProps:{}, formElementsProps:{}}
-    const [state, setState] = React.useState({reset:false, fields:props.defaultValues??{} })
+    const [state, setState] = React.useState({reset:false, fields:props.defaultValues??{},errors:[],data:{},result:[] })
 
     props = {defaultProps, ...props}
    if (props.debug === 'undefined') props.debug = false
@@ -21,6 +21,10 @@ export function GenericReactHookForm(props)
     });
     useEffect(()=>{
         if (state.reset) {reset({});  }
+        return () => {
+            if (props.afterSubmitFn)
+                props.afterSubmitFn(state.data,state.result)
+        }
 
     },[state.reset])
 
@@ -30,12 +34,11 @@ export function GenericReactHookForm(props)
         console.log(data)
         const result = await postGraphSqlQuery(graphqlurl, props.mutationQuery,  props.variables(data))
         props.debug && console.log(result)
-        if (props.afterSubmitFn != 'undefined')
-              props.afterSubmitFn(data, result)
+
         //console.log(result)
-        if (!result.errors) setState({...state,reset:true, fields:{}})
-        else setState({...state,fields:data})
-        reset({})
+        if (!result.errors) setState({...state,reset:true, fields:{}, errors:[],data:data,result:result})
+        else setState({...state,reset:false,fields:data, errors:result.errors,data:data,result: {data:{}}})
+       // reset({})
 
     }
     return (
@@ -58,7 +61,7 @@ export function GenericReactHookForm(props)
                     <form onSubmit={handleSubmit(onSubmit)} {...props.formProps??{}}>
 
                         {React.cloneElement(props.formComponent, {...props.formComponentProps, control:control, errors:errors,defaultValues:state.fields}) }
-
+                        <p>{(state.errors.length > 0) && JSON.stringify(state.errors, null, '\t')}</p>
                     </form>
                 </Stack>
     )

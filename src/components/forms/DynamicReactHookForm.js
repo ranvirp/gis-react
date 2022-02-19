@@ -51,7 +51,7 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
 
                     props.debug && console.log("I am here", index1)
                     return <>
-                        <Stack  direction={"row"}> <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value, control:newForm.control, componentRootName:`${componentName}[${index1}]`}}/><Button value={index1} onClick={removeElement}>Remove</Button></Stack>
+                        <Stack  direction={"row"}> <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value,'fieldArray':fieldArray,  form:newForm,index:index1, componentRootName:`${componentName}[${index1}]`}}/><Button value={index1} onClick={removeElement}>Remove</Button></Stack>
                     </>
 
                     // return <h2>Hello</h2>

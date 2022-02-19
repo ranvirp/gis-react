@@ -20,6 +20,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
 import {ReactHookFormControlledInput} from "../../../../components/forms/ReactHookFormInput";
 import {yupResolver} from "@hookform/resolvers/yup";
+import {DynamicReactHookForm} from "../../../../components/forms/DynamicReactHookForm";
 
 
 const fields2 = [
@@ -46,6 +47,16 @@ const mycolumns = [
 ];
 const query = 'query a($filter:String!){gata_by_filter(filter:$filter){id gata_no area bhaumik_year}}'
 const defaultValues = {gata_no:'', area:0,bhaumik_year:1423}
+const fieldInfo = {
+    id:{ label: 'ID', pk:true,required: false, defaultValue: ''},
+    gata_no:{ label: 'Gata No', required: true, defaultValue: defaultValues['gata_no']},
+    area:{label: 'Area', required: true, defaultValue: defaultValues['area']},
+    bhaumik_year:{ label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
+}
+function defaultSubmitFn(data)
+{
+    console.log(data)
+}
 export function AddGataForm (props)
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
@@ -54,7 +65,7 @@ export function AddGataForm (props)
         console.log("khata_no", e.target.value)
         setKhataNo(e.target.value)
     }
-    return (<><ReactHookFormControlledInput comp={<TextField/>} label="Khata No" name={"khata_no"} onChange={fn1} control={newForm.control}/>
+    return (<><ReactHookFormControlledInput comp={<TextField/>} label="Khata No" name={"khata_no"} onChange={fn1} form={newForm}/>
    <DataEntryForKhata khata_no={khata_no} newForm={newForm}/></> )
 }
 export function DataEntryForKhata({khata_no, newForm}) {
@@ -69,7 +80,9 @@ export function DataEntryForKhata({khata_no, newForm}) {
    // console.log("myitems", items)
 
    // return (<p>Hi</p>)
-    return (<><DisplayGatas items={items} newForm={newForm}/></>)
+    return (<><DynamicReactHookForm debug={true} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"khatedars"} newForm={newForm}/></>)
+
+
 
 }
 export function DisplayGatas({items, newForm}){
