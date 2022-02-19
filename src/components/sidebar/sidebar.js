@@ -1,19 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React, { useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+import {List,Divider, Typography, Grid } from '@mui/material';
 
 import LoginFormSideBarItem from "./sidebar_items/LoginFormSideBarItem";
-import DistrictList from "../../reports/districts";
-import MainComponent from "../../Village"
+
 import SignUpFormSideBarItem from "./sidebar_items/SignUpFormSideBarItem";
 import LogoutSideBarItem from "./sidebar_items/LogoutSideBarItem";
 
 import ErrorBoundary from "antd/es/alert/ErrorBoundary";
-import Typography from "@mui/material/Typography";
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,6 +39,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 //TODO: replace this with context or something
 export var globalState = {}
+function dateToString(dateString)
+{
+    const d = new Date(dateString)
+    return d.getDay() + '-' + (d.getMonth() + 1)+ '-' + d.getFullYear()
+
+}
 export default function PermanentDrawerLeft(props) {
     const classes = useStyles();
     const context = props.context
@@ -102,8 +105,16 @@ export default function PermanentDrawerLeft(props) {
             <ErrorBoundary>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                
+                <Grid container xs={12}>
+                    <Grid item xs={6}>राजस्व ग्राम का नाम</Grid><Grid item xs={2}><Typography>{localStorage.chakbandi_village_name}</Typography></Grid>
+                    <Grid item xs={4}></Grid>
+                    <Grid item xs={6}>अधिसूचना का दिनांक </Grid><Grid item xs={2}>  <Typography> { dateToString(localStorage.chakbandi_date_of_4notification)}</Typography></Grid>
+                    <Grid item xs={4}></Grid>
 
+                </Grid>
+
+                
+<Divider/>
                 {state.comp!=null && React.cloneElement(state.comp, state.props)}
 
             </main>

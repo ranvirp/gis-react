@@ -4,7 +4,7 @@ import {TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper}
 export default function BasicTable(props) {
     return (
         <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={props.sx} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         {props.columns.map((value)=>{

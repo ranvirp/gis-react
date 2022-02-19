@@ -13,7 +13,7 @@ renderMethod(
 
       {
        //   <AppWithoutLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
-     //    <ComponentTester/>
+      //  <ComponentTester/>
       <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       }
   </React.StrictMode>,

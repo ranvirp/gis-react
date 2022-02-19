@@ -92,7 +92,7 @@ export function DataEntryForKhata({khata_no, newForm}) {
         newForm.reset()
 
     }
-    return (<><DynamicReactHookForm debug={true} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"gatas"} newForm={newForm}/></>)
+    return (<><DynamicReactHookForm debug={false} addTitle={"Add Gata"} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"gatas"} newForm={newForm}/></>)
 
 
 

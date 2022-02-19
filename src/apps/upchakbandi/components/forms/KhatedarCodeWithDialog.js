@@ -1,14 +1,10 @@
-import React, {createRef, useEffect, useRef} from "react";
-import {Stack, TextField} from "@mui/material";
+import React, { useEffect, } from "react";
+import {Stack, TextField, Button, Box} from "@mui/material";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../settings";
 import {FullScreenDialog} from "../../../../components/dialogs/MyDialog";
-import Button from "@material-ui/core/Button";
 import {FarmerCreateUpdateForm} from "./FarmerEntryForm";
-function onClose()
-{
-    console.log("close dialog")
-}
+
 function OpenFarmerDialog(props)
 {
     console.log(props.open)
@@ -79,13 +75,18 @@ export function KhatedarCodeWithDialogForm (props)
 
     }
     return (
-        <Stack>
-        <Stack direction={"row"}>
-        <TextField  {...props}   onChange={fn}  />
-            <TextField  disabled key={state.name} value={state.name} width={300}/>
-        </Stack>
+        <Box sx={{width:"100%"}}>
+        <Box sx={{display:"flex", flexDirection:"row"}}>
+            <Box sx={{width:"40%"}}>
+        <TextField  {...props}   onChange={fn} size="20px" />
+        </Box>
+            <Box sx={{width:"60%"}}>
+            <TextField  fullWidth disabled key={state.name} value={state.name} size={"100px"}/>
+            </Box>
+        </Box>
             <OpenFarmerDialog open={dialogOpen} afterSubmitFn={afterSubmitFn}/>
             <Button onClick={setOpen}>Create New Farmer</Button>
-        </Stack>
+
+        </Box>
     )
 }

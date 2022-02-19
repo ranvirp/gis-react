@@ -68,6 +68,6 @@ export function AddKhatedarForm (props)
     // console.log("myitems", items)
 
     // return (<p>Hi</p>)
-    return (<><DynamicReactHookForm debug={true} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"khatedars"} newForm={newForm}/></>)
+    return (<><DynamicReactHookForm debug={false} addTitle={"Add Khatedar"} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"khatedars"} newForm={newForm}/></>)
 
 }

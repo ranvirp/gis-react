@@ -55,7 +55,7 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
         <form onSubmit={newForm.handleSubmit(onSubmit)}>
             <Stack direction={"column"}>
 
-                <Stack direction={"row"}> <Button onClick={fn1}>Add Gata</Button>{props.debug && <Button onClick={showValues}>Show Values</Button>}<Button type={"submit"}>Submit</Button></Stack>
+                <Stack direction={"row"}> <Button onClick={fn1}>{props.addTitle}</Button>{props.debug && <Button onClick={showValues}>Show Values</Button>}<Button type={"submit"}>Submit</Button></Stack>
                 {fieldArray.fields.map((value,index1) => {
 
                     //props.debug && console.log("I am here", index1)

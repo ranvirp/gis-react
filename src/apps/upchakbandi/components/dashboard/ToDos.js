@@ -1,7 +1,7 @@
 import React from "react";
 import {ClickableItem} from "../../../../components/clickableitem";
 import {ChakbandiCreateUpdateForm} from "../../generated/forms/chakbandi";
-import {AddGataForm} from "../forms/KhataEntryForm";
+import {AddGataForm} from "../forms/GataEntryForm";
 import {FarmerCreateUpdateForm} from "../forms/FarmerEntryForm";
 import {AddKhatedarForm} from "../forms/AddKhatedarForm";
 

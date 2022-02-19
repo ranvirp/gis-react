@@ -16,7 +16,9 @@ import {Claims} from "../apps/upchakbandi/components/forms/claims";
 import {ReactHookFormInput} from "./forms/ReactHookFormInput";
 import {KhatedarCodeForm} from "../apps/upchakbandi/components/forms/KhatedarCode";
 import {useForm} from "react-hook-form";
-import {KhataEntryForm} from "../apps/upchakbandi/components/forms/KhataEntryForm";
+import {KhataEntryForm} from "../apps/upchakbandi/components/forms/GataEntryForm";
+import {AllowedTasks} from "../apps/upchakbandi/components/dashboard/AllowedTasks";
+import {KhatauniDataEntry} from "../apps/upchakbandi/components/forms/KhatauniDataEntry";
 const fn = (value) => {value.khatauni = value.khatauni.id}
 export function ComponentTester(props)
 {
@@ -42,8 +44,10 @@ export function ComponentTester(props)
                 //<Claims/>
                // <ReactHookFormInput comp={<KhatedarCodeForm/>} control={control} errors={errors}/>
                // <KhatedarCodeForm/>
-                <KhataEntryForm/>
+               // <KhataEntryForm/>
                 //<PetitionWithClaimsFormAndAddClaimButton id={"34af786c-fffa-4553-88b5-be8ed3b38f28"}/>
+               // <AllowedTasks/>
+                <KhatauniDataEntry/>
 
             }
 

@@ -11,8 +11,9 @@ import {PetitionReport} from "./functions/functionres";
 import {KhataAll, KhataWithEdit} from "./generated/reports/khata";
 import {FarmerAll} from "./generated/reports/farmer";
 import {ChooseDefaultChakbandi} from "./components/reports/chooseaChakbandi";
-import {AddGataForm, GataListForm, KhataEntryForm} from "./components/forms/KhataEntryForm";
+import {AddGataForm, GataListForm, KhataEntryForm} from "./components/forms/GataEntryForm";
 import {ToDos} from "./components/dashboard/ToDos";
+import {KhatauniDataEntry} from "./components/forms/KhatauniDataEntry";
 
 export const graphqlurl = 'http://127.0.0.1:8000/graphql'
 const defaultValue = {khatauni:localStorage.khatauni_id}
@@ -51,21 +52,9 @@ const ChakbandiSettings = ()=> {
             // Khatauni:[   <SideBarItem comp={<KhatauniCreateForm />} title='Khatauni Form' handleClick={handleClick}/>,
             //    <SideBarItem comp={KhatauniList} title='Khatauni List' handleClick={handleClick}/>,],
 
-            Khata:[
-                <SideBarItem comp={<AddGataForm khata_no={10}/>} title='Add Gata Form' handleClick={handleClick}/>,
+            'Khatauni Details':[
+                <SideBarItem comp={<KhatauniDataEntry/>} title={"Khatauni Data Entry"} handleClick={handleClick}/>,
 
-                <SideBarItem comp={<GataListForm khata_no={30}/>} title='Khata Form' handleClick={handleClick}/>,
-
-                <SideBarItem comp={<KhataWithEdit mutationQuery={khataquery} defaultValues={defaultValue}/>} title='Khata Form' handleClick={handleClick}/>,
-                <SideBarItem comp={<KhataAll fn={(val)=>{val.category=val.category.name;val.khatauni= val.khatauni.id}}/>} title='Khata List' handleClick={handleClick}/>,],
-            Gata:[   <SideBarItem comp={<GataCreateUpdateForm edit={false} debug={false}  defaultValues={defaultValue}/>} title='Gata Form' handleClick={handleClick}/>,
-                <SideBarItem comp={<GataWithEdit fn={fn} formFn={(val)=>{val.khatauni= val.khatauni.id}}/>} title='Gata List' handleClick={handleClick}/>,],
-            Farmer:[   <SideBarItem comp={FarmerCreateForm} title='Farmer Form' handleClick={handleClick}/>,
-                <SideBarItem comp={<FarmerAll fn={fn}/>} title='Farmer List' handleClick={handleClick}/>,],
-            Claim:[   <SideBarItem comp={<Claims  defaultValues={defaultValue}/>} title='claim Form' handleClick={handleClick}/>,
-               // <SideBarItem comp={<PetitionList fn={(value)=>{value.khatauni = value.khatauni.id;return value}}/>} title='Petition List' handleClick={handleClick}/>,
-                <SideBarItem comp={PetitionReport} title='Petition List' handleClick={handleClick}/>,
-               // <SideBarItem comp={MyGataForm} title='Petition List' handleClick={handleClick}/>,
 
         ],
 
