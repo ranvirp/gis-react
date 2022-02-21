@@ -1,7 +1,7 @@
-import ListItem from "@material-ui/core/ListItem";
+import ListItem from "@mui/material/ListItem";
 import React from "react";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import {ListItemIcon, ListItemText} from "@material-ui/core";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import {ListItemIcon, ListItemText} from "@mui/material";
 
 export default function LogoutSideBarItem(props) {
     const logout = 'logout';

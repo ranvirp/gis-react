@@ -6,7 +6,7 @@ import {InboxRounded} from "@mui/icons-material";
 export default function LoginFormSideBarItem(props) {
     const login = 'login';
     return (
-        <ListItem button key={login} onClick={()=> {props.handleClick(<SignIn/>)}}>
+        <ListItem button key={login} onClick={()=> {props.handleClick(<SignIn afterHandle={props.afterHandle}/>)}}>
             <ListItemIcon> <InboxRounded/> </ListItemIcon>
             <ListItemText primary='Login'/>
         </ListItem>

@@ -9,6 +9,7 @@ export function Dropdown(props)
             <InputLabel htmlFor={props.id} id={props.id + 'field-label'}>{props.label}</InputLabel>
 
             <Select
+
                 disabled={props.disabled}
 
                 labelId= {props.id + "field-label"}
@@ -17,7 +18,8 @@ export function Dropdown(props)
                 label={props.label}
                 onChange={e=>props.onChange(e)}
                 defaultValue={props.defaultValue}
-                value={props.value}
+
+
 
 
             >

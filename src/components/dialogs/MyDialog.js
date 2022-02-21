@@ -1,11 +1,11 @@
 import React from "react"
 import Slide from '@mui/material/Slide';
 import {AppBar, Dialog} from "@mui/material";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Button from "@material-ui/core/Button";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import Button from "@mui/material/Button";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
-import {Box} from "@material-ui/core";
+import {Box} from "@mui/material";
 import {Divider} from "@mui/material";
 const query = 'query a($app_id:String!){ tasks(app_id:$app_id,app_name:"chakbandi"){task_name status active}}'
 const heightOfBar = "9px"

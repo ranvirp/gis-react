@@ -10,7 +10,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {KhatedarCodeForm} from "./KhatedarCode";
 import BasicTable from "../../../../components/tables/tables";
 import {GenericTabularReport} from "../../../../components/reports/GenericTabularReport";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 
 
 const yupSchema = yup.object({

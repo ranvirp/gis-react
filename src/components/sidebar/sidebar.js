@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-
+import Drawer from '@mui/material/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
+import {createTheme, useTheme} from '@mui/material/styles';
 import {List,Divider, Typography, Grid } from '@mui/material';
 
 import LoginFormSideBarItem from "./sidebar_items/LoginFormSideBarItem";
@@ -12,6 +12,7 @@ import LogoutSideBarItem from "./sidebar_items/LogoutSideBarItem";
 
 import ErrorBoundary from "antd/es/alert/ErrorBoundary";
 const drawerWidth = 240;
+const theme = createTheme()
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex:100,
     },
     // necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
+    toolbar:  theme.mixins.toolbar,
     content: {
         flexGrow: 1,
         backgroundColor: theme.palette.background.default,
@@ -39,16 +40,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 //TODO: replace this with context or something
 export var globalState = {}
-function dateToString(dateString)
-{
-    const d = new Date(dateString)
-    return d.getDay() + '-' + (d.getMonth() + 1)+ '-' + d.getFullYear()
 
-}
 export default function PermanentDrawerLeft(props) {
-    const classes = useStyles();
-    const context = props.context
-    console.log(context)
+    const classes = useStyles(theme);
+    const user = props.user
+
 
     const [state, setState] = useState({comp:null, props:null});
 
@@ -61,7 +57,7 @@ export default function PermanentDrawerLeft(props) {
 
     var loginOrLogout = <LoginFormSideBarItem handleClick={handleClick}/>
     //loginOrLogout += <SignUpFormSideBarItem handleClick={handleClick}/>
-    if (context.authenticated == 'true') {
+    if (user.authenticated == 'true') {
         loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
     }
     //console.log(loginOrLogout)
@@ -92,10 +88,10 @@ export default function PermanentDrawerLeft(props) {
                     <Divider />
 
                     {
-                        context.auth.authenticated == true && <LogoutSideBarItem logout={context.logout} handleClick={handleClick}/>
+                        user.authenticated == true && <LogoutSideBarItem logout={user.logout} handleClick={handleClick}/>
                     }
                     {
-                        context.auth.authenticated != true && <><LoginFormSideBarItem handleClick={handleClick}/>
+                        user.authenticated != true && <><LoginFormSideBarItem handleClick={handleClick}/>
                             <SignUpFormSideBarItem handleClick={handleClick}/></>
                     }
 
@@ -105,13 +101,7 @@ export default function PermanentDrawerLeft(props) {
             <ErrorBoundary>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <Grid container xs={12}>
-                    <Grid item xs={6}>राजस्व ग्राम का नाम</Grid><Grid item xs={2}><Typography>{localStorage.chakbandi_village_name}</Typography></Grid>
-                    <Grid item xs={4}></Grid>
-                    <Grid item xs={6}>अधिसूचना का दिनांक </Grid><Grid item xs={2}>  <Typography> { dateToString(localStorage.chakbandi_date_of_4notification)}</Typography></Grid>
-                    <Grid item xs={4}></Grid>
 
-                </Grid>
 
                 
 <Divider/>

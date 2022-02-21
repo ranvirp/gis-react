@@ -1,7 +1,7 @@
 import * as React from 'react';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import TextField from '@material-ui/core/TextField';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import InputAdornment from '@mui/material/InputAdornment';
+import TextField from '@mui/material/TextField';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 export default function Email(props) {
     return (
@@ -18,6 +18,7 @@ export default function Email(props) {
                     ),
                 }}
                 variant="standard"
+
             />
 
     )

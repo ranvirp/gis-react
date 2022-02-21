@@ -14,8 +14,12 @@ import {ChooseDefaultChakbandi} from "./components/reports/chooseaChakbandi";
 import {AddGataForm, GataListForm, KhataEntryForm} from "./components/forms/GataEntryForm";
 import {ToDos} from "./components/dashboard/ToDos";
 import {KhatauniDataEntry} from "./components/forms/KhatauniDataEntry";
+import {ChakbandiCreateForm} from "./components/forms/ChakbandiCreateForm";
 
-export const graphqlurl = 'http://127.0.0.1:8000/graphql'
+const mode = 'dev'
+
+
+export const graphqlurl = mode==='dev'?'http://127.0.0.1:8000/graphql':'http://150.230.140.7:8000/graphql'
 const defaultValue = {khatauni:localStorage.khatauni_id}
 const khataprops = {khatauni:{disabled:true}}
 const khataquery = `mutation something($khatauni:String!, $khata_no:String!, $category:String!, $area:String!){
@@ -48,6 +52,9 @@ const ChakbandiSettings = ()=> {
             '  ':[<SideBarItem comp={<ChooseDefaultChakbandi/>} title='Chooose default Chakbandi' handleClick={handleClick}/>,],
              Dashboard:[   <SideBarItem comp={<ToDos />} title='Todos' handleClick={handleClick}/>,
              ],
+            'Create Chakbandi':[
+                <SideBarItem comp={<ChakbandiCreateForm />} title='Create Chakbandi' handleClick={handleClick}/>,
+            ],
 
             // Khatauni:[   <SideBarItem comp={<KhatauniCreateForm />} title='Khatauni Form' handleClick={handleClick}/>,
             //    <SideBarItem comp={KhatauniList} title='Khatauni List' handleClick={handleClick}/>,],

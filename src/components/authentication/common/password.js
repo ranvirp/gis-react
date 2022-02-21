@@ -1,11 +1,11 @@
 import * as React from 'react';
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@mui/material/IconButton';
 
-import InputAdornment from '@material-ui/core/InputAdornment';
+import InputAdornment from '@mui/material/InputAdornment';
 
-import TextField from '@material-ui/core/TextField';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import TextField from '@mui/material/TextField';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export default function Password(props) {
     const [values, setValues] = React.useState({
@@ -34,10 +34,10 @@ export default function Password(props) {
     return (
 
                 <TextField
-                    {...props}
 
+                    {...props}
                     type={values.showPassword ? 'text' : 'password'}
-                    value={values.password}
+
                     onChange={handleChange('password')}
                     InputProps={ {endAdornment:(
                         <InputAdornment position="end">
@@ -50,6 +50,7 @@ export default function Password(props) {
                             </IconButton>
                         </InputAdornment>
                             )}}
+
                 />
 
 

@@ -1,6 +1,7 @@
 import {Controller} from "react-hook-form";
 import React from "react";
 import {ErrorMessage} from "@hookform/error-message";
+import {TextField} from "@mui/material";
 const errorStyles = {
 
     border: 1,
@@ -9,21 +10,22 @@ const errorStyles = {
 
 };
 
-export function ReactHookFormInput(props){
+export function ReactHookFormInput({name,label, comp, form, defaultValue, required, visibility, onchange, ...props}){
+    comp = comp ?? <TextField/>
     return ( <Controller
-        name={props.id}
-        control={props.control}
-        defaultValue={props.defaultValue?? '' }
+        name={name}
+        control={form.control}
+        defaultValue={defaultValue?? '' }
         render={({ field: { onChange, value,ref },
                      fieldState: { invalid, isTouched, isDirty, error },
                      formState:{errors}}) => (
 
             <>
-                {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{ if (props.onChange) props.onChange(e);onChange(e)},
+                {React.cloneElement(comp, {...props, label:label,value:value, defaultValue:defaultValue, required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onchange) onchange(e);onChange(e)},
 
-                    sx:errors[props.id]?errorStyles:{}
+                    sx:errors[name]?errorStyles:{}
                 })}
-                 <ErrorMessage errors={errors} name={props.id}/>
+                 <ErrorMessage errors={errors} name={name}/>
                 {
                  //   <Box hidden={!eval("errors?." + props.id.replace("[", "?.["))}><Typography
                    //     sx={{color: 'error.main'}}>{eval("errors?." + props.id.replace("[", "?.["))?.message}</Typography></Box>

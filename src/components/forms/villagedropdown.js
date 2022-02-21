@@ -77,12 +77,12 @@ export function Villagedropdown(props) {
 
 
     return (
-        <Stack direction="rows">
-            <Dropdown values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId} onBlur={getDists}
+        <Stack direction="column">
+            <Dropdown fullWidth values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId} onBlur={getDists}
                       name={props.fieldAName} label={props.fieldALabel?props.fieldALabel:'District'} onBlur={getDists}/>
-            <Dropdown values={state.fieldB} onChange={changeFunctionB} id={props.fieldBId}
+            <Dropdown fullWidth values={state.fieldB} onChange={changeFunctionB} id={props.fieldBId}
                       name={props.fieldBName} label={props.fieldBLabel?props.fieldBLabel:'Tehsil'}/>
-            <Dropdown values={state.fieldC} onChange={props.onChange} id={props.fieldCId}
+            <Dropdown fullWidth values={state.fieldC} onChange={props.onChange} id={props.fieldCId}
                       name={props.name} label={props.label} {...props}/>
 
 

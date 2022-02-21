@@ -9,7 +9,7 @@ import {
     ReactHookFormObject
 } from "../../../../components/forms/ReactHookFormComponent";
 import {Stack, TextField} from "@mui/material";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import {GenericReport, ReportObject} from "../../../../components/reports/GenericReport";
 import BasicTable from "../../../../components/tables/tables";
 import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher";
@@ -155,23 +155,6 @@ export function DisplayGatas({items, newForm}){
 
          </Stack>
         </form>
-    )
-}
-export function GataSingleForm({index, newForm, defaultValues})
-{
-    const fields = [
-        {name: `gata_no`, label: 'Gata No', required: true, defaultValue: defaultValues['gata_no']},
-        {name: `area`, label: 'Area', required: true, defaultValue: defaultValues['area']},
-        {name: `bhaumik_year`, label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
-
-    ]
-    const form2 = new ReactHookFormObject(defaultProps, defaultComponents, fields)
-
-    return (
-
-            <FieldArrayReactHookFormComponent  componentRootName={`gatas[${index}]`} direction={"row"}
-                                               formObject={form2} {...newForm}  />
-
     )
 }
 export function GataListForm({khata_no}) {

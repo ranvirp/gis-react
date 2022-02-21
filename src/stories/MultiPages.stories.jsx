@@ -2,7 +2,7 @@ import React from 'react';
 
 import MultiColumnGrid from "../components/pages/MultiColumnGrid";
 import Signup from "../components/authentication/SignUp/signup";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 import LeafletMap from "../components/leaflet/components/leafletmap";
 import L from 'leaflet'
 import SignInPage from "../components/pages/signinpage";

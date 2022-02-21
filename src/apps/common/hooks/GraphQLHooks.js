@@ -31,3 +31,18 @@ export function useGraphQlQuery(query, variables, queryName,reducer=null)
     },[JSON.stringify(variables), query])
     return {items,errors,status}
 }
+export async function graphqlFetch (query, variables, queryName, reducer) {
+    const result = await postGraphSqlQuery(graphqlurl, query, variables)
+
+    if (!result.errors) {
+        var allitems = result.data[queryName]
+        //console.log("firstobject", allitems[0])
+
+
+        allitems = reducer?reducer(allitems):allitems
+        return allitems, [], "ok"
+
+    }else {
+        return [], result.errors, "error"
+    }
+}

@@ -12,6 +12,11 @@ export function ToDos(props)
     return (
         <ol align={"left"}>
             <li><ClickableItem comp={<ChakbandiCreateUpdateForm/>} title={"Create Chakbandi village"}/></li>
+            <li>Create User</li>
+            <li>Assign Village</li>
+            <li></li>
+
+
             <li><ClickableItem comp={<AddGataMapForm/>} title={"Enter 41"}/> </li>
             <li>Enter 45</li>
             <li><ClickableItem title="Enter Khatedar" comp={<AddKhatedarForm/>}/></li>

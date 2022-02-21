@@ -1,1 +1,3 @@
-export const graphqlFetch= (query, variables) =>{}
+export const graphqlFetch= (query, variables, queryName, reducer) =>{
+
+}

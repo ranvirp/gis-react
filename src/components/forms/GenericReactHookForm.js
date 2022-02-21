@@ -15,28 +15,32 @@ export function GenericReactHookForm(props)
 
     props = {defaultProps, ...props}
    if (props.debug === 'undefined') props.debug = false
-    const { control, handleSubmit, reset, formState:{ errors } } = useForm( {
+    const form = useForm( {
         defaultValues: state.fields,
         resolver: yupResolver(props.yupSchema)
     });
     useEffect(()=>{
-        if (state.reset) {reset({});  }
+        if (state.reset) {form.reset({});  }
         return () => {
-            if (props.afterSubmitFn)
-                props.afterSubmitFn(state.data,state.result)
+
+
         }
 
-    },[state.reset])
+    },[state.reset, state.result])
 
 
     const onSubmit= async (data)=>{
 
         console.log(data)
+        console.log(props)
         const result = await postGraphSqlQuery(graphqlurl, props.mutationQuery,  props.variables(data))
         props.debug && console.log(result)
-
+        if (props.afterSubmitFn) {
+            console.log(props.afterSubmitFn)
+            props.afterSubmitFn(data, result)
+        }
         //console.log(result)
-        if (!result.errors) setState({...state,reset:true, fields:{}, errors:[],data:data,result:result})
+        if (!result.errors) setState({...state,reset:true, fields:{}, errors:[],data:data,'result':result})
         else setState({...state,reset:false,fields:data, errors:result.errors,data:data,result: {data:{}}})
        // reset({})
 
@@ -49,18 +53,18 @@ export function GenericReactHookForm(props)
            {state.submitted &&  <Typography variant="h5" textAlign="center"> Object created </Typography>}
 
 
-            <form onSubmit={handleSubmit(onSubmit)} {...props.formProps??{}}>
+            <form onSubmit={form.handleSubmit(onSubmit)} {...props.formProps??{}}>
 
-            {React.cloneElement(props.formComponent, {...props.formComponentProps, control:control, errors:errors, defaultValues:state.fields}) }
+            {React.cloneElement(props.formComponent, {...props.formComponentProps, form:form, defaultValues:state.fields}) }
 
         </form>
         </Stack>:   <Stack>
                     <Typography variant="h5" textAlign="center"> {props.title} </Typography>
             {state.submitted && <Typography variant="h5" textAlign="center"> Error in  creation of object </Typography>}
 
-                    <form onSubmit={handleSubmit(onSubmit)} {...props.formProps??{}}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} {...props.formProps??{}}>
 
-                        {React.cloneElement(props.formComponent, {...props.formComponentProps, control:control, errors:errors,defaultValues:state.fields}) }
+                        {React.cloneElement(props.formComponent, {...props.formComponentProps, form:form,defaultValues:state.fields}) }
                         <p>{(state.errors.length > 0) && JSON.stringify(state.errors, null, '\t')}</p>
                     </form>
                 </Stack>

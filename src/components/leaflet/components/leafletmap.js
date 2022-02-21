@@ -4,7 +4,7 @@ import L from 'leaflet'
 import vectorTileLayer from 'leaflet-vector-tile-layer';
 
 import useScript from "../../../hooks/useScript";
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@mui/material/styles";
 import axios from "axios";
 import {myContext} from "../../App";
 const useStyle = makeStyles({

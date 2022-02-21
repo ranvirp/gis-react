@@ -1,7 +1,7 @@
 import React from "react";
 import {PetitionByFilter} from "../generated/reports/petition";
 import {ClaimCreateForm} from "../generated/forms/claim";
-import {Button} from "@material-ui/core";
+import {Button} from "@mui/material";
 
 export function PetitionWithClaimsFormAndAddClaimButton(props)
 {

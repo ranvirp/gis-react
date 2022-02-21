@@ -40,7 +40,7 @@ export const FarmerCreateUpdateForm = (props)=> {
    
    const formFields = [FormField("id","Id"),FormField("chakbandi","Chakbandi"),FormField("khatauni","Khatauni"),FormField("unique_id","Unique Id"),FormField("khatedar_code","Khatedar Code"),FormField("mobile_no","Mobile No"),FormField("name","Name"),FormField("relationship","Relationship"),FormField("relative_name","Relative Name"),FormField("year_of_birth","Year Of Birth"),FormField("gender","Gender"),FormField("address","Address")]
    const mutation = props.edit? updateFarmerMutation:createFarmerMutation
-   const defprops =  defaultProps
+   const defprops = props.edit ? {}: defaultProps
    const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
    //const myQuery = `query a{all_farmer { id chakbandi_id khatauni_id unique_id khatedar_code mobile_no name relationship relative_name year_of_birth gender address status }}`
    

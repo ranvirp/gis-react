@@ -12,13 +12,13 @@ import {
     Container,
     CssBaseline,
     Avatar,
-    FormControlLabel, Checkbox, Link, createTheme
+    FormControlLabel, Checkbox, Link, createTheme, Stack
 } from "@mui/material";
 import Email from "../common/email";
 import Password from "../common/password";
-import {ReactHookFormInput} from "../../../apps/upchakbandi/components/forms/formutilities";
-import {ThemeProvider} from "@mui/styles";
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {ReactHookFormInput} from "../../forms/ReactHookFormInput";
+import {graphqlFetch} from "../../../apps/common/hooks/GraphQLHooks";
+
 const yupschema = yup.object({
     email: yup
         .string('Enter your email')
@@ -46,17 +46,17 @@ function Copyright(props) {
 
 const theme = createTheme();
 const LoginFormComponent = (props) => {
-    const margin = "5px 10px"
+    const margin = "10px -10px 10px -10px"
 
     return (
 
-                <Grid container  spacing={3}  sx={{margin:'10px', backgroundColor:'#FFFFFFF'}}>
+                <Grid container  spacing={3}  sx={{borderRadius:"25px", lineHeight:"20px",display:"block",flexDirection:"column",backgroundColor:'#F2F2F2'}}>
                     <Grid item xs={12} sx={{cornerRadius:'6px 6px 0 0'}}>
-                        <Typography align={"center"} variant={"h6"} sx={{display:'block', padding:'5px 0 5px 0'}}>Please Sign In</Typography>
+                        <Typography align={"center"} variant={"h6"} sx={{ }}>Please Sign In</Typography>
 
                     </Grid>
                     <Grid item xs={12} sx={{margin:margin}}>
-                        <ReactHookFormInput {...props} comp={<Email/>} id='email' props={{
+                        <ReactHookFormInput {...props} comp={<Email/>}  name='email' {...{
 
 
                             label: 'Email',
@@ -67,9 +67,9 @@ const LoginFormComponent = (props) => {
                         }}/>
 
                     </Grid>
-                    <Divider/>
+
                     <Grid item xs={12} sx={{margin:margin}}>
-                        <ReactHookFormInput {...props} comp={<Password/>} id='password' props={{
+                        <ReactHookFormInput {...props} comp={<Password/>}  name='password' {...{
 
 
                             label: 'Password',
@@ -83,7 +83,7 @@ const LoginFormComponent = (props) => {
 
                     <Grid item xs={12} sx={{margin:margin}}>
 
-                        <Button color="primary" variant="contained" fullWidth type="submit" >
+                        <Button color="primary" variant="contained" sx={{width:"50%"}} type="submit" >
                             Submit
                         </Button>
                     </Grid>
@@ -170,11 +170,22 @@ mutation ($email:String!,$password:String!) {token_auth(username:$email, passwor
 function varsLogin(data){
     return {email:data.email, password:data.password}
 }
+ function submitFn(data)
+{
+   // const [results,errors,status] = await graphqlFetch(GET_AUTH_TOKEN_MUTATION,varsLogin(data),'token_auth', null)
+console.log(data)
+}
 export function SignIn(props)
 {
-
+console.log(props)
     return (
-        <GenericReactHookForm afterSubmitFn={props.afterHandle} debug={true} yupSchema={yupschema} formComponent={<LoginFormComponent/>} formComponentProps={props} mutationQuery={GET_AUTH_TOKEN_MUTATION} onSubmitFn={(result)=>{console.log(result)}} variables={varsLogin}/>
 
+        <Box sx={{display:"flex",flexDirection:"column",alignItems:"center", justifyContent:"center",width:"100%",marginTop:"20px", height:"600px"}}>
+            <Stack spacing={10}>
+                <Typography variant={"h5"}>Welcome to E-Chakbandi</Typography>
+            <GenericReactHookForm afterSubmitFn={props.afterHandle} debug={true} yupSchema={yupschema} formComponent={<LoginFormComponent/>} formComponentProps={props} mutationQuery={GET_AUTH_TOKEN_MUTATION} variables={varsLogin}/>
+
+        </Stack>
+        </Box>
     )
 }

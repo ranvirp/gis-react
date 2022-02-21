@@ -146,7 +146,7 @@ export const FieldArrayReactHookFormComponent = ({formObject,control,errors, com
         <Stack direction={props.direction??"column"}>
             {doFields(fields)}
         </Stack>)}
-export const ReactHookFormComponent = ({formObject,control, errors,reset,setValue, componentRootName, defaultValues={},debug=false, ...props}) => {
+export const ReactHookFormComponent = ({formObject,form,reset,setValue, componentRootName, defaultValues={},debug=false, ...props}) => {
 
 
 
@@ -156,6 +156,7 @@ export const ReactHookFormComponent = ({formObject,control, errors,reset,setValu
         const myProps = {}
 
         myProps.id = value.name
+        myProps.name = value.name
         myProps.comp = value.comp ?? formObject.defaultComponents[value.name] ?? <TextField/>
         myProps.onChange = value.onChange
         myProps.label = value.label
@@ -174,7 +175,7 @@ export const ReactHookFormComponent = ({formObject,control, errors,reset,setValu
 
 //return <TextField {...myProps}/>
 
-        return React.cloneElement(<ReactHookFormInput />, {key:value.id,name:value.name, ...formObject.defaultProps[value.name]??{},...myProps, ...otherprops, ...props, control:control, errors:errors})
+        return React.cloneElement(<ReactHookFormInput />, {key:value.id,name:value.name, ...formObject.defaultProps[value.name]??{},...myProps, ...otherprops, ...props, form:form})
 
 
     })} </Stack>)}

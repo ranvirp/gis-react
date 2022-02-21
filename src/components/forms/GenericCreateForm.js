@@ -42,6 +42,7 @@ export function GenericCreateUpdateForm({formObject, ...props})
 
     const FormComponent = (props) => {return (
         <Grid container>{formObject.formfields.map((value)=> {
+            value.name = value.name ?? value.id
             value.comp = value.comp ?? formObject.defaultComponents[value.id] ?? <TextField/>
            // console.log(value.comp, formObject.defaultComponents[value.id])
 
