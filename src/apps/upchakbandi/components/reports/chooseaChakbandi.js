@@ -15,6 +15,7 @@ export const ChooseDefaultChakbandi = (props) => {
     const query = `query a($filter:String!){chakbandi_by_filter (filter:$filter){id village{village_code_census vname} date_of_4notification status}}`
     var chakbandi = null
     const chooseKChakbandi = (e) => {
+        let chakbandi = e.target.getAttribute('chakbandi')
         chakbandi = JSON.parse(chakbandi)
         console.log("chakbandi",chakbandi)
         localStorage.chakbandi_id = chakbandi.id
@@ -34,7 +35,7 @@ export const ChooseDefaultChakbandi = (props) => {
             a.village = d.village.vname
             a.status = d.status === 1 ? 'Finalised' : 'Under Process'
 
-            a.action = <Button onClick={chooseKChakbandi}>CHOOSE</Button>
+            a.action = <Button chakbandi={chakbandi} onClick={chooseKChakbandi}>CHOOSE</Button>
             return a
         })
     }
@@ -48,9 +49,10 @@ export const ChooseDefaultChakbandi = (props) => {
     }
     const reportObject = new ReportObject(mycolumns, query,state.variables, fn)
     return (
+
         state.selected?<Typography>Selected {localStorage.chakbandi_village_name}</Typography>:
         <div>
-            <Villagedropdown onChange={myChange}/>
+            <Villagedropdown onChange={myChange} label={"चकबंदी ग्राम चुनें"}/>
             { !state.initial && <GenericReport tableComponent={<BasicTable/>} key={state.name}  reportObject={reportObject}/>}
 
         </div>

@@ -7,15 +7,18 @@ import ChakbandiSettings from "./apps/upchakbandi/settings";
 import AppWithoutLogin from './components/AppWithoutLogin';
 import {ComponentTester} from "./components/ComponentTester";
 import AppWithLogin from "./components/AppWithLogin";
+import {BrowserRouter} from "react-router-dom";
+
 const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 renderMethod(
   <React.StrictMode>
-
+<BrowserRouter>
       {
        //   <AppWithoutLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       //  <ComponentTester/>
       <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       }
+</BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

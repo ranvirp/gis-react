@@ -48,7 +48,7 @@ const fieldInfo = {
     bhaumik_year:{ label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
 }
 
-export function AddGataForm (props)
+export function AddGataForm ({khatauni_id})
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
     const [khata_no,setKhataNo] = useState("")
@@ -58,14 +58,14 @@ export function AddGataForm (props)
     }
 
     return (<><ReactHookFormControlledInput comp={<TextField/>} label="Khata No" name={"khata_no"} onChange={fn1} form={newForm}/>
-   <DataEntryForKhata khata_no={khata_no} newForm={newForm}/></> )
+   <DataEntryForKhata khatauni_id={khatauni_id} khata_no={khata_no} newForm={newForm}/></> )
 }
-export function DataEntryForKhata({khata_no, newForm}) {
+export function DataEntryForKhata({khatauni_id, khata_no, newForm}) {
 
 
     const {items} = useGraphQlQuery(query, {
         filter: JSON.stringify({
-            khatauni_id: localStorage.khatauni_id,
+            khatauni_id: khatauni_id,
             khata_no: khata_no
         })
     },'gata_by_filter')

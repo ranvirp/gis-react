@@ -12,7 +12,6 @@ import LogoutSideBarItem from "./sidebar_items/LogoutSideBarItem";
 
 import ErrorBoundary from "antd/es/alert/ErrorBoundary";
 const drawerWidth = 240;
-const theme = createTheme()
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
         width: drawerWidth,
-        zIndex:100,
+        zIndex:theme.zIndex.drawer,
     },
     // necessary for content to be below app bar
     toolbar:  theme.mixins.toolbar,
@@ -42,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 export var globalState = {}
 
 export default function PermanentDrawerLeft(props) {
-    const classes = useStyles(theme);
+    const classes = useStyles();
     const user = props.user
 
 
@@ -64,7 +63,7 @@ export default function PermanentDrawerLeft(props) {
     var list = []
     var dict1 = props.sidebaritems(handleClick)
     for (var key of Object.keys(dict1)) {
-        list.push( <Typography key={key} variant="h7">{key}</Typography>)
+        list.push( <Typography key={key} variant="h6">{key}</Typography>)
         list.push(<Divider/>)
         list = list.concat(dict1[key])
     }
@@ -104,7 +103,6 @@ export default function PermanentDrawerLeft(props) {
 
 
                 
-<Divider/>
                 {state.comp!=null && React.cloneElement(state.comp, state.props)}
 
             </main>

@@ -25,14 +25,7 @@ const mycolumns = [
 ];
 const query = 'query a($filter:String!){khatedar_by_filter(filter:$filter){id khatedar_code slno_in_khata share_ch4_set{share}}}'
 
-const fieldInfo = {
-    id:{ label: 'ID', pk:true,required: false, defaultValue: ''},
-    khatedar_code:{ label: 'Khatedar Code', required: true, defaultValue: '', comp:<KhatedarCodeWithDialogForm/>},
 
-
-    slno:{label: 'Serial No', required: true, defaultValue: ''},
-
-}
 function defaultSubmitFn(data) {console.log(data)}
 function reducer(data) {
     return data.map(value=>{
@@ -45,7 +38,7 @@ function reducer(data) {
         return x
     })
 }
-export function AddKhatedarForm (props)
+export function AddKhatedarForm ({chakbandi_id, khatauni_id, ...props})
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
     const [khata_no,setKhataNo] = useState("")
@@ -53,21 +46,30 @@ export function AddKhatedarForm (props)
         console.log("Khata_no", e.target.value)
         setKhataNo(e.target.value)
     }
+
     return (<><ReactHookFormControlledInput comp={<TextField/>} label="KhataNo" name={"khata_no"} onChange={fn1} form={newForm}/>
-        <DataEntryForKhatedar khata_no={khata_no} newForm={newForm}/></> )
+        <DataEntryForKhatedar chakbandi_id={chakbandi_id} khatauni_id={khatauni_id} khata_no={khata_no} newForm={newForm}/></> )
 }
- function DataEntryForKhatedar({khata_no, newForm}) {
+ function DataEntryForKhatedar({chakbandi_id, khatauni_id, khata_no, newForm}) {
 
 
     const {items} = useGraphQlQuery(query, {
         filter: JSON.stringify({
-            khatauni_id: localStorage.khatauni_id,
+            khatauni_id: khatauni_id,
             khata_no: khata_no
         })
     },'khatedar_by_filter',reducer)
     // console.log("myitems", items)
 
     // return (<p>Hi</p>)
+     const fieldInfo = {
+         id:{ label: 'ID', pk:true,required: false, defaultValue: ''},
+         khatedar_code:{ label: 'Khatedar Code', required: true, defaultValue: '', comp:<KhatedarCodeWithDialogForm chakbandi_id={chakbandi_id}/>},
+
+
+         slno:{label: 'Serial No', required: true, defaultValue: ''},
+
+     }
     return (<><DynamicReactHookForm debug={false} addTitle={"Add Khatedar"} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"khatedars"} newForm={newForm}/></>)
 
 }

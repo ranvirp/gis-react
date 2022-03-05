@@ -10,10 +10,16 @@ export function useGraphQlQuery(query, variables, queryName,reducer=null)
     useEffect( ()=> {
         async function fetchData() {
             const result = await postGraphSqlQuery(graphqlurl, query, variables)
-
+            // return (<p>Hi</p>)
+            /*
+            function timeout(delay) {
+                return new Promise( res => setTimeout(res, delay) );
+            }
+            await timeout(300); //for 1 sec delay
+*/
             if (!result.errors) {
                 const allitems = result.data[queryName]
-                console.log("firstobject", allitems[0])
+               // console.log("firstobject", allitems[0])
 
 
                 reducer?setItems(reducer(allitems)):setItems(allitems)
@@ -31,18 +37,26 @@ export function useGraphQlQuery(query, variables, queryName,reducer=null)
     },[JSON.stringify(variables), query])
     return {items,errors,status}
 }
-export async function graphqlFetch (query, variables, queryName, reducer) {
-    const result = await postGraphSqlQuery(graphqlurl, query, variables)
+export  async function graphqlFetch (query, variables, queryName, reducer) {
 
-    if (!result.errors) {
-        var allitems = result.data[queryName]
-        //console.log("firstobject", allitems[0])
+      const result =  await  postGraphSqlQuery(graphqlurl, query, variables)
+        //console.log('result', result)
 
 
-        allitems = reducer?reducer(allitems):allitems
-        return allitems, [], "ok"
+            if (!result.errors) {
+                //console.log(result, queryName, result.data[queryName])
+                var allitems = result.data[queryName]
+                //console.log("firstobject", allitems)
 
-    }else {
-        return [], result.errors, "error"
-    }
+
+                allitems = reducer ? reducer(allitems) : allitems
+                return {items: allitems, errors: [], success: true}
+
+            } else {
+                return {items: [], errors: result.errors, success: false}
+            }
+
+
+
+
 }

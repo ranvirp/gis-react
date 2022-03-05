@@ -17,7 +17,6 @@ import {
 import Email from "../common/email";
 import Password from "../common/password";
 import {ReactHookFormInput} from "../../forms/ReactHookFormInput";
-import {graphqlFetch} from "../../../apps/common/hooks/GraphQLHooks";
 
 const yupschema = yup.object({
     email: yup

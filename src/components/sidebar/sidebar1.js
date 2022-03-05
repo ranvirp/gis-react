@@ -68,7 +68,7 @@ export default function PermanentDrawerLeft(props) {
 if (context.authenticated == 'true') {
     loginOrLogout = <LogoutSideBarItem handleClick={handleClick}/>
 }
-console.log(loginOrLogout)
+//console.log(loginOrLogout)
     return (
         <div className={classes.root}>
             <CssBaseline />

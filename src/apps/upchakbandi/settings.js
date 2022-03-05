@@ -15,6 +15,10 @@ import {AddGataForm, GataListForm, KhataEntryForm} from "./components/forms/Gata
 import {ToDos} from "./components/dashboard/ToDos";
 import {KhatauniDataEntry} from "./components/forms/KhatauniDataEntry";
 import {ChakbandiCreateForm} from "./components/forms/ChakbandiCreateForm";
+import {ChakbandiDocuments} from "./components/forms/ChakbandiDocuments";
+import {AadharKhatauniEntry} from "./components/forms/AadharKhatauniEntry";
+import {BandobastKhatauniEntry} from "./components/forms/BandobastKhatauniEntry";
+import {AddGataMapForm} from "./components/forms/OldGataNewGataMapEntryForm";
 
 const mode = 'dev'
 
@@ -48,22 +52,25 @@ const fn = (value) => (value.khatauni = value.khatauni.id)
 const ChakbandiSettings = ()=> {
     return {'sidebaritems':(handleClick)=> {
         return {
-            '':[<SideBarItem comp={<ChooseDefaultKhatauni/>} title='Chooose default khatauni' handleClick={handleClick}/>,],
-            '  ':[<SideBarItem comp={<ChooseDefaultChakbandi/>} title='Chooose default Chakbandi' handleClick={handleClick}/>,],
-             Dashboard:[   <SideBarItem comp={<ToDos />} title='Todos' handleClick={handleClick}/>,
-             ],
-            'Create Chakbandi':[
-                <SideBarItem comp={<ChakbandiCreateForm />} title='Create Chakbandi' handleClick={handleClick}/>,
+
+            'चकबंदी  का विवरण':[
+                <SideBarItem comp={<ChakbandiCreateForm />} title='चकबंदी अधिसूचना का विवरण' handleClick={handleClick}/>,
+                <SideBarItem comp={<ChooseDefaultChakbandi />} title='चकबंदी ग्राम चुनें' handleClick={handleClick}/>,
+
+                <SideBarItem comp={<ChakbandiDocuments />} title='चकबंदी अभिलेखों का विवरण' handleClick={handleClick}/>,
+
+
             ],
 
-            // Khatauni:[   <SideBarItem comp={<KhatauniCreateForm />} title='Khatauni Form' handleClick={handleClick}/>,
-            //    <SideBarItem comp={KhatauniList} title='Khatauni List' handleClick={handleClick}/>,],
+            'अभिलेखों की डेटा एंट्री': [
+           <SideBarItem comp={<BandobastKhatauniEntry/>} title='बंदोबस्त खतौनी-45' handleClick={handleClick}/>,
+                <SideBarItem comp={<AddGataMapForm/>} title='बंदोबस्त खतौनी-41' handleClick={handleClick}/>,
+                <SideBarItem comp={<AadharKhatauniEntry/>} title='आधार वर्ष' handleClick={handleClick}/>,
 
-            'Khatauni Details':[
-                <SideBarItem comp={<KhatauniDataEntry/>} title={"Khatauni Data Entry"} handleClick={handleClick}/>,
+
+            ],
 
 
-        ],
 
 
 

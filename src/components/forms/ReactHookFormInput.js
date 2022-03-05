@@ -10,20 +10,21 @@ const errorStyles = {
 
 };
 
-export function ReactHookFormInput({name,label, comp, form, defaultValue, required, visibility, onchange, ...props}){
+export function ReactHookFormInput({name,label, comp, form, defaultValue, required, visibility, onChange, ...props}){
     comp = comp ?? <TextField/>
+    console.log('defaultValue', defaultValue)
     return ( <Controller
         name={name}
         control={form.control}
         defaultValue={defaultValue?? '' }
-        render={({ field: { onChange, value,ref },
+        render={({ field: { onChange:inbuildOnChange, value,ref },
                      fieldState: { invalid, isTouched, isDirty, error },
                      formState:{errors}}) => (
 
             <>
-                {React.cloneElement(comp, {...props, label:label,value:value, defaultValue:defaultValue, required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onchange) onchange(e);onChange(e)},
+                {React.cloneElement(comp, {sx:{...props.sx,...errors[name]?errorStyles:{}},value:props.value??value,defaultValue:defaultValue, label:label , required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onChange) onChange(e);inbuildOnChange(e)},
+                ...props,
 
-                    sx:errors[name]?errorStyles:{}
                 })}
                  <ErrorMessage errors={errors} name={name}/>
                 {

@@ -35,7 +35,8 @@ export default function Password(props) {
 
                 <TextField
 
-                    {...props}
+                    fullWidth={props.fullWidth}
+                    sx={props.sx}
                     type={values.showPassword ? 'text' : 'password'}
 
                     onChange={handleChange('password')}

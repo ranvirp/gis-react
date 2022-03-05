@@ -16,7 +16,7 @@ export const ChooseDefaultKhatauni = (props) => {
     const query = `query a($filter:String!){khatauni_by_filter (filter:$filter){id village{village_code_census vname} fasli_year type_of_khatauni status}}`
     var khatauni = null
     const chooseKhatauni = (e) => {
-        khatauni = JSON.parse(khatauni)
+        let khatauni = JSON.parse(e.target.getAttribute('khatauni'))
         localStorage.khatauni_id = khatauni.id
         localStorage.khatauni_village_code = khatauni.village.village_code_census
         localStorage.khatauni_village_name = khatauni.village.vname
@@ -31,7 +31,7 @@ export const ChooseDefaultKhatauni = (props) => {
             a.village = d.village.vname
             a.status = d.status === 1 ? 'Finalised' : 'Under Process'
 
-            a.action = <Button onClick={chooseKhatauni}>CHOOSE</Button>
+            a.action = <Button khatauni={khatauni} onClick={chooseKhatauni}>CHOOSE</Button>
             return a
         })
     }

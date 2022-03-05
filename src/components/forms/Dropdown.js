@@ -16,8 +16,9 @@ export function Dropdown(props)
                 id={props.id}
                 name={props.name}
                 label={props.label}
-                onChange={e=>props.onChange(e)}
+                onChange={props.onChange}
                 defaultValue={props.defaultValue}
+                required={props.required}
 
 
 

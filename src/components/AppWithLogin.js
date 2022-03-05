@@ -4,9 +4,10 @@ import PrimarySearchAppBar from "./toolbar/toolbar1";
 import PermanentDrawerLeft from "./sidebar/sidebar";
 import './App.css'
 import {ForAuthenticatedUser} from "./authentication/ForAuthenticatedUser";
+import {PasswordResetWithoutOldPassword} from "./authentication/PasswordReset";
+
 
 function App(props) {
-
 
 
         return (
@@ -14,15 +15,16 @@ function App(props) {
 
 
                 <div className="App">
-                    <ForAuthenticatedUser>
+                    <PasswordResetWithoutOldPassword>
+                    <ForAuthenticatedUser key={"authenticateduser"}>
                         <p>I am here for authenticated user only</p>
 
 
-                    <PrimarySearchAppBar title={props.title}/>
+                    <PrimarySearchAppBar key="searchbar" title={props.title}/>
 
-                    <PermanentDrawerLeft sidebaritems={props.sidebaritems}/>
+                    <PermanentDrawerLeft key="drawerleft" sidebaritems={props.sidebaritems}/>
                     </ForAuthenticatedUser>
-
+                    </PasswordResetWithoutOldPassword>
                 </div>
 
 

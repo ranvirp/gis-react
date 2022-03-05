@@ -2,7 +2,7 @@
   "name": "gisfrontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ranvirp.github.io/",
+  "homepage": "http://ranvirp.github.io/gisfrontend",
   "dependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
@@ -32,6 +32,7 @@
     "pbf": "^3.2.1",
     "prettier": "2.2.1",
     "prop-types": "^15.8.1",
+    "query-string": "^7.1.1",
     "raw-loader": "^4.0.1",
     "react": "latest",
     "react-collapsible": "^2.8.3",

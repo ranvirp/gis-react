@@ -4,7 +4,7 @@ import {postGraphSqlQuery} from "../../../../components/fetcher/graphsqlfetcher"
 import {graphqlurl} from "../../settings";
 
 
-export function KhatedarCodeForm (props)
+export function KhatedarCodeForm ({chakbandi_id, khatauni_id,...props})
 {
     const [state,setState] = React.useState({val:'',id:'',name:''})
 
@@ -22,7 +22,7 @@ export function KhatedarCodeForm (props)
         const query = 'query a($filter:String){farmer_by_filter(filter:$filter){khatedar_code name relationship relative_name address}}'
         const q = {}
         q['khatedar_code'] = value
-        q['chakbandi'] = localStorage.chakbandi_id
+        q['chakbandi_id'] = chakbandi_id
 
         const results = await postGraphSqlQuery(graphqlurl, query, {"filter":JSON.stringify(q)})
         if (!results.errors) {

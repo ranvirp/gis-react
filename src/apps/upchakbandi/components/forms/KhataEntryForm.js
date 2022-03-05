@@ -4,17 +4,21 @@ import {ReactHookFormInput} from "../../../../components/forms/ReactHookFormInpu
 import {GenericDate} from "../../../../components/forms/GenericDate";
 import {Box, Button, Stack, TextField} from "@mui/material";
 import {AllCategory} from "./AllCategory";
+import {KhataByKhatauni} from "../reports/KhataByKhatauni";
+import {defaultSubmitFn} from "../../functions/submitFn";
 
 
 const m = 'mutation a($khata_no:String!,$category:String!){mutate_multiple_objects()}'
-export function KhataEntryForm(props)
+export function KhataEntryForm({khatauni_id})
 {
     const form = useForm()
     function onSubmit(data)
     {
-
+       data.khatauni_id = khatauni_id
+        defaultSubmitFn(data, 'khataentry', form)
     }
     return(
+        <Stack>
         <form onSubmit={form.handleSubmit(onSubmit)}>
                <Stack>
                     <ReactHookFormInput  form={form} name={"khata_no"} label={"खाता संख्या"}/>
@@ -27,5 +31,7 @@ export function KhataEntryForm(props)
                </Stack>
 
         </form>
+<KhataByKhatauni khatauni_id={khatauni_id}/>
+        </Stack>
     )
 }

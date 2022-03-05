@@ -127,6 +127,9 @@ export default function PrimarySearchAppBar(props) {
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
+
+
+
         <Menu
             anchorEl={mobileMoreAnchorEl}
             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
@@ -164,12 +167,15 @@ export default function PrimarySearchAppBar(props) {
                 <p>Profile</p>
             </MenuItem>
         </Menu>
-    );
+
+    )
+
+
+
 
     return (
-        <ThemeProvider theme={theme}>
         <div className={classes.grow}>
-            <AppBar position="fixed">
+            <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
                 <Toolbar>
                     <IconButton
                         edge="start"
@@ -196,6 +202,8 @@ export default function PrimarySearchAppBar(props) {
                         />
                     </div>
                     <div className={classes.grow} />
+                    {
+                        /*
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
@@ -229,11 +237,12 @@ export default function PrimarySearchAppBar(props) {
                             <MoreIcon />
                         </IconButton>
                     </div>
+                    */
+                    }
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
         </div>
-            </ThemeProvider>
     );
 }

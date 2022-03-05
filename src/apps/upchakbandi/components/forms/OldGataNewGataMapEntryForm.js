@@ -8,6 +8,7 @@ import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
 import {ReactHookFormControlledInput} from "../../../../components/forms/ReactHookFormInput";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {DynamicReactHookForm} from "../../../../components/forms/DynamicReactHookForm";
+import {defaultSubmitFn} from "../../functions/submitFn";
 
 
 
@@ -21,14 +22,13 @@ const yupSchema = yup.object({
               )
      }).required()
 
-const query = 'query a($filter:String!){gata_map_by_filter(filter:$filter){id old_gata_no new_gata_no area bhaumik_year}}'
+const query = 'query a($filter:String!){gata_map_by_filter(filter:$filter){id old_gata_no new_gata_no area}}'
 const fieldInfo = {
     id:{ label: 'ID', pk:true,required: false, defaultValue: ''},
     old_gata_no:{ label: 'Old Gata No', required: true, defaultValue: ''},
     area:{label: 'Area', required: true, defaultValue: ''},
 
 }
-function defaultSubmitFn(data) {console.log(data)}
 export function AddGataMapForm (props)
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
@@ -38,20 +38,29 @@ export function AddGataMapForm (props)
         setNewGataNo(e.target.value)
     }
     return (<><ReactHookFormControlledInput comp={<TextField/>} label="New Gata No" name={"new_gata_no"} onChange={fn1} form={newForm}/>
-   <DataEntryForGataMap new_gata_no={new_gata_no} newForm={newForm}/></> )
+   <DataEntryForGataMap key={"new-gata#" + new_gata_no} khatauni_id={localStorage.bid} new_gata_no={new_gata_no} newForm={newForm}/></> )
 }
-export function DataEntryForGataMap({new_gata_no, newForm}) {
+export  function DataEntryForGataMap({khatauni_id, new_gata_no, newForm}) {
 
 
-    const {items} = useGraphQlQuery(query, {
+    const {items,status} = useGraphQlQuery(query, {
         filter: JSON.stringify({
-            khatauni_id: localStorage.khatauni_id,
+            khatauni_id: khatauni_id,
             new_gata_no: new_gata_no
         })
     },'gata_map_by_filter')
    // console.log("myitems", items)
 
-   // return (<p>Hi</p>)
-    return (<><DynamicReactHookForm debug={true} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"old_gatas"} newForm={newForm}/></>)
+
+    if (status == 'pending') return 'Loading'
+    function submitValues(data) {
+        data.chakbandi_id = localStorage.chakbandi_id
+        data.khatauni_id = khatauni_id
+        data.new_gata_no = new_gata_no
+        console.log(khatauni_id)
+        defaultSubmitFn(data, 'gatamapentry', newForm)
+    }
+
+    return (<><DynamicReactHookForm debug={true} onSubmit={submitValues} initialValues={items} fieldInfo={fieldInfo} componentName={"old_gatas"} newForm={newForm}/></>)
 
 }

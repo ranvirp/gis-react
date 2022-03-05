@@ -8,7 +8,7 @@ import React from "react";
 export default function SideBarItem(props) {
     return (
         <ListItem button key={props.key} onClick={()=> {props.handleClick(props.comp)}}>
-            <ListItemIcon> <InboxIcon/> </ListItemIcon>
+            <ListItemIcon> {props.icon??<InboxIcon/>} </ListItemIcon>
             <ListItemText primary={props.title}/>
         </ListItem>
     );

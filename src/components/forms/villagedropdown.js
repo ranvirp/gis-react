@@ -3,6 +3,8 @@ import {Dropdown} from "./Dropdown";
 import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
 import Stack from "@mui/material/Stack";
 import {graphqlurl} from "../../apps/upchakbandi/settings";
+import Typography from "@mui/material/Typography";
+import {Box, Grid} from "@mui/material";
 
 const  queryvillage = ` query something($teh:String!){
 villages(vill: { tehsil_code:$teh}) {
@@ -77,16 +79,23 @@ export function Villagedropdown(props) {
 
 
     return (
-        <Stack direction="column">
-            <Dropdown fullWidth values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId} onBlur={getDists}
+       <Stack direction={"row"} spacing={2}>
+            <Typography>{props.label}{props.required?'*':''}</Typography>
+
+
+    <Stack fullWidth direction="row" justifyContent="space-evenly">
+
+    <Dropdown fullWidth values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId} onBlur={getDists}
                       name={props.fieldAName} label={props.fieldALabel?props.fieldALabel:'District'} onBlur={getDists}/>
             <Dropdown fullWidth values={state.fieldB} onChange={changeFunctionB} id={props.fieldBId}
                       name={props.fieldBName} label={props.fieldBLabel?props.fieldBLabel:'Tehsil'}/>
             <Dropdown fullWidth values={state.fieldC} onChange={props.onChange} id={props.fieldCId}
-                      name={props.name} label={props.label} {...props}/>
+                      name={props.name}  {...props} label={props.fieldCLabel??'Village'}/>
 
 
         </Stack>
+</Stack>
+
     );
 }
 

@@ -10,6 +10,7 @@ function AppWithoutLogin(props) {
 
    
         return (
+
             <div className="App">
 
 
@@ -19,6 +20,7 @@ function AppWithoutLogin(props) {
 
 
             </div>
+
 
         );
         

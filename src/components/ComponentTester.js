@@ -19,10 +19,12 @@ import {useForm} from "react-hook-form";
 import {KhataEntryForm} from "../apps/upchakbandi/components/forms/GataEntryForm";
 import {AllowedTasks} from "../apps/upchakbandi/components/dashboard/AllowedTasks";
 import {KhatauniDataEntry} from "../apps/upchakbandi/components/forms/KhatauniDataEntry";
+import {PasswordResetWithoutOldPassword} from "./authentication/PasswordReset";
+import {KhatedarCodeWithDialogForm} from "../apps/upchakbandi/components/forms/KhatedarCodeWithDialog";
 const fn = (value) => {value.khatauni = value.khatauni.id}
 export function ComponentTester(props)
 {
-    const { control, handleSubmit, reset, formState:{ errors } } = useForm()
+    const form = useForm()
     return (
         <ErrorBoundary>
             {
@@ -47,7 +49,9 @@ export function ComponentTester(props)
                // <KhataEntryForm/>
                 //<PetitionWithClaimsFormAndAddClaimButton id={"34af786c-fffa-4553-88b5-be8ed3b38f28"}/>
                // <AllowedTasks/>
-                <KhatauniDataEntry/>
+                //<KhatauniDataEntry/>
+                // <PasswordResetWithoutOldPassword/>
+               // <ReactHookFormInput name={"test"} comp={<TextField  />} label={"hello"} defaultValue={"I am here jaana kahan hai"} form={form}/>
 
             }
 

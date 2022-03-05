@@ -7,6 +7,7 @@ import {postGraphSqlQuery} from "../fetcher/graphsqlfetcher";
 import {graphqlurl} from "../../apps/upchakbandi/settings";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import {Box} from "@mui/material";
 
 export function GenericReactHookForm(props)
 {
@@ -58,15 +59,17 @@ export function GenericReactHookForm(props)
             {React.cloneElement(props.formComponent, {...props.formComponentProps, form:form, defaultValues:state.fields}) }
 
         </form>
-        </Stack>:   <Stack>
+        </Stack>:      <Stack>
                     <Typography variant="h5" textAlign="center"> {props.title} </Typography>
             {state.submitted && <Typography variant="h5" textAlign="center"> Error in  creation of object </Typography>}
 
                     <form onSubmit={form.handleSubmit(onSubmit)} {...props.formProps??{}}>
 
                         {React.cloneElement(props.formComponent, {...props.formComponentProps, form:form,defaultValues:state.fields}) }
-                        <p>{(state.errors.length > 0) && JSON.stringify(state.errors, null, '\t')}</p>
+                        <Box sx={{maxWidth:"220px"}}>{(state.errors.length > 0) && JSON.stringify(state.errors, null, '\t')}</Box>
                     </form>
                 </Stack>
+
+
     )
 }

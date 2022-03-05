@@ -8,11 +8,7 @@ export function DefaultValuesChecker(props)
             <ChooseDefaultChakbandi/>
         )
     }
-    if (!localStorage.khatauni_id) {
-        return (
-            <ChooseDefaultKhatauni/>
-        )
-    }
+  
     return (
         <>{props.children}</>
     )

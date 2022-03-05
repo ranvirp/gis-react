@@ -8,7 +8,8 @@ export default function Email(props) {
 
 
             <TextField
-                {...props}
+                fullWidth={props.fullWidth}
+                sx={props.sx}
                 defaultValue={props.defaultValue}
                 InputProps={{
                     startAdornment: (
@@ -18,6 +19,7 @@ export default function Email(props) {
                     ),
                 }}
                 variant="standard"
+                onChange={props.onChange}
 
             />
 

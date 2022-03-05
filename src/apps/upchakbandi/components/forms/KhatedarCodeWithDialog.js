@@ -8,15 +8,15 @@ import {FarmerCreateUpdateForm} from "./FarmerEntryForm";
 function OpenFarmerDialog(props)
 {
     console.log(props.open)
-    return (<FullScreenDialog key={JSON.stringify(props.open)} comp={<FarmerCreateUpdateForm afterSubmitFn={props.afterSubmitFn}/>} open={props.open} />)
+    return (<FullScreenDialog  key={props.open} cloeFunction={props.closeFunction} comp={<FarmerCreateUpdateForm afterSubmitFn={props.afterSubmitFn}/>} open={props.open} />)
 }
-export function KhatedarCodeWithDialogForm (props)
+export function KhatedarCodeWithDialogForm ({chakbandi_id, ...props})
 {
     const [state,setState] = React.useState({val:'',id:'',name:'',khatedar_code:''})
     const [dialogOpen, setDialogOpen] = React.useState(false)
     function setOpen(e)
     {
-        console.log("clicked")
+
         setDialogOpen(true)
     }
     useEffect(
@@ -32,7 +32,8 @@ export function KhatedarCodeWithDialogForm (props)
         const query = 'query a($filter:String){farmer_by_filter(filter:$filter){khatedar_code name relationship relative_name address}}'
         const q = {}
         q['khatedar_code'] = value
-        q['chakbandi'] = localStorage.chakbandi_id
+        q['chakbandi_id'] = chakbandi_id
+         console.log(q, 'q')
 
         const results = await postGraphSqlQuery(graphqlurl, query, {"filter":JSON.stringify(q)})
         if (!results.errors) {
@@ -54,7 +55,6 @@ export function KhatedarCodeWithDialogForm (props)
         props.onChange(e)
 
     }
-    console.log('rerendered')
     const  afterSubmitFn = (data,result)=>
     {
         console.log(props)
@@ -84,7 +84,7 @@ export function KhatedarCodeWithDialogForm (props)
             <TextField  fullWidth disabled key={state.name} value={state.name} size={"100px"}/>
             </Box>
         </Box>
-            <OpenFarmerDialog open={dialogOpen} afterSubmitFn={afterSubmitFn}/>
+            <OpenFarmerDialog   closeFunction={setDialogOpen} open={dialogOpen} afterSubmitFn={afterSubmitFn}/>
             <Button onClick={setOpen}>Create New Farmer</Button>
 
         </Box>

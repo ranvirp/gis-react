@@ -13,8 +13,7 @@ export async  function defaultSubmitFn(data, type,  newForm)
 }`
     const variables = {}
     variables.type = type
-    data.khatauni_id = localStorage.khatauni_id
-    data.chakbandi_id = localStorage.chakbandi_id
+
     variables.obj_json = JSON.stringify(data)
     const results = await postGraphSqlQuery(graphqlurl, mutation, variables)
     console.log(results)
