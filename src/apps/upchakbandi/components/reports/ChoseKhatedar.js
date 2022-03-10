@@ -55,7 +55,7 @@ export const ChooseKhatedar = (props) => {
     return (
         <>
         <TextField disabled={true} value={state.id} {...props}/>
-            {state.selected?<Typography>Selected {state.name}</Typography>:
+            {state.selected?<Typography component={"span"}>Selected {state.name}</Typography>:
         <div>
             <TextField onChange={myChange}/>
             { !state.initial && <GenericReportWithStickyHead key={state.name}  reportObject={reportObject}/>}

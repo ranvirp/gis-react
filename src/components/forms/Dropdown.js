@@ -1,9 +1,10 @@
 import React from 'react';
 import {Box, FormControl, InputLabel, Select, MenuItem} from "@mui/material";
+import SelectInput from "@mui/material/Select/SelectInput";
 
 export function Dropdown(props)
 {
-    // console.log(props)
+   // console.log(props)
     return ( <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
             <InputLabel htmlFor={props.id} id={props.id + 'field-label'}>{props.label}</InputLabel>
@@ -17,7 +18,7 @@ export function Dropdown(props)
                 name={props.name}
                 label={props.label}
                 onChange={props.onChange}
-                defaultValue={props.defaultValue}
+                defaultValue={props.defaultValue??''}
                 required={props.required}
 
 

@@ -4,11 +4,10 @@ import {Button} from '@mui/material';
 import {ClickableItem} from "../../../../components/clickableitem";
 import GenericReportWithStickyHead, {ReportObject} from "../../../../components/reports/GenericReport";
 import {KhatauniCreateUpdateForm} from "../forms/khatauni";
-export const KhatauniQuery = `query a {all_khatauni { id village{ vname  village_code_census  vname_eng  pname  flg_chakbandi  flg_survey  pargana_code_new tehsil_code{ district_code{ dname  district_code_census  dname_eng }  tname  tehsil_code_census  tname_eng } district_code{ dname  district_code_census  dname_eng } }  fasli_year  type_of_khatauni  no_of_khatas  no_of_gatas  area  status }  }`
-export const KhatauniFilterQuery = `query a($filter:String!) {khatauni_by_filter(filter: $filter){ id village{ vname  village_code_census  vname_eng  pname  flg_chakbandi  flg_survey  pargana_code_new tehsil_code{ district_code{ dname  district_code_census  dname_eng }  tname  tehsil_code_census  tname_eng } district_code{ dname  district_code_census  dname_eng } }  fasli_year  type_of_khatauni  no_of_khatas  no_of_gatas  area  status }  }`
+export const KhatauniQuery = `query a {all_khatauni { id village{ vname  village_code_census  vname_eng  pname  flg_chakbandi  flg_survey  pargana_code_new tehsil_code{ district_code{ dname  district_code_census  dname_eng }  tname  tehsil_code_census  tname_eng } district_code{ dname  district_code_census  dname_eng } }  fasli_year  no_of_khatas  no_of_gatas  area  status }  }`
+export const KhatauniFilterQuery = `query a($filter:String!) {khatauni_by_filter(filter: $filter){ id village{ vname  village_code_census  vname_eng  pname  flg_chakbandi  flg_survey  pargana_code_new tehsil_code{ district_code{ dname  district_code_census  dname_eng }  tname  tehsil_code_census  tname_eng } district_code{ dname  district_code_census  dname_eng } }  fasli_year  no_of_khatas  no_of_gatas  area  status }  }`
 const KhatauniColumns = [
 { id: 'fasli_year',label: 'Fasli Year',minWidth: 10, align: 'center', format: (value) => value.toString(),},
-{ id: 'type_of_khatauni',label: 'Type Of Khatauni',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 { id: 'no_of_khatas',label: 'No Of Khatas',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 { id: 'no_of_gatas',label: 'No Of Gatas',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 { id: 'area',label: 'Area',minWidth: 10, align: 'center', format: (value) => value.toString(),},

@@ -21,7 +21,7 @@ import {ReactHookFormInput} from "../../forms/ReactHookFormInput";
 const yupschema = yup.object({
     email: yup
         .string('Enter your email')
-        .email('Enter a valid email')
+       // .email('Enter a valid email')
         .required('Email is required'),
 
     password: yup
@@ -176,13 +176,13 @@ console.log(data)
 }
 export function SignIn(props)
 {
-console.log(props)
+//console.log(props)
     return (
 
         <Box sx={{display:"flex",flexDirection:"column",alignItems:"center", justifyContent:"center",width:"100%",marginTop:"20px", height:"600px"}}>
             <Stack spacing={10}>
                 <Typography variant={"h5"}>Welcome to E-Chakbandi</Typography>
-            <GenericReactHookForm afterSubmitFn={props.afterHandle} debug={true} yupSchema={yupschema} formComponent={<LoginFormComponent/>} formComponentProps={props} mutationQuery={GET_AUTH_TOKEN_MUTATION} variables={varsLogin}/>
+            <GenericReactHookForm afterSubmitFn={props.afterHandle} debug={props.debug??false} yupSchema={yupschema} formComponent={<LoginFormComponent/>} formComponentProps={props} mutationQuery={GET_AUTH_TOKEN_MUTATION} variables={varsLogin}/>
 
         </Stack>
         </Box>

@@ -1,5 +1,5 @@
-import {postGraphSqlQuery} from "../../../components/fetcher/graphsqlfetcher";
-import {graphqlurl} from "../settings";
+
+import {graphqlFetch} from "../../common/hooks/GraphQLHooks";
 
 export async  function defaultSubmitFn(data, type,  newForm)
 {
@@ -15,8 +15,11 @@ export async  function defaultSubmitFn(data, type,  newForm)
     variables.type = type
 
     variables.obj_json = JSON.stringify(data)
-    const results = await postGraphSqlQuery(graphqlurl, mutation, variables)
-    console.log(results)
-    newForm.reset()
+    console.log(variables)
+    const result = await graphqlFetch( mutation, variables,'mutate_multiple_objects')
+    //console.log(result)
+    return result
+    //console.log(results)
+   // newForm.reset()
 
 }

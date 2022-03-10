@@ -11,15 +11,15 @@ import {BrowserRouter} from "react-router-dom";
 
 const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 renderMethod(
-  <React.StrictMode>
+
 <BrowserRouter>
       {
        //   <AppWithoutLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       //  <ComponentTester/>
-      <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
+     <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       }
 </BrowserRouter>
-  </React.StrictMode>,
+,
   document.getElementById('root')
 );
 

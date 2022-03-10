@@ -1,29 +1,21 @@
 import React from "react";
 import SideBarItem from "../../components/sidebar/sidebar_items/SideBarItem";
 
-
-import {ChooseDefaultKhatauni} from "./components/reports/chooseakhatauni";
-import { GataCreateUpdateForm} from "./generated/forms/gata";
-import { GataWithEdit} from "./generated/reports/gata";
-import {FarmerCreateForm} from "./generated/forms/farmer";
-import {Claims} from "./components/forms/claims";
-import {PetitionReport} from "./functions/functionres";
-import {KhataAll, KhataWithEdit} from "./generated/reports/khata";
-import {FarmerAll} from "./generated/reports/farmer";
 import {ChooseDefaultChakbandi} from "./components/reports/chooseaChakbandi";
-import {AddGataForm, GataListForm, KhataEntryForm} from "./components/forms/GataEntryForm";
-import {ToDos} from "./components/dashboard/ToDos";
-import {KhatauniDataEntry} from "./components/forms/KhatauniDataEntry";
+
 import {ChakbandiCreateForm} from "./components/forms/ChakbandiCreateForm";
 import {ChakbandiDocuments} from "./components/forms/ChakbandiDocuments";
 import {AadharKhatauniEntry} from "./components/forms/AadharKhatauniEntry";
 import {BandobastKhatauniEntry} from "./components/forms/BandobastKhatauniEntry";
 import {AddGataMapForm} from "./components/forms/OldGataNewGataMapEntryForm";
+import {OrderEntryForm} from "./components/forms/OrderEntryForm";
+import {DefaultChakbandiValueChecker} from "./components/forms/DefaultChakbandiValueChecker";
+import {FarmerLocalteByName} from "./components/reports/FarmerLocateByName";
 
 const mode = 'dev'
 
 
-export const graphqlurl = mode==='dev'?'http://127.0.0.1:8000/graphql':'http://150.230.140.7:8000/graphql'
+export const graphqlurl = process.env.NODE_ENV==='development'?'http://127.0.0.1:8000/graphql':'http://150.230.140.7:8000/graphql'
 const defaultValue = {khatauni:localStorage.khatauni_id}
 const khataprops = {khatauni:{disabled:true}}
 const khataquery = `mutation something($khatauni:String!, $khata_no:String!, $category:String!, $area:String!){
@@ -58,14 +50,22 @@ const ChakbandiSettings = ()=> {
                 <SideBarItem comp={<ChooseDefaultChakbandi />} title='चकबंदी ग्राम चुनें' handleClick={handleClick}/>,
 
                 <SideBarItem comp={<ChakbandiDocuments />} title='चकबंदी अभिलेखों का विवरण' handleClick={handleClick}/>,
+                <SideBarItem comp={<DefaultChakbandiValueChecker>
+                    <FarmerLocalteByName chakbandi_id={localStorage.chakbandi_id}/>
+                </DefaultChakbandiValueChecker>} title='किसान का कोड ज्ञात करें ' handleClick={handleClick}/>,
 
 
             ],
 
             'अभिलेखों की डेटा एंट्री': [
-           <SideBarItem comp={<BandobastKhatauniEntry/>} title='बंदोबस्त खतौनी-45' handleClick={handleClick}/>,
-                <SideBarItem comp={<AddGataMapForm/>} title='बंदोबस्त खतौनी-41' handleClick={handleClick}/>,
-                <SideBarItem comp={<AadharKhatauniEntry/>} title='आधार वर्ष' handleClick={handleClick}/>,
+                <SideBarItem comp={<BandobastKhatauniEntry/>} title='बंदोबस्त खतौनी-45/41' handleClick={handleClick}/>,
+                <SideBarItem comp={<AadharKhatauniEntry/>} title='आधार वर्ष खतौनी' handleClick={handleClick}/>,
+
+
+            ],
+            'आदेशों  की डेटा एंट्री': [
+                <SideBarItem comp={<OrderEntryForm/>} title='आदेश की डेटा एंट्री ' handleClick={handleClick}/>,
+
 
 
             ],

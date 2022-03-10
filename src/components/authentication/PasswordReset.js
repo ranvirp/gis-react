@@ -22,6 +22,7 @@ const mutation = `mutation a($username: String!, $passwd: String!,
 \t\tsuccess error
 \t}
 }`
+//TODO
 export  function PasswordResetWithoutOldPassword(props)
 {
     const location = useLocation();
@@ -41,12 +42,14 @@ export  function PasswordResetWithoutOldPassword(props)
     {
         const result =  graphqlFetch(mutation, {username:data['username'], token:data['token'], passwd:data['password']},'password_reset')
         result.then(
-            ({items})=> {console.log(items)}
+            ({items})=> {
+                console.log(items)
+            }
         )
     }
 
 
-console.log('render')
+    //console.log('render')
     if (!token || !items.username) {return <>{props.children}</>}
 
         return (

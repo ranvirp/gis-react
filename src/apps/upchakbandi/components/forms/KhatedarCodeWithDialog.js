@@ -5,12 +5,8 @@ import {graphqlurl} from "../../settings";
 import {FullScreenDialog} from "../../../../components/dialogs/MyDialog";
 import {FarmerCreateUpdateForm} from "./FarmerEntryForm";
 
-function OpenFarmerDialog(props)
-{
-    console.log(props.open)
-    return (<FullScreenDialog  key={props.open} cloeFunction={props.closeFunction} comp={<FarmerCreateUpdateForm afterSubmitFn={props.afterSubmitFn}/>} open={props.open} />)
-}
-export function KhatedarCodeWithDialogForm ({chakbandi_id, ...props})
+
+export function KhatedarCodeWithDialogForm ({chakbandi_id,khatauni_id, ...props})
 {
     const [state,setState] = React.useState({val:'',id:'',name:'',khatedar_code:''})
     const [dialogOpen, setDialogOpen] = React.useState(false)
@@ -28,6 +24,11 @@ export function KhatedarCodeWithDialogForm ({chakbandi_id, ...props})
             }
             },[props.defaultValue]
     )
+    function OpenFarmerDialog(props)
+    {
+        console.log(props.open)
+        return (<FullScreenDialog  key={props.open} cloeFunction={props.closeFunction} comp={<FarmerCreateUpdateForm chakbandi_id={chakbandi_id} khatauni_id={khatauni_id} afterSubmitFn={props.afterSubmitFn}/>} open={props.open} />)
+    }
      async function fetchData(value) {
         const query = 'query a($filter:String){farmer_by_filter(filter:$filter){khatedar_code name relationship relative_name address}}'
         const q = {}

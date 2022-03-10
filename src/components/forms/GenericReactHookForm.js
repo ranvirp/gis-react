@@ -32,12 +32,12 @@ export function GenericReactHookForm(props)
 
     const onSubmit= async (data)=>{
 
-        console.log(data)
-        console.log(props)
+       // console.log(data)
+       // console.log(props)
         const result = await postGraphSqlQuery(graphqlurl, props.mutationQuery,  props.variables(data))
         props.debug && console.log(result)
         if (props.afterSubmitFn) {
-            console.log(props.afterSubmitFn)
+         //   console.log(props.afterSubmitFn)
             props.afterSubmitFn(data, result)
         }
         //console.log(result)
@@ -49,9 +49,9 @@ export function GenericReactHookForm(props)
     return (
         state.ok ?
        <Stack>
-            <Typography variant="h5" textAlign="center"> {props.title} </Typography>
+            <Typography component={'span'} variant="h5" textAlign="center"> {props.title} </Typography>
 
-           {state.submitted &&  <Typography variant="h5" textAlign="center"> Object created </Typography>}
+           {state.submitted &&  <Typography component={'span'} variant="h5" textAlign="center"> Object created </Typography>}
 
 
             <form onSubmit={form.handleSubmit(onSubmit)} {...props.formProps??{}}>
@@ -60,13 +60,13 @@ export function GenericReactHookForm(props)
 
         </form>
         </Stack>:      <Stack>
-                    <Typography variant="h5" textAlign="center"> {props.title} </Typography>
-            {state.submitted && <Typography variant="h5" textAlign="center"> Error in  creation of object </Typography>}
+                    <Typography component={'span'} variant="h5" textAlign="center"> {props.title} </Typography>
+            {state.submitted && <Typography component={'span'} variant="h5" textAlign="center"> Error in  creation of object </Typography>}
 
                     <form onSubmit={form.handleSubmit(onSubmit)} {...props.formProps??{}}>
 
                         {React.cloneElement(props.formComponent, {...props.formComponentProps, form:form,defaultValues:state.fields}) }
-                        <Box sx={{maxWidth:"220px"}}>{(state.errors.length > 0) && JSON.stringify(state.errors, null, '\t')}</Box>
+                        <Box sx={{maxWidth:"220px"}}><span>{(state.errors.length > 0) && JSON.stringify(state.errors, null, '\t')}</span></Box>
                     </form>
                 </Stack>
 

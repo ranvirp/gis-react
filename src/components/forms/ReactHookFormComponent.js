@@ -23,6 +23,7 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
     }
     let pk = false
     const markForDeletion = (e)=>{
+        console.log('mark for deletion')
         let deleteText = 'Delete'
         var deleteValue = e.target.getAttribute('delete')
         if (deleteValue === 1) deleteValue = 0
@@ -31,7 +32,8 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
 
         const prevValue = fieldArray.fields[index]
         e.target.setAttribute('delete', deleteValue)
-        e.target.textContent = e.target.innerText = deleteText
+        e.target.textContent =  deleteText
+        e.target.innerText = deleteText
 
         prevValue.delete = deleteValue
         fieldArray.update(index, prevValue)

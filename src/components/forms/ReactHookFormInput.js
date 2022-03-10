@@ -12,7 +12,7 @@ const errorStyles = {
 
 export function ReactHookFormInput({name,label, comp, form, defaultValue, required, visibility, onChange, ...props}){
     comp = comp ?? <TextField/>
-    console.log('defaultValue', defaultValue)
+    //console.log('defaultValue', defaultValue)
     return ( <Controller
         name={name}
         control={form.control}
@@ -22,8 +22,8 @@ export function ReactHookFormInput({name,label, comp, form, defaultValue, requir
                      formState:{errors}}) => (
 
             <>
-                {React.cloneElement(comp, {sx:{...props.sx,...errors[name]?errorStyles:{}},value:props.value??value,defaultValue:defaultValue, label:label , required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onChange) onChange(e);inbuildOnChange(e)},
-                ...props,
+                {React.cloneElement(comp, {...props, sx:{...props.sx,...errors[name]?errorStyles:{}},value:props.value??value,defaultValue:defaultValue??'', label:label , required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onChange) onChange(e);inbuildOnChange(e)},
+
 
                 })}
                  <ErrorMessage errors={errors} name={name}/>
@@ -47,7 +47,7 @@ export function ReactHookFormControlledInput({name,form,fieldArray,componentRoot
                      formState}) => (
 
             <>
-                {React.cloneElement(props.comp, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{if (props.onChange) props.onChange(e);onChange(e)},
+                {React.cloneElement(props.comp ?? <TextField/>, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{if (props.onChange) props.onChange(e);onChange(e)},
                     fieldArray:fieldArray,componentRootName:componentRootName,form:form,index:index
 
                 })}

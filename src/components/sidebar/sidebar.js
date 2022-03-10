@@ -80,7 +80,7 @@ export default function PermanentDrawerLeft(props) {
                 anchor="left"
             >
                 <div className={classes.toolbar} />
-                <Typography variant="h6">MENU</Typography>
+                <Typography component={"span"} variant="h6">MENU</Typography>
                 <Divider />
                 <List>
                     {list}

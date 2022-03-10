@@ -52,7 +52,6 @@ export function AddKhatedarForm ({chakbandi_id, khatauni_id, ...props})
 }
  function DataEntryForKhatedar({chakbandi_id, khatauni_id, khata_no, newForm}) {
 
-
     const {items} = useGraphQlQuery(query, {
         filter: JSON.stringify({
             khatauni_id: khatauni_id,
@@ -64,7 +63,7 @@ export function AddKhatedarForm ({chakbandi_id, khatauni_id, ...props})
     // return (<p>Hi</p>)
      const fieldInfo = {
          id:{ label: 'ID', pk:true,required: false, defaultValue: ''},
-         khatedar_code:{ label: 'Khatedar Code', required: true, defaultValue: '', comp:<KhatedarCodeWithDialogForm chakbandi_id={chakbandi_id}/>},
+         khatedar_code:{ label: 'Khatedar Code', required: true, defaultValue: '', comp:<KhatedarCodeWithDialogForm chakbandi_id={chakbandi_id} khatauni_id={khatauni_id}/>},
 
 
          slno:{label: 'Serial No', required: true, defaultValue: ''},

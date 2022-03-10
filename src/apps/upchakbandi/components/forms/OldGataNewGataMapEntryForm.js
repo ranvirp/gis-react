@@ -29,7 +29,7 @@ const fieldInfo = {
     area:{label: 'Area', required: true, defaultValue: ''},
 
 }
-export function AddGataMapForm (props)
+export function AddGataMapForm ({chakbandi_id, khatauni_id, ...props})
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
     const [new_gata_no,setNewGataNo] = useState("")
@@ -38,9 +38,9 @@ export function AddGataMapForm (props)
         setNewGataNo(e.target.value)
     }
     return (<><ReactHookFormControlledInput comp={<TextField/>} label="New Gata No" name={"new_gata_no"} onChange={fn1} form={newForm}/>
-   <DataEntryForGataMap key={"new-gata#" + new_gata_no} khatauni_id={localStorage.bid} new_gata_no={new_gata_no} newForm={newForm}/></> )
+   <DataEntryForGataMap key={"new-gata#" + new_gata_no} khatauni_id={khatauni_id} new_gata_no={new_gata_no} newForm={newForm}/></> )
 }
-export  function DataEntryForGataMap({khatauni_id, new_gata_no, newForm}) {
+export  function DataEntryForGataMap({chakbandi_id,khatauni_id, new_gata_no, newForm}) {
 
 
     const {items,status} = useGraphQlQuery(query, {
@@ -54,7 +54,7 @@ export  function DataEntryForGataMap({khatauni_id, new_gata_no, newForm}) {
 
     if (status == 'pending') return 'Loading'
     function submitValues(data) {
-        data.chakbandi_id = localStorage.chakbandi_id
+        data.chakbandi_id = chakbandi_id
         data.khatauni_id = khatauni_id
         data.new_gata_no = new_gata_no
         console.log(khatauni_id)

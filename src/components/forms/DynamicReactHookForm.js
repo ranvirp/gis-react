@@ -49,6 +49,8 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
     const showValues = (e) => {
         props.debug && console.log(newForm.formState.errors)
         props.debug && console.log(newForm.watch(componentName))
+        props.debug && console.log(newForm.getValues())
+
     }
 
     return (

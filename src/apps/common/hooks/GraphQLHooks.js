@@ -40,7 +40,7 @@ export function useGraphQlQuery(query, variables, queryName,reducer=null)
 export  async function graphqlFetch (query, variables, queryName, reducer) {
 
       const result =  await  postGraphSqlQuery(graphqlurl, query, variables)
-        //console.log('result', result)
+        console.log('result', result)
 
 
             if (!result.errors) {

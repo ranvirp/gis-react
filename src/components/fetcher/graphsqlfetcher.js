@@ -1,7 +1,7 @@
 export async function postGraphSqlQuery(url,query,variables)  {
 
     // fetch(graphqlurl(querytehsil("'" + district_code + "'")))
-    console.log(query, variables)
+   // console.log(query, variables)
 
 
     let   headers = {

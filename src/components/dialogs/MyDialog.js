@@ -5,7 +5,6 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import CloseIcon from '@mui/icons-material/Close';
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -13,12 +12,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export  function FullScreenDialog(props) {
     const [open,setOpen] = React.useState(props.open)
-    console.log("rerender dialog")
+   // console.log("rerender dialog")
 
 
 
     const handleClose = () => {
-        console.log("closing")
+       // console.log("closing")
         props.cloeFunction(false)
         setOpen(false)
 
@@ -40,7 +39,7 @@ export  function FullScreenDialog(props) {
                             onClick={handleClose}
                             aria-label="close"
                         >
-<CloseIcon/>
+                        <CloseIcon/>
                         </IconButton>
                         <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
                             Close

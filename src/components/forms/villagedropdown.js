@@ -80,7 +80,7 @@ export function Villagedropdown(props) {
 
     return (
        <Stack direction={"row"} spacing={2}>
-            <Typography>{props.label}{props.required?'*':''}</Typography>
+            <Typography component={"span"}>{props.label}{props.required?'*':''}</Typography>
 
 
     <Stack fullWidth direction="row" justifyContent="space-evenly">

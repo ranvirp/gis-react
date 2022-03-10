@@ -14,9 +14,9 @@ export default function BasicTable(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.items.map((row) => (
+                    {props.items.map((row, index) => (
                         <TableRow
-                            key={row.name}
+                            key={index}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                             {props.columns.map((value)=>{

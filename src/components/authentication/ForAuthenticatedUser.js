@@ -34,6 +34,10 @@ function isAuthenticated()
     const token = localStorage.token
     if (token==null) return false
     const decoded = parseJwt(token??'')
+    const exp = decoded.exp
+    const timenow = Date.now()
+    if (exp < timenow) return false
+    console.log(decoded, "decoded")
     if (decoded.username) return decoded.username
 
 }
@@ -63,8 +67,8 @@ export function ForAuthenticatedUser(props)
     return (
 
          authenticated ? <>
-                    {props.children.map(value=>
-                      {return React.cloneElement(value, {user:user})})}
+                    {props.children.map((value,index)=>
+                      {return React.cloneElement(value, {user:user, key:index})})}
 
                 </>
 

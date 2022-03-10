@@ -12,7 +12,7 @@ export const ChooseDefaultChakbandi = (props) => {
         { id: 'action',label: 'Action',minWidth: 10, align: 'center', format: (value) => value.toString(),},
 
     ];
-    const query = `query a($filter:String!){chakbandi_by_filter (filter:$filter){id village{village_code_census vname} date_of_4notification status}}`
+    const query = `query a($filter:String!){chakbandi_by_filter (filter:$filter){id village{village_code_census vname} date_of_4notification status chakbandi_documents_set{type_of_khatauni khatauni{id }}}}`
     var chakbandi = null
     const chooseKChakbandi = (e) => {
         let chakbandi = e.target.getAttribute('chakbandi')
@@ -22,6 +22,13 @@ export const ChooseDefaultChakbandi = (props) => {
         localStorage.chakbandi_village_code = chakbandi.village.village_code_census
         localStorage.chakbandi_village_name = chakbandi.village.vname
         localStorage.chakbandi_date_of_4notification = chakbandi.date_of_4notification.toString()
+        chakbandi.chakbandi_documents_set.map(value =>
+        {
+            console.log(value)
+            if (value.type_of_khatauni ==='b') localStorage.bid = value.khatauni.id
+            else if (value.type_of_khatauni ==='a') localStorage.aid = value.khatauni.id
+
+        })
         console.log(localStorage)
 
         setState({selected:true})
@@ -50,7 +57,7 @@ export const ChooseDefaultChakbandi = (props) => {
     const reportObject = new ReportObject(mycolumns, query,state.variables, fn)
     return (
 
-        state.selected?<Typography>Selected {localStorage.chakbandi_village_name}</Typography>:
+        state.selected?<Typography component={"span"}>Selected {localStorage.chakbandi_village_name}</Typography>:
         <div>
             <Villagedropdown onChange={myChange} label={"चकबंदी ग्राम चुनें"}/>
             { !state.initial && <GenericReport tableComponent={<BasicTable/>} key={state.name}  reportObject={reportObject}/>}

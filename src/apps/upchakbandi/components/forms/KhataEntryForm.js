@@ -11,7 +11,7 @@ import {defaultSubmitFn} from "../../functions/submitFn";
 const m = 'mutation a($khata_no:String!,$category:String!){mutate_multiple_objects()}'
 export function KhataEntryForm({khatauni_id})
 {
-    const form = useForm()
+    const form = useForm({defaultValues:{'category':''}})
     function onSubmit(data)
     {
        data.khatauni_id = khatauni_id
@@ -23,7 +23,7 @@ export function KhataEntryForm({khatauni_id})
                <Stack>
                     <ReactHookFormInput  form={form} name={"khata_no"} label={"खाता संख्या"}/>
 
-                    <ReactHookFormInput  comp={<AllCategory/>} form={form} name={"category"} label={"श्रेणी"}/>
+                    <ReactHookFormInput  key={Math.random()} comp={<AllCategory/>} form={form} name={"category"} label={"श्रेणी"}/>
 
                     <ReactHookFormInput comp={<TextField type={"float"}/>} form={form} name={"area"} label={"क्षेत्रफल"}/>
 

@@ -5,8 +5,8 @@ let q = `query a($filter:String!) {chakbandi_documents_by_filter(filter:$filter)
 export function KhatauniValueInitializer({chakbandi_id, ...props})
 {
     const results = useGraphQlQuery(q,{filter:JSON.stringify({chakbandi_id:chakbandi_id})},'chakbandi_documents_by_filter')
-    localStorage.bid = null
-    localStorage.aid = null
+    //localStorage.bid = null
+    //localStorage.aid = null
     results.items.map (value => {
         if (value.khatauni.type_of_khatauni === 'b') {
             localStorage.bid = value.khatauni.id

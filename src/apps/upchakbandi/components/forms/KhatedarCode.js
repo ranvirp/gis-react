@@ -23,6 +23,7 @@ export function KhatedarCodeForm ({chakbandi_id, khatauni_id,...props})
         const q = {}
         q['khatedar_code'] = value
         q['chakbandi_id'] = chakbandi_id
+         //q['khatauni_id'] = khatauni_id
 
         const results = await postGraphSqlQuery(graphqlurl, query, {"filter":JSON.stringify(q)})
         if (!results.errors) {

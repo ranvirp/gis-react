@@ -25,7 +25,7 @@ mutation ($email:String!,$password:String!) {token_auth(username:$email, passwor
 
 export default function SignInPage(props) {
 
-    const heading = <Typography variant={"h5"} sx={{color:"white"}}>Welcome to Chakbandi, Uttar Pradesh</Typography>
+    const heading = <Typography component={"span"} variant={"h5"} sx={{color:"white"}}>Welcome to Chakbandi, Uttar Pradesh</Typography>
     var elems = {'21': <SignIn  afterHandle={props.afterHandle} sx={{ backgroundColor:"#FFFFFF"}}/>}
     elems['11'] = heading
     //elems['21'] = heading

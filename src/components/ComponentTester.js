@@ -21,10 +21,20 @@ import {AllowedTasks} from "../apps/upchakbandi/components/dashboard/AllowedTask
 import {KhatauniDataEntry} from "../apps/upchakbandi/components/forms/KhatauniDataEntry";
 import {PasswordResetWithoutOldPassword} from "./authentication/PasswordReset";
 import {KhatedarCodeWithDialogForm} from "../apps/upchakbandi/components/forms/KhatedarCodeWithDialog";
+import {Dropdown} from "./forms/Dropdown";
+import {OrderEntryForm} from "../apps/upchakbandi/components/forms/OrderEntryForm";
+import {FarmerSearch} from "../apps/upchakbandi/components/forms/FarmerSearch";
+import {FarmerLocalteByName} from "../apps/upchakbandi/components/reports/FarmerLocateByName";
 const fn = (value) => {value.khatauni = value.khatauni.id}
+const values = [{key:'a',label:'a', value:'a'}, {key:'b',label:'b', value:'b'}]
 export function ComponentTester(props)
 {
-    const form = useForm()
+    const form = useForm({defaultValues:{test:'a'}})
+    function resetForm(e)
+    {
+
+        form.reset()
+    }
     return (
         <ErrorBoundary>
             {
@@ -51,8 +61,11 @@ export function ComponentTester(props)
                // <AllowedTasks/>
                 //<KhatauniDataEntry/>
                 // <PasswordResetWithoutOldPassword/>
-               // <ReactHookFormInput name={"test"} comp={<TextField  />} label={"hello"} defaultValue={"I am here jaana kahan hai"} form={form}/>
+             //   <ReactHookFormInput key={Math.random()} name={"test"} comp={<Dropdown values={values}/>} label={"hello"} defaultValue={""} form={form}/>
 
+//<Dropdown values={values} defaultValue={'b'}/>
+               // <OrderEntryForm chakbandi_id={localStorage.chakbandi_id}/>
+                <FarmerLocalteByName chakbandi_id={"0e33f6bd-6bdb-461b-bbb0-9028c129ae5c"} form={form} name={"test"}/>
             }
 
         </ErrorBoundary>
