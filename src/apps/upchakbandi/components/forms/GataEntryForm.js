@@ -19,6 +19,7 @@ import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
 import {ReactHookFormControlledInput} from "../../../../components/forms/ReactHookFormInput";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {DynamicReactHookForm} from "../../../../components/forms/DynamicReactHookForm";
+import {defaultSubmitFn} from "../../functions/submitFn";
 
 
 
@@ -48,7 +49,7 @@ const fieldInfo = {
     bhaumik_year:{ label: 'Fasli Year', required: true, defaultValue: defaultValues['bhaumik_year']},
 }
 
-export function AddGataForm ({khatauni_id})
+export function AddGataForm ({chakbandi_id, khatauni_id})
 {
     const newForm = useForm({resolver:yupResolver(yupSchema)})
     const [khata_no,setKhataNo] = useState("")
@@ -58,9 +59,9 @@ export function AddGataForm ({khatauni_id})
     }
 
     return (<><ReactHookFormControlledInput comp={<TextField/>} label="Khata No" name={"khata_no"} onChange={fn1} form={newForm}/>
-   <DataEntryForKhata khatauni_id={khatauni_id} khata_no={khata_no} newForm={newForm}/></> )
+   <DataEntryForKhata khatauni_id={khatauni_id} chakbandi_id={chakbandi_id} khata_no={khata_no} newForm={newForm}/></> )
 }
-export function DataEntryForKhata({khatauni_id, khata_no, newForm}) {
+export function DataEntryForKhata({khatauni_id, chakbandi_id, khata_no, newForm}) {
 
 
     const {items} = useGraphQlQuery(query, {
@@ -72,27 +73,21 @@ export function DataEntryForKhata({khatauni_id, khata_no, newForm}) {
    // console.log("myitems", items)
 
    // return (<p>Hi</p>)
-    async function defaultSubmitFn(data)
+    async function onSubmitFn(data)
     {
-        const mutation = `mutation a($type:String!,$obj_json:String!){
-    mutate_multiple_objects(type:$type,obj_json:$obj_json){
-        ok
-        errormessage
-        obj_errors
-        created_obj_ids updated_obj_ids deleted_obj_ids
-    }
-}`
-        const variables = {}
-        variables.type = 'gatasinkhata'
-        data.khatauni_id = localStorage.khatauni_id
-        data.chakbandi_id = localStorage.chakbandi_id
-        variables.obj_json = JSON.stringify(data)
-        const results = await postGraphSqlQuery(graphqlurl, mutation, variables)
-        console.log(results)
-        newForm.reset()
+
+
+        data.khatauni_id = khatauni_id
+        data.chakbandi_id = chakbandi_id
+        console.log(data)
+        defaultSubmitFn(data, 'gatasinkhata', newForm).then(results=> {
+
+            console.log(results)
+            newForm.reset()
+        })
 
     }
-    return (<><DynamicReactHookForm debug={false} addTitle={"Add Gata"} onSubmit={defaultSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"gatas"} newForm={newForm}/></>)
+    return (<><DynamicReactHookForm debug={true} addTitle={"Add Gata"} onSubmit={onSubmitFn} initialValues={items} fieldInfo={fieldInfo} componentName={"gatas"} newForm={newForm}/></>)
 
 
 

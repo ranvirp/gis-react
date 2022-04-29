@@ -15,7 +15,9 @@ export function KhataEntryForm({khatauni_id})
     function onSubmit(data)
     {
        data.khatauni_id = khatauni_id
-        defaultSubmitFn(data, 'khataentry', form)
+        defaultSubmitFn(data, 'khataentry', form).then(result=>{
+            form.reset()
+        })
     }
     return(
         <Stack>

@@ -47,10 +47,20 @@ export default function PermanentDrawerLeft(props) {
 
     const [state, setState] = useState({comp:null, props:null});
 
-    const handleClick = ( comp, props=null) => {
+    const handleClick = ( comp, myprops=null) => {
         // console.log("clicked");
         // console.log(comp);
-        setState({comp:comp, props:props});
+        /*
+        const fn1 = ()=> {
+            setState({comp: comp, props: myprops});
+        }
+        console.log("now setting fn on ", props.fn, fn1)
+        props.fn2(Date.now()/1000)
+        props.fn(fn1)
+
+         */
+        props.fn({comp:comp, props:myprops})
+
     };
     globalState.handleClick = handleClick
 
@@ -103,7 +113,7 @@ export default function PermanentDrawerLeft(props) {
 
 
                 
-                {state.comp!=null && React.cloneElement(state.comp, state.props)}
+                {props.comp?.comp!=null && React.cloneElement(props.comp.comp, props.comp.props)}
 
             </main>
             </ErrorBoundary>

@@ -30,7 +30,7 @@ console.log(khatauni_type, "khatauni_type")
         {label: 'Khata Details', comp:<KhataEntryForm khatauni_id={khatauni_id}/>},
 
         {label:'Khatedar Entry', comp:<AddKhatedarForm chakbandi_id={chakbandi_id} khatauni_id={khatauni_id}/>},
-        {label:'Gata Entry', comp:<AddGataForm khatauni_id={khatauni_id}/>},
+        {label:'Gata Entry', comp:<AddGataForm khatauni_id={khatauni_id} chakbandi_id={chakbandi_id}/>},
 
         {label:'Khata Preview', comp:<KhataPreview khatauni_id={khatauni_id}/>}
 

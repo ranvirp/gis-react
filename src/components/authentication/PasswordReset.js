@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import { useLocation } from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 import queryString from 'query-string';
 import {graphqlFetch, useGraphQlQuery} from "../../apps/common/hooks/GraphQLHooks";
 import {useForm} from "react-hook-form";
@@ -8,7 +8,9 @@ import {Box, TextField, Typography} from "@mui/material";
 import Button from "@mui/material/Button";
 import * as yup from "yup"
 import PrimarySearchAppBar from "../toolbar/toolbar1";
-import PermanentDrawerLeft from "../sidebar/sidebar";
+import {SignIn} from "./SignIn/signinreacthook";
+import {yupResolver} from "@hookform/resolvers/yup";
+import Password from "./common/password";
 const query = `query a($token: String!) {
 \treset_valid(token: $token) {
 \t\tvalid
@@ -23,14 +25,23 @@ const mutation = `mutation a($username: String!, $passwd: String!,
 \t}
 }`
 //TODO
+const yupSchema = yup.object().shape({
+
+    password:yup.string().required(),
+    confirmpassword:yup.string()   .oneOf([yup.ref('password'), null], "Passwords don't match!").required()
+})
 export  function PasswordResetWithoutOldPassword(props)
 {
     const location = useLocation();
-    const form = useForm()
+    const history = useHistory()
+    const form = useForm({resolver:yupResolver(yupSchema)})
+
+    const [items,setItems] = React.useState({})
+    const [resetDone,setResetDone] = React.useState(false)
     const parsed = queryString.parse(location.search)
     const token = parsed.reset
-    const [items,setItems] = React.useState({})
     useEffect(()=> {
+        if (token)
          graphqlFetch(query, {token: token}, 'reset_valid').then(({items,errors,success})=>{
             setItems(items)
         })
@@ -38,19 +49,31 @@ export  function PasswordResetWithoutOldPassword(props)
 
 
     },[token])
+
     function onSubmit(data)
     {
+        data.token = token
+        data.username = items.username
+        console.log(data)
+
         const result =  graphqlFetch(mutation, {username:data['username'], token:data['token'], passwd:data['password']},'password_reset')
         result.then(
             ({items})=> {
                 console.log(items)
+                setResetDone(true)
+                history.push({search:''})
+
             }
         )
     }
 
 
     //console.log('render')
-    if (!token || !items.username) {return <>{props.children}</>}
+   // history.push('/')
+    if (resetDone) {
+
+        return (<SignIn/>) }
+    if (!token || !items.username) {return <Box key={"user" + items.username}>{props.children}</Box>}
 
         return (
           items.valid?
@@ -59,15 +82,13 @@ export  function PasswordResetWithoutOldPassword(props)
 
               <Box sx={{marginTop:"120px",display:"flex",flexDirection:"column"}}>
 
-                  <Typography>Please reset your password for user {items.username}</Typography>
+                  <span>Please reset your password for user {items.username}</span>
               <form onSubmit={form.handleSubmit(onSubmit)}>
-                <ReactHookFormInput name={"password"} comp={<TextField type={"password"}/>} label={"Password"} form={form} fullWidth/>
-                <ReactHookFormInput name={"confirmpassword"} comp={<TextField type={"password"}/>} label={"Confirm Password"} form={form} fullWidth/>
-                <ReactHookFormInput name={"token"} comp={<input type={"hidden"} />}  value={token} form={form} fullWidth/>
-                <ReactHookFormInput name={"username"} comp={<input  type={"hidden"} />}  value={items.username} form={form} fullWidth/>
-                <Button type={"submit"}>Submit</Button>
+                <ReactHookFormInput name={"password"} comp={<Password/>} label={"Password"} form={form} fullWidth/>
+                <ReactHookFormInput name={"confirmpassword"} comp={<Password/>} label={"Confirm Password"} form={form} fullWidth/>
+                 <Button type={"submit"}>Submit</Button>
             </form>
-              </Box></Box>: <>{props.children}</>
+              </Box></Box>: <Box><Box><span>Reset token already used</span></Box>{props.children}</Box>
 
         )
 

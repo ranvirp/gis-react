@@ -1,45 +1,95 @@
 
-import React from "react";
-import {FormField, FormObject, GenericCreateUpdateForm} from "../../../../components/forms/GenericCreateForm";
-import defaultComponents,{defaultProps} from "../../inputparameters";
+import React from "react"
+import {useForm} from "react-hook-form";
+import {ReactHookFormInput} from "../../../../components/forms/ReactHookFormInput";
+import {Stack, Button, Box} from "@mui/material";
+import {yupResolver} from "@hookform/resolvers/yup";
+
 import * as yup from 'yup'
-export const updateDistrictMutation = `mutation something($dname:String!, $district_code_census:String!, $dname_eng:String!){
-    update_district(dname: $dname, district_code_census: $district_code_census, dname_eng: $dname_eng) {
-        district {dname district_code_census dname_eng }
+import {graphqlFetch} from "../../../common/hooks/GraphQLHooks";
+import defaultComponents from "../../inputparameters";
+
+export const createUpdateDistrictMutation = `mutation something($dname:String!, $district_code_census:String, $dname_eng:String!){
+    create_update_district(dname: $dname, district_code_census: $district_code_census, dname_eng: $dname_eng) {
+       
       ok
       errormessage
-      
+
     }
     }`
-  
-export const createDistrictMutation = `mutation something($dname:String!, $dname_eng:String!){
-        create_district(dname: $dname, dname_eng: $dname_eng) {
-            district {dname district_code_census dname_eng }
-          ok
-          errormessage
 
-        }
-        }`
 
-const formFields = [FormField("dname","Dname"),FormField("dname_eng","Dname Eng")]
+
 const yupSchema = yup.object({
 dname: yup.string().required(),
 dname_eng: yup.string().required(),
  }).required();
 
-const formObject = new FormObject(defaultProps,defaultComponents,formFields,yupSchema,createDistrictMutation)
-export const DistrictCreateForm = <GenericCreateUpdateForm title="Create District" formObject={formObject}/>
-export const DistrictCreateUpdateForm = (props)=> {
-   
-   const formFields = [FormField("dname","Dname"),FormField("district_code_census","District Code Census"),FormField("dname_eng","Dname Eng")]
-   const mutation = props.edit? updateDistrictMutation:createDistrictMutation
-   const defprops = props.edit ? {}: defaultProps
-   const formObject = new FormObject(defprops,defaultComponents,formFields,yupSchema,mutation,props.afterSubmitFn, props.variablesFn, props.debug)
-   //const myQuery = `query a{all_district { dname district_code_census dname_eng }}`
-   
+const query = 'query a($filter:String!){district_by_filter(filter:$filter) { dname  district_code_census  dname_eng }  }'
 
-   return (
-   <GenericCreateUpdateForm title={props.pk?"Update ":"Create " + "District"} pk={"district_code_census"} defaultValues={props.defaultValues} formObject={formObject} {...props}/>
-   )
+export const DistrictCreateUpdateForm = (props)=> {
+const [errormessage,setErrorMessage] = React.useState('')
+const form = useForm({resolver:yupResolver(yupSchema)})
+const [id,setId] = React.useState(null)
+
+function search(){
+  let data = form.getValues()
+  
+  Object.keys(data).map(value=>{
+    if (data[value]==='') delete data[value]
+  })
+  
+  graphqlFetch(query,{filter:JSON.stringify(data)},'district_by_filter').then(({items,errors,success})=>{
+    if (success && items.length==1) {
+       form.setValue("dname",items[0]["dname"])
+form.setValue("dname_eng",items[0]["dname_eng"])
+
+       setId(items[0]['district_code_census'])
+      
+    }
+    
+  })
+}
+function reset(e)
+{
+  form.reset()  
+  setId(null)
+}
+function onSubmit(data)
+{
+    
+Object.keys(data).map(value=>{
+     data[value] = String(data[value])
+ })
+    graphqlFetch(createUpdateDistrictMutation, data, 'create_update_district').then(({items,errors,success})=>{
+ if (errors.length > 0) {
+            setErrorMessage(errors.toString)
+            return
+        }
+        let errormessage = items.errormessage?.toString()
+        let errorMessage = 'Success'
+        if (errormessage) errorMessage = "Error during form submission: " + errormessage
+        else form.reset()
+        setErrorMessage((errorMessage))
+
+
+    })
+
+
+}
+    return(
+        <Stack>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+               <Stack>
+                   <Box sx={{color:errormessage === 'Success'? 'green':"red"}}>{errormessage}</Box>
+                    <ReactHookFormInput  form={form} comp={defaultComponents["dname"]} name={"dname"} label={"Dname"}/>
+<ReactHookFormInput  form={form} comp={defaultComponents["dname_eng"]} name={"dname_eng"} label={"Dname Eng"}/>
+                    
+                   <Stack direction="row"> <Button onClick={reset}>Reset</Button> <Button onClick={search}>Search</Button> <Button type="submit">{id?'Update':'Submit'}</Button> </Stack>
+               </Stack>
+
+        </form>
+        </Stack>
+    )
 }
     

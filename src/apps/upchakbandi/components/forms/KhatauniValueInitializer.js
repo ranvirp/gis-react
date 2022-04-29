@@ -1,6 +1,6 @@
 import React from "react";
 import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
-let q = `query a($filter:String!) {chakbandi_documents_by_filter(filter:$filter){khatauni{id,fasli_year type_of_khatauni}}}`
+let q = `query a($filter:String!) {chakbandi_documents_by_filter(filter:$filter){khatauni{id,fasli_year} type_of_khatauni}}`
 
 export function KhatauniValueInitializer({chakbandi_id, ...props})
 {
@@ -8,10 +8,10 @@ export function KhatauniValueInitializer({chakbandi_id, ...props})
     //localStorage.bid = null
     //localStorage.aid = null
     results.items.map (value => {
-        if (value.khatauni.type_of_khatauni === 'b') {
+        if (value.type_of_khatauni === 'b') {
             localStorage.bid = value.khatauni.id
         }
-        else if (value.khatauni.type_of_khatauni === 'a') {
+        else if (value.type_of_khatauni === 'a') {
             localStorage.aid = value.khatauni.id
         }
     })

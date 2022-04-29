@@ -8,17 +8,17 @@ import AppWithoutLogin from './components/AppWithoutLogin';
 import {ComponentTester} from "./components/ComponentTester";
 import AppWithLogin from "./components/AppWithLogin";
 import {BrowserRouter} from "react-router-dom";
+import {KhataCreateUpdateForm} from "./apps/upchakbandi/generated/forms/khata";
 
 const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 renderMethod(
 
-<BrowserRouter>
-      {
+
        //   <AppWithoutLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
       //  <ComponentTester/>
-     <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems}/>
-      }
-</BrowserRouter>
+     <AppWithLogin title={ChakbandiSettings().title} sidebaritems={ChakbandiSettings().sidebaritems} time={Date.now()/1000}/>
+        //  <KhataCreateUpdateForm khatauni_id={"61c34677-b1f4-4185-8361-7a3162b5b8db"}/>
+
 ,
   document.getElementById('root')
 );

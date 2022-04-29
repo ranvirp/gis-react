@@ -25,6 +25,7 @@ import {Dropdown} from "./forms/Dropdown";
 import {OrderEntryForm} from "../apps/upchakbandi/components/forms/OrderEntryForm";
 import {FarmerSearch} from "../apps/upchakbandi/components/forms/FarmerSearch";
 import {FarmerLocalteByName} from "../apps/upchakbandi/components/reports/FarmerLocateByName";
+import {GataOwnership} from "../apps/upchakbandi/components/reports/GataOwnership";
 const fn = (value) => {value.khatauni = value.khatauni.id}
 const values = [{key:'a',label:'a', value:'a'}, {key:'b',label:'b', value:'b'}]
 export function ComponentTester(props)
@@ -65,7 +66,8 @@ export function ComponentTester(props)
 
 //<Dropdown values={values} defaultValue={'b'}/>
                // <OrderEntryForm chakbandi_id={localStorage.chakbandi_id}/>
-                <FarmerLocalteByName chakbandi_id={"0e33f6bd-6bdb-461b-bbb0-9028c129ae5c"} form={form} name={"test"}/>
+               // <FarmerLocalteByName chakbandi_id={"0e33f6bd-6bdb-461b-bbb0-9028c129ae5c"} form={form} name={"test"}/>
+                <GataOwnership/>
             }
 
         </ErrorBoundary>

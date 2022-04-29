@@ -10,6 +10,7 @@ export function useGraphQlQuery(query, variables, queryName,reducer=null)
     useEffect( ()=> {
         async function fetchData() {
             const result = await postGraphSqlQuery(graphqlurl, query, variables)
+            console.log(query,variables,result)
             // return (<p>Hi</p>)
             /*
             function timeout(delay) {
@@ -40,8 +41,7 @@ export function useGraphQlQuery(query, variables, queryName,reducer=null)
 export  async function graphqlFetch (query, variables, queryName, reducer) {
 
       const result =  await  postGraphSqlQuery(graphqlurl, query, variables)
-        console.log('result', result)
-
+         console.log(result,query,variables)
 
             if (!result.errors) {
                 //console.log(result, queryName, result.data[queryName])

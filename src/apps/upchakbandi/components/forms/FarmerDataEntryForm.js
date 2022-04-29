@@ -96,12 +96,16 @@ export function FarmerDataEntryForm({chakbandi_id, khatauni_id, ...props})
          data.year_of_birth = String(data.year_of_birth)
 
          if (data.id != ''){ query = updateFarmerMutation; queryName = 'custom_update_farmer' } else {delete data.id}
-         console.log(data)
+         //console.log(data)
          const result = graphqlFetch(query,data,queryName)
          result.then(value=>{
-             console.log(value)
+             //console.log(value)
              if(value.errors.length > 0) setOutcome('errors' + value.errors[0].message)
-             else setOutcome("Success")
+             else {
+                 setOutcome("Success")
+                 form.reset()
+
+             }
              //
          })
     }

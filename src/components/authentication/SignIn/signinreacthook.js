@@ -17,6 +17,10 @@ import {
 import Email from "../common/email";
 import Password from "../common/password";
 import {ReactHookFormInput} from "../../forms/ReactHookFormInput";
+import {SendPasswordResetEmail} from "../SendPasswordResetEmail";
+import {useForm} from "react-hook-form";
+import {graphqlFetch} from "../../../apps/common/hooks/GraphQLHooks";
+import {yupResolver} from "@hookform/resolvers/yup";
 
 const yupschema = yup.object({
     email: yup
@@ -164,7 +168,9 @@ id:'email',
 }
 const GET_AUTH_TOKEN_MUTATION = `
 mutation ($email:String!,$password:String!) {token_auth(username:$email, password:$password)
-{token}
+{token payload
+    
+    refresh_expires_in}
 }`
 function varsLogin(data){
     return {email:data.email, password:data.password}
@@ -176,13 +182,35 @@ console.log(data)
 }
 export function SignIn(props)
 {
-//console.log(props)
+    const [reset,setReset] = React.useState(false)
+    const form = useForm({resolver:yupResolver(yupschema)})
+    if (reset) return <SendPasswordResetEmail/>
+    function fn(e)
+    {
+        setReset(true)
+    }
+    function handleSubmit(data)
+    {
+        console.log(data)
+        graphqlFetch(GET_AUTH_TOKEN_MUTATION,{email:data.email, password:data.password},'token_auth').then(({success,items,errors})=>{
+            if (success && errors.length === 0)
+            {
+                console.log(items)
+                const token = items.token
+                localStorage.setItem('token', token)
+                props.afterHandle(token)
+            }
+    })
+    }
     return (
 
         <Box sx={{display:"flex",flexDirection:"column",alignItems:"center", justifyContent:"center",width:"100%",marginTop:"20px", height:"600px"}}>
             <Stack spacing={10}>
                 <Typography variant={"h5"}>Welcome to E-Chakbandi</Typography>
-            <GenericReactHookForm afterSubmitFn={props.afterHandle} debug={props.debug??false} yupSchema={yupschema} formComponent={<LoginFormComponent/>} formComponentProps={props} mutationQuery={GET_AUTH_TOKEN_MUTATION} variables={varsLogin}/>
+                <form onSubmit={form.handleSubmit(handleSubmit)}>
+                    <LoginFormComponent form={form}/>
+                </form>
+                <Button onClick={fn}>Reset Password</Button>
 
         </Stack>
         </Box>

@@ -29,6 +29,7 @@ export function ChakbandiCreateForm(props)
     const [error,setError] = React.useState('')
     function onSubmit(data)
     {
+        //console.log(data)
         defaultSubmitFn(data, "chakbandicreate", form).then(({items,errors,success})=>{
             console.log(errors,success);
             if (success) {

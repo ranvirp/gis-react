@@ -1,6 +1,6 @@
 import React from "react";
 import {PetitionByFilter} from "../generated/reports/petition";
-import {ClaimCreateForm} from "../generated/forms/claim";
+import {ClaimCreateUpdateForm} from "../generated/forms/claim";
 import {Button} from "@mui/material";
 
 export function PetitionWithClaimsFormAndAddClaimButton(props)
@@ -21,7 +21,7 @@ export function PetitionWithClaimsFormAndAddClaimButton(props)
         //Petition object with petitionId
         <>
             <PetitionByFilter columns={PetitionColumns} fn={fn} filter={JSON.stringify({id:props.id})}/>
-            {state.form && ClaimCreateForm}
+            {state.form && ClaimCreateUpdateForm}
         </>
     )
 }

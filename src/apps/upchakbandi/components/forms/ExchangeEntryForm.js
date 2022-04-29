@@ -13,12 +13,16 @@ export function ExchangeEntryForm({chakbandi_id, form, ...props})
                         <ReactHookFormControlledInput {...props} form={form} label={"Party A"} name={props.componentRootName + "." + "partyA"} comp={<KhatedarCodeForm chakbandi_id={chakbandi_id}/>}/>
                             <ReactHookFormControlledInput {...props} form={form} label={"Gata A"} name={props.componentRootName + "." + "gataA"} />
                             <ReactHookFormControlledInput {...props} form={form} label={"Area of Gata A"} name={props.componentRootName + "." + "gataAarea"} />
+                <ReactHookFormControlledInput {...props} form={form} label={"Exchange Ratio of Gata A"} name={props.componentRootName + "." + "exchangeratioA"} />
+
             </Stack>
             <Stack direction={"row"}>
 
                             <ReactHookFormControlledInput {...props} form={form} label={"Party B"} name={props.componentRootName + "." + "partyB"} comp={<KhatedarCodeForm chakbandi_id={chakbandi_id}/>}/>
                             <ReactHookFormControlledInput {...props} form={form} label={"Gata B"} name={props.componentRootName + "." +"gataB"} />
                             <ReactHookFormControlledInput {...props} form={form} label={"Area of Gata B"} name={props.componentRootName + "." + "gataBarea"} />
+                <ReactHookFormControlledInput {...props} form={form} label={"Exchange Ratio of Gata B"} name={props.componentRootName + "." + "exchangeratioB"} />
+
             </Stack>
             <Stack direction={"row"}>
                             <ReactHookFormControlledInput {...props} form={form} label={"Date of Exchange"} name={props.componentRootName + "." +"date_of_exchange"} comp={<GenericDate/>}/>

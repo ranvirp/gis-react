@@ -70,6 +70,7 @@ export const DynamicReactHookFormComponent = ({formObject,fieldInfo,fields, fiel
 
 
                 return React.cloneElement(<ReactHookFormControlledInput/>, {
+                    ...props[`${componentRootName}.${value1}`],
                     ...myProps,
 
                     form: form,

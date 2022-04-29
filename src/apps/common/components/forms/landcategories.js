@@ -32,8 +32,8 @@ const  LandCategoryDropdown =  (props) => {
         fetchData()
     },[])
     return (
-        <Dropdown values={items} onChange={props.onChange} id={props.id} onBlur={fetchData}
-                  name={props.name} label={props.label} required={props.required}/>
+        <Dropdown values={items}  {...props} onBlur={fetchData}
+                  />
     );
 }
 export default LandCategoryDropdown;

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {Stack, TextField} from "@mui/material";
 import BasicTable from "../../../../components/tables/tables";
 import {useGraphQlQuery} from "../../../common/hooks/GraphQLHooks";
@@ -6,21 +6,37 @@ import {GenericTabularReport} from "../../../../components/reports/GenericTabula
 import Button from "@mui/material/Button";
 import {ReactHookFormInput} from "../../../../components/forms/ReactHookFormInput";
 const q = 'query a($filter:String!){farmer_by_filter(filter:$filter){id name relative_name khatedar_code}}'
-
-export function FarmerSearchByKhatedarCode({chakbandi_id, ...props})
+export function FarmerSearchByKhatedarCode({chakbandi_id,form, ...props})
 {
+
+    console.log(props)
     const [khatedarCode, setKhatedarCode] = useState(null)
     const [id,setId] = useState(null)
     const [selectedValue, setSelectedValue] = useState('Not selected')
+    const khatedar_code = form.watch(props.componentRootName + "." + 'khatedar_code')
+    useEffect(
+        ()=>{
+            setKhatedarCode(khatedar_code)
+
+        },[khatedar_code]
+    )
     function fn1(e)
     {
         setId(e.target.value)
+        let name = props.name
+
+        form.setValue(name, e.target.value)
+
         setSelectedValue(e.target.getAttribute('details'))
     }
     function reducer(data)
     {
         return  data.map(value=> {
+
             value.btn = <Button  details={`${value.khatedar_code}-${value.name}-${value.relative_name}`} value={value.id} onClick={fn1}>Select</Button>
+            if (value.khatedar_code == khatedarCode) {
+                setSelectedValue(`${value.khatedar_code}-${value.name}-${value.relative_name}`)
+            }
             return value
         })
     }
@@ -41,12 +57,13 @@ export function FarmerSearchByKhatedarCode({chakbandi_id, ...props})
         setId(null)
         setSelectedValue('Not Selected')
     }
+
     return (
         <Stack>
-            <TextField label={props.label??"Khatedar Code"} onChange={fn}/>
+            <TextField label={props.label??"Khatedar Code"} name={props.componentRootName + "." + 'khatedar_code'} defaultValue={form.getValues([props.componentRootName + "." + 'khatedar_code'])[0]} onChange={fn}/>
             <span>{selectedValue}</span>
 
-            <input type={"hidden"}  {...props} value={id}  />
+            <TextField key={id}   {...props}  defaultValue={id} type={"hidden"}/>
             {!id?<GenericTabularReport key={khatedarCode} columns={columns} items={items} tableComponent={<BasicTable/>}/>:''}
         </Stack>
     )

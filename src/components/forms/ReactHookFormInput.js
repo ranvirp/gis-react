@@ -13,6 +13,9 @@ const errorStyles = {
 export function ReactHookFormInput({name,label, comp, form, defaultValue, required, visibility, onChange, ...props}){
     comp = comp ?? <TextField/>
     //console.log('defaultValue', defaultValue)
+    if (typeof comp.type === 'string') {
+        return React.cloneElement(comp, {...form.register(name)})
+    }
     return ( <Controller
         name={name}
         control={form.control}
@@ -22,7 +25,7 @@ export function ReactHookFormInput({name,label, comp, form, defaultValue, requir
                      formState:{errors}}) => (
 
             <>
-                {React.cloneElement(comp, {...props, sx:{...props.sx,...errors[name]?errorStyles:{}},value:props.value??value,defaultValue:defaultValue??'', label:label , required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onChange) onChange(e);inbuildOnChange(e)},
+                {React.cloneElement(comp, {...props, sx:{...props.sx,...errors[name]?errorStyles:{}},name:name,value:props.value??value, label:label , required:required??false,visibility:visibility??"visible", onChange:(e)=>{ if (onChange) onChange(e);inbuildOnChange(e)},
 
 
                 })}
@@ -38,6 +41,9 @@ export function ReactHookFormInput({name,label, comp, form, defaultValue, requir
 }
 export function ReactHookFormControlledInput({name,form,fieldArray,componentRootName,index, ...props}){
    // console.log("name",props.name)
+     if (typeof props.comp?.type === 'string') {
+        return React.cloneElement(props.comp, {...form.register(name)})
+    }
     return ( <Controller
         name={name}
         control={form.control}
@@ -48,7 +54,7 @@ export function ReactHookFormControlledInput({name,form,fieldArray,componentRoot
 
             <>
                 {React.cloneElement(props.comp ?? <TextField/>, {label:props.label,value:value, defaultValue:props.defaultValue, required:props.required??false,visibility:props.visibility??"visible", onChange:(e)=>{if (props.onChange) props.onChange(e);onChange(e)},
-                    fieldArray:fieldArray,componentRootName:componentRootName,form:form,index:index
+                    fieldArray:fieldArray,componentRootName:componentRootName,form:form,index:index, name:name
 
                 })}
                 {

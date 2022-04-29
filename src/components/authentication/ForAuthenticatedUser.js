@@ -1,19 +1,7 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {SignIn} from "./SignIn/signinreacthook";
-const initialState = {
-    authenticated:false,
-    token_auth:{
-       token:localStorage.token,
-        refresh_token:localStorage.refreshToken,
-    payload: {
-        "username": null,
-        "exp": 0,
-        "origIat": 0
-    },
-    },
+import {graphqlFetch} from "../../apps/common/hooks/GraphQLHooks";
 
-
-};
 function parseJwt (token) {
     if (token == null) return false
     else {
@@ -28,45 +16,74 @@ function parseJwt (token) {
         }
         return {}
     }
-};
+}
+ function  getRefreshToken(token)
+{
+    const query = 'mutation refresh_token($token: String!) {\n' +
+        '  refresh_token(token: $token) {\n' +
+        '    token\n' +
+        '    payload\n' +
+        '    refresh_expires_in\n' +
+        '  }\n' +
+        '}'
+    return graphqlFetch(query, {token:token},'refresh_token')
+
+
+}
 function isAuthenticated()
 {
     const token = localStorage.token
-    if (token==null) return false
+    console.log('token', token)
+    if (token === 'null') {
+        console.log('token is null')
+        return false
+    }
     const decoded = parseJwt(token??'')
     const exp = decoded.exp
-    const timenow = Date.now()
-    if (exp < timenow) return false
+    const timenow = Date.now()/1000
+    console.log("tokenexp and timenow",exp, timenow)
+    console.log(decoded)
+    console.log((exp - timenow)/60)
+    const diff = (exp - timenow)/60
+    if ( diff < 0 ) {
+        // send refresh_token
+        localStorage.token = null
+        return false
+    } else if (diff <=4.3) {
+
+        getRefreshToken(localStorage.token).then(res=>{localStorage.token = res.items.token})
+
+        //localStorage.clear()
+    }
     console.log(decoded, "decoded")
     if (decoded.username) return decoded.username
 
 }
 const username = isAuthenticated()
+//console.log(username)
 export function ForAuthenticatedUser(props)
 {
-    const [authenticated,setAuthenticated ] = React.useState(username?true:false)
-    const [authToken,setAuthToken ] = React.useState(initialState)
+    console.log("checking authentication at", props, props.children)
 
-    function afterHandle(data, results)
+    function afterHandle(token)
     {
-       if (!results.errors)
-       {
-           setAuthToken(results.data.token_auth)
-           localStorage.token = results.data.token_auth.token
-           setAuthenticated(true)
-
-       }
+      props.fn(Date.now()/1000)
     }
-
+   const username = isAuthenticated()
     const user = {
-        authenticated:authenticated,
+        authenticated:username !== false,
         username:username?username:null,
-        logout:()=>{localStorage.token = null;setAuthToken(null);setAuthenticated(false)}
+        logout:()=>{ localStorage.token = null;
+
+            console.log("now loggin out")
+            props.fn(Date.now()/1000)}
     }
+    console.log("authenticated", user.authenticated)
 
     return (
 
-         authenticated ? <>
+         user.authenticated ? <>
+
                     {props.children.map((value,index)=>
                       {return React.cloneElement(value, {user:user, key:index})})}
 
@@ -74,6 +91,7 @@ export function ForAuthenticatedUser(props)
 
 
                 :<SignIn afterHandle={afterHandle}/>
+
 
     )
 }

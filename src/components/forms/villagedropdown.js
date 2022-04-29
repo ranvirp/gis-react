@@ -83,7 +83,7 @@ export function Villagedropdown(props) {
             <Typography component={"span"}>{props.label}{props.required?'*':''}</Typography>
 
 
-    <Stack fullWidth direction="row" justifyContent="space-evenly">
+    <Stack  direction="row" justifyContent="space-evenly">
 
     <Dropdown fullWidth values={state.fieldA} onChange={changeFunctionA} id={props.fieldAId} onBlur={getDists}
                       name={props.fieldAName} label={props.fieldALabel?props.fieldALabel:'District'} onBlur={getDists}/>

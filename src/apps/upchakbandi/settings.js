@@ -11,6 +11,10 @@ import {AddGataMapForm} from "./components/forms/OldGataNewGataMapEntryForm";
 import {OrderEntryForm} from "./components/forms/OrderEntryForm";
 import {DefaultChakbandiValueChecker} from "./components/forms/DefaultChakbandiValueChecker";
 import {FarmerLocalteByName} from "./components/reports/FarmerLocateByName";
+import {UserAdmin} from "../UserAdmin";
+import {OrderDataEntryForm} from "./components/forms/OrderDataEntryForm";
+import {AllChakbandi} from "./components/reports/AllChakbandi";
+import {CourtOrderCreateUpdateForm} from "./generated/forms/courtorder";
 
 const mode = 'dev'
 
@@ -46,7 +50,9 @@ const ChakbandiSettings = ()=> {
         return {
 
             'चकबंदी  का विवरण':[
-                <SideBarItem comp={<ChakbandiCreateForm />} title='चकबंदी अधिसूचना का विवरण' handleClick={handleClick}/>,
+                <SideBarItem comp={<ChakbandiCreateForm />} title='चकबंदी अधिसूचना का विवरण भरें' handleClick={handleClick}/>,
+                <SideBarItem comp={<AllChakbandi />} title='चकबंदी अधिसूचना की सूची' handleClick={handleClick}/>,
+
                 <SideBarItem comp={<ChooseDefaultChakbandi />} title='चकबंदी ग्राम चुनें' handleClick={handleClick}/>,
 
                 <SideBarItem comp={<ChakbandiDocuments />} title='चकबंदी अभिलेखों का विवरण' handleClick={handleClick}/>,
@@ -64,11 +70,13 @@ const ChakbandiSettings = ()=> {
 
             ],
             'आदेशों  की डेटा एंट्री': [
-                <SideBarItem comp={<OrderEntryForm/>} title='आदेश की डेटा एंट्री ' handleClick={handleClick}/>,
+                <SideBarItem comp={<OrderDataEntryForm chakbandi_id={localStorage.chakbandi_id}/>} title='आदेश की डेटा एंट्री ' handleClick={handleClick}/>,
 
 
 
             ],
+            'यूज़र प्रबंधन':[<SideBarItem comp={<UserAdmin/>} title='नए यूज़र' handleClick={handleClick}/>],
+
 
 
 

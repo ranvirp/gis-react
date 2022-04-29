@@ -3,8 +3,9 @@ import React, {useEffect} from "react";
 import {Stack, Button} from "@mui/material";
 import {DynamicReactHookFormComponent} from "./ReactHookFormComponent";
 import defaultComponents, {defaultProps} from "../../apps/upchakbandi/inputparameters";
+import {BasicTabs} from "../tabpanels/BasicTabPanel";
 
-export function DynamicReactHookForm({fieldInfo,initialValues, newForm,componentName, ...props}){
+export function DynamicReactHookForm({fieldInfo,initialValues, newForm,componentName,tabs=false, ...props}){
 
 
     const fieldArray = useFieldArray({control: newForm.control, name: componentName, keyName:props.keyName??'code'})
@@ -42,7 +43,7 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
     }
     */
     const onSubmit = (data) => {
-         console.log(newForm.formState.errors)
+        // console.log(newForm.formState.errors)
 
         if (props.onSubmit) props.onSubmit(data)
     }
@@ -52,33 +53,36 @@ export function DynamicReactHookForm({fieldInfo,initialValues, newForm,component
         props.debug && console.log(newForm.getValues())
 
     }
+    var tabitems = []
+    var items = []
+    fieldArray.fields.map((value,index1) => {
+
+        //props.debug && console.log("I am here", index1)
+
+            let comp =    <Stack  direction={"row"} sx={{backgroundColor:(value.delete === 1)?'red':''}}>
+        {props.beforeComponent?.(value)}
+        <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value,'fieldArray':fieldArray,  form:newForm,index:index1, componentRootName:`${componentName}[${index1}]`}}/>
+
+
+
+        {props.afterComponent?.(value)}
+    </Stack>
+    tabitems.push({label:value[props.tabTitleField]??index1, comp:comp})
+        items.push(comp)
+
+    })
+
 
     return (
-        <form onSubmit={newForm.handleSubmit(onSubmit)}>
+
             <Stack direction={"column"}>
+                <form onSubmit={newForm.handleSubmit(onSubmit)}>
 
                 <Stack direction={"row"}> <Button onClick={fn1}>{props.addTitle??'Add New'}</Button>{props.debug && <Button onClick={showValues}>Show Values</Button>}<Button type={"submit"}>Submit</Button></Stack>
-                {fieldArray.fields.map((value,index1) => {
 
-                    //props.debug && console.log("I am here", index1)
-                    return <>
-                        <Stack  direction={"row"} sx={{backgroundColor:(value.delete === 1)?'red':''}}>
-                            {props.beforeComponent?.(value)}
-                            <DynamicReactHookFormComponent key={value.id} {...{ formObject:{defaultComponents, defaultProps},fieldInfo:fieldInfo,fields:value,'fieldArray':fieldArray,  form:newForm,index:index1, componentRootName:`${componentName}[${index1}]`}}/>
-                            {
-                               // <Button value={index1} onClick={removeElement}>Remove</Button>
-                                //<Button value={index1} onClick={markForDeletion}>Delete</Button>
-                            }
+                    {tabs?<BasicTabs items={tabitems}/>:items}
 
-
-                        {props.afterComponent?.(value)}
-                        </Stack>
-                    </>
-
-                    // return <h2>Hello</h2>
-                })}
-
-            </Stack>
         </form>
+            </Stack>
     )
 }

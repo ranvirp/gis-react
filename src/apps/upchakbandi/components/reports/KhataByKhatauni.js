@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form";
 import {Stack, TextField} from "@mui/material";
 import {ReactHookFormInput} from "../../../../components/forms/ReactHookFormInput";
 import Button from "@mui/material/Button";
-const khataQuery = `query a($filter:String!) {khata_by_filter(filter:$filter) { id khatauni{ id village{ vname  village_code_census   district_code{ dname  district_code_census  dname_eng } }  fasli_year  }  khata_no category{ code  category  category_eng  name  name_eng }  area  status }  }`
+const khataQuery = `query a($filter:String!) {khata_by_filter(filter:$filter) { id khatauni{ id village{ vname  village_code_census   district_code{ dname  district_code_census  dname_eng } }  fasli_year  }  khata_no category{ code  category    name  }  area  status }  }`
 const columns = [
   //  { id: 'id',label: 'Id',minWidth: 10, align: 'center', format: (value) => value.toString(),},
     { id: 'khata_no',label: 'Khata No',minWidth: 10, align: 'center', format: (value) => value.toString(),},
